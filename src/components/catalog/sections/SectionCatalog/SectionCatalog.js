@@ -19,8 +19,7 @@ const SectionCatalog = ({ level, setLevelNonText, setLatestBook, setClass1, setC
     const [currentData, setCurrentData] = useState([]);
 
     const [lists, setLists] = useState([])
-    const [search, setSearch] = useState('')
-    console.log(typeCatalogue)
+    const [search, setSearch] = useState('') =
 
     // Tooltip configuration
     const message = [
