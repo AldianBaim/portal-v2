@@ -1,5 +1,6 @@
 import React from 'react'
 import reportWebVitals from "./reportWebVitals"
+import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import App from './App'
@@ -25,3 +26,6 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
+// For activate service worker change to register()
+serviceWorkerRegistration.register();

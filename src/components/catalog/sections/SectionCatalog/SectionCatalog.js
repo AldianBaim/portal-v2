@@ -59,7 +59,6 @@ const SectionCatalog = ({ level, setLevelNonText, setLatestBook, setClass1, setC
     const handleSearch = ({ currentTarget = {} }) => {
         const { value } = currentTarget
         setSearch(value)
-
     }
 
     // Set for pagination
@@ -219,6 +218,16 @@ const SectionCatalog = ({ level, setLevelNonText, setLatestBook, setClass1, setC
                                                         SMA/MA/SMK/MAK
                                                     </label>
                                                 </div>
+                                                {
+                                                    typeCatalogue === "getPenggerakTextBooks" && (
+                                                        <div className="form-check">
+                                                            <input onClick={() => setLevel('level_sdlb')} checked={checkActive == 'level_sdlb' ? true : false} onChange={(e) => selectOnlyThis(e)} className="form-check-input" type="checkbox" id="check5" />
+                                                            <label className="form-check-label" htmlFor="checkSDLB">
+                                                                SLB (SDLB/SMPLB/SMALB)
+                                                            </label>
+                                                        </div>
+                                                    )
+                                                }
                                             </div>
                                         </div>
                                         <div className="card mt-3">
