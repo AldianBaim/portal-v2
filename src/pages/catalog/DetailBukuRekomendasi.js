@@ -2,11 +2,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import HeroDetail from '../../components/catalog/hero/HeroDetail/HeroDetail'
-import SectionAudioPlayer from '../../components/catalog/sections/SectionAudioPlayer/SectionAudioPlayer'
 import SectionBreadcumb from '../../components/catalog/sections/SectionBreadcumb/SectionBreadcumb'
-import SectionRecommended from '../../components/catalog/sections/SectionRecommended/SectionRecommended'
-import SectionReview from '../../components/catalog/sections/SectionReview/SectionReview'
-import SectionTestimonyComment from '../../components/catalog/sections/SectionTestimonyComment/SectionTestimonyComment'
 import Layout from '../../components/global/Layout'
 import { BASE_URL } from '../../utils/config'
 
@@ -15,23 +11,10 @@ const DetailBukuRekomendasi = () => {
     const { slug } = useParams();
     const [loading, setLoading] = useState(false)
     const [book, setBook] = useState([1])
-    const [reviews, setReviews] = useState([])
-    const [recommendBooks, setRecommendBooks] = useState([])
 
     useEffect(() => {
 
         setLoading(true)
-        const getRecommendBooks = async () => {
-            try {
-                let response = await axios.get(`${BASE_URL}/api/catalogue/getRecommendCatalogue?slug=${slug}&qty=8`);
-                setRecommendBooks(response.data.results);
-                setLoading(false);
-            } catch (err) {
-                return err.message;
-            } finally {
-                setLoading(false)
-            }
-        }
         const getBookDetail = async () => {
             try {
                 const response = await axios.get(`${BASE_URL}/api/catalogue/getDetails?slug=${slug}`);
@@ -42,19 +25,7 @@ const DetailBukuRekomendasi = () => {
                 setLoading(false)
             }
         }
-        const getReviews = async () => {
-            try {
-                const response = await axios.get(`${BASE_URL}/api/review/getReviews?slug=${slug}&limit=5&offset=0`);
-                setReviews(response.data.results);
-            } catch (error) {
-                return error.message;
-            } finally {
-                setLoading(false)
-            }
-        }
-        getReviews()
         getBookDetail()
-        getRecommendBooks()
     }, [slug])
 
     return (

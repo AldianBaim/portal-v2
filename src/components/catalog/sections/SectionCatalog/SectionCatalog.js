@@ -2,17 +2,15 @@ import { faArrowLeft, faArrowRight, faFilePdf, faHandPointer, faSearch, faVolume
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useEffect, useState } from 'react'
 import Paginator from 'react-hooks-paginator'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import CardBook from '../../../global/card/CardBook/CardBook'
 import CardSkeleton from '../../../global/card/CardSkeleton/CardSkeleton'
-import Fuse from "fuse.js";
 import { BASE_URL } from '../../../../utils/config'
 import axios from 'axios'
 import fuzzy from "fuzzy"
 import { Tooltip } from 'bootstrap'
 
 const SectionCatalog = ({ level, setLevelNonText, setLatestBook, setClass1, setClass2, setClass3, setClass4, setClass5, setClass6, setClass7, setClass8, setClass9, setClass10, setClass11, setClass12, setSearchTypeCatalogue, searchTitle, checkActive, books, loading, skeletonCount, typeBook, typeCatalogue, setTypeBook, setLevel, setLessonSejarah, setLessonGeografi, setLessonEkonomi, setLessonAntropologi, setLessonSosiologi, setLessonIPA, setLessonIPS, setLessonBIndonesia, setLessonBInggris, setLessonMatematika, setLessonPkn, setLessonInformatika, setLessonPJOK, setLessonIslam, setLessonKristen, setLessonKatolik, setLessonHindu, setLessonBuddha, setLessonKhonghucu, setLessonKepercayaan, setLessonSeniTari, setLessonSeniMusik, setLessonSeniRupa, setLessonSeniTeater, setLessonPrakarya, setLessonIPAS, setLessonTeknikKonstruksiDanPerumahan, setLessonTeknikOtomotif, setLessonTeknikElektronika, setLessonTeknikPesawatUdara, setLessonTeknikKonstruksiKapal, setLessonTeknikKetenagalistrikan, setLessonTeknikGeospasial, setLessonTeknikGeologiPertambangan, setLessonLayananKesehatan, setLessonAgriteknologiPengolahanHasilPertanian, setLessonManajementPerkantoranDanLayananBisnis, setLessonUsahaLayananPariwisata, setLessonDesainKomunikasiVisual, setLessonTeknikFurniture, setLessonKuliner, setLessonBiologi, setLessonFisika, setLessonKimia,setPopularBook }) => {
-    const navigate = useNavigate()
     const pageLimit = 12;
     const [offset, setOffset] = useState(0);
     const [currentPage, setCurrentPage] = useState(1);
@@ -170,19 +168,19 @@ const SectionCatalog = ({ level, setLevelNonText, setLatestBook, setClass1, setC
                                             </div>
                                             <div className="card-body">
                                                 <div onChange={() => setTypeBook('type_pdf')} className="form-check">
-                                                    <input className="form-check-input" checked={typeBook == 'type_pdf' && true} name="type_book" type="checkbox" id="typePDF" />
+                                                    <input className="form-check-input" checked={typeBook === 'type_pdf' && true} name="type_book" type="checkbox" id="typePDF" />
                                                     <label className="form-check-label" htmlFor="typePDF">
                                                         Buku PDF
                                                     </label>
                                                 </div>
                                                 <div onChange={() => setTypeBook('type_audio')} className="form-check">
-                                                    <input className="form-check-input" checked={typeBook == 'type_audio' && true} name="type_book" type="checkbox" id="typeAudio" />
+                                                    <input className="form-check-input" checked={typeBook === 'type_audio' && true} name="type_book" type="checkbox" id="typeAudio" />
                                                     <label className="form-check-label" htmlFor="typeAudio">
                                                         Buku Audio
                                                     </label>
                                                 </div>
                                                 <div onChange={() => setTypeBook('type_interactive')} className="form-check">
-                                                    <input className="form-check-input" checked={typeBook == 'type_interactive' && true} name="type_book" type="checkbox" id="typeInteractive" />
+                                                    <input className="form-check-input" checked={typeBook === 'type_interactive' && true} name="type_book" type="checkbox" id="typeInteractive" />
                                                     <label className="form-check-label" htmlFor="typeInteractive">
                                                         Buku Interaktif
                                                     </label>
@@ -195,25 +193,25 @@ const SectionCatalog = ({ level, setLevelNonText, setLatestBook, setClass1, setC
                                             </div>
                                             <div className="card-body">
                                                 <div className="form-check">
-                                                    <input onClick={() => setLevel('level_paud')} checked={checkActive == 'level_paud' ? true : false} onChange={(e) => selectOnlyThis(e)} className="form-check-input" type="checkbox" id="check1" />
+                                                    <input onClick={() => setLevel('level_paud')} checked={checkActive === 'level_paud' ? true : false} onChange={(e) => selectOnlyThis(e)} className="form-check-input" type="checkbox" id="check1" />
                                                     <label className="form-check-label" htmlFor="checkPAUD">
                                                         PAUD
                                                     </label>
                                                 </div>
                                                 <div className="form-check">
-                                                    <input onClick={() => setLevel('level_sd')} checked={checkActive == 'level_sd' ? true : false} onChange={(e) => selectOnlyThis(e)} className="form-check-input" type="checkbox" id="check2" />
+                                                    <input onClick={() => setLevel('level_sd')} checked={checkActive === 'level_sd' ? true : false} onChange={(e) => selectOnlyThis(e)} className="form-check-input" type="checkbox" id="check2" />
                                                     <label className="form-check-label" htmlFor="checkSD">
                                                         SD/MI
                                                     </label>
                                                 </div>
                                                 <div className="form-check">
-                                                    <input onClick={() => setLevel('level_smp')} checked={checkActive == 'level_smp' ? true : false} onChange={(e) => selectOnlyThis(e)} className="form-check-input" type="checkbox" id="check3" />
+                                                    <input onClick={() => setLevel('level_smp')} checked={checkActive === 'level_smp' ? true : false} onChange={(e) => selectOnlyThis(e)} className="form-check-input" type="checkbox" id="check3" />
                                                     <label className="form-check-label" htmlFor="checkSMP">
                                                         SMP/MTS
                                                     </label>
                                                 </div>
                                                 <div className="form-check">
-                                                    <input onClick={() => setLevel('level_sma')} checked={checkActive == 'level_sma' ? true : false} onChange={(e) => selectOnlyThis(e)} className="form-check-input" type="checkbox" id="check4" />
+                                                    <input onClick={() => setLevel('level_sma')} checked={checkActive === 'level_sma' ? true : false} onChange={(e) => selectOnlyThis(e)} className="form-check-input" type="checkbox" id="check4" />
                                                     <label className="form-check-label" htmlFor="checkSMK">
                                                         SMA/MA/SMK/MAK
                                                     </label>
@@ -221,7 +219,7 @@ const SectionCatalog = ({ level, setLevelNonText, setLatestBook, setClass1, setC
                                                 {
                                                     typeCatalogue === "getPenggerakTextBooks" && (
                                                         <div className="form-check">
-                                                            <input onClick={() => setLevel('level_sdlb')} checked={checkActive == 'level_sdlb' ? true : false} onChange={(e) => selectOnlyThis(e)} className="form-check-input" type="checkbox" id="check5" />
+                                                            <input onClick={() => setLevel('level_sdlb')} checked={checkActive === 'level_sdlb' ? true : false} onChange={(e) => selectOnlyThis(e)} className="form-check-input" type="checkbox" id="check5" />
                                                             <label className="form-check-label" htmlFor="checkSDLB">
                                                                 SLB (SDLB/SMPLB/SMALB)
                                                             </label>
@@ -603,7 +601,7 @@ const SectionCatalog = ({ level, setLevelNonText, setLatestBook, setClass1, setC
                                 </div>
 
                                 {
-                                    search != '' && (
+                                    search !== '' && (
                                         <div className="card-body bg-white p-0 py-2 px-3 position-absolute" style={{ zIndex: '10' }}>
                                             <h6>Hasil pencarian :</h6>
                                             <div className="list-group">
@@ -652,7 +650,7 @@ const SectionCatalog = ({ level, setLevelNonText, setLatestBook, setClass1, setC
                                     ? [...Array(skeletonCount)].map((item, index) => {
                                         return ((<div key={index} className="col-lg-4 my-2"><CardSkeleton /></div>))
                                     })
-                                    : currentData?.length == 0 ? (
+                                    : currentData?.length === 0 ? (
                                         <div className="text-center mt-5">
                                             <img
                                                 width="60"

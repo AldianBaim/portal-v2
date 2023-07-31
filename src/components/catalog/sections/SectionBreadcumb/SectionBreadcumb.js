@@ -36,7 +36,7 @@ const SectionBreadcumb = ({ category, level, title, bookRecommendation }) => {
                                 <Link to={`/katalog/buku-rekomendasi`} className="text-decoration-none text-blue">Buku Rekomendasi</Link>
                             </li>)
                         }
-                        {category != "" && !bookRecommendation && (
+                        {category !== "" && !bookRecommendation && (
                             <li className="breadcrumb-item">
                                 <Link to={`/katalog?type=${categoryAction}`} className="text-decoration-none text-blue">{fixCategory}</Link>
                             </li>)

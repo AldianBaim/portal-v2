@@ -16,7 +16,7 @@ const SectionTestimonyComment = ({ reviews }) => {
                                     <div className="col-8 col-lg-9">
                                         <div>
                                             <h6 className={`pt-4 fw-bold ${styles.username}`}>{review.name}</h6>
-                                            <small>{review.message == " " ? (<i>Tidak ada komentar</i>) : review.message == "" ? (<i>Tidak ada komentar</i>) : review.message}</small>
+                                            <small>{review.message === " " ? (<i>Tidak ada komentar</i>) : review.message === "" ? (<i>Tidak ada komentar</i>) : review.message}</small>
                                             <div className="me-4 my-2">
                                                 <ReactStars classNames="ms-auto" count={5} size={25} value={review.feedback_star} edit={false} />
                                             </div>

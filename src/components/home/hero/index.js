@@ -1,7 +1,6 @@
 import { faFilePdf, faHandPointer, faSearch, faVolumeHigh } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import styles from './index.module.scss'
-import Fuse from "fuse.js";
 import { BASE_URL } from '../../../utils/config';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
@@ -36,16 +35,6 @@ const Hero = ({ nightMode }) => {
         };
         getLists();
     }, []);
-
-    // Handle search using fuse JS
-    // const fuse = new Fuse(lists, {
-    //     keys: [
-    //         'title', 'type'
-    //     ],
-    //     id: 'id'
-    // });
-    // const results = fuse.search(search)
-    // const listResults = results.map((result) => result.item)
 
     // Handle search using fuzzy JS
     var options = {

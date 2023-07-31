@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useState } from 'react'
 import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
-import { Link, useLocation, useNavigate, useSearchParams } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import Layout from '../../components/global/Layout'
 import { BASE_URL } from '../../utils/config/'
 import { GoogleLogin } from 'react-google-login';
@@ -37,7 +37,7 @@ const Login = () => {
 
         try {
             const response = await axios.post(`${BASE_URL}/api/user/${endpoint}`, JSON.stringify(payload))
-            if (response.data.status == 'failed') {
+            if (response.data.status === 'failed') {
                 setMessage(response.data.message)
             } else {
                 setMessage('')
@@ -69,7 +69,7 @@ const Login = () => {
                                 )
                             }
                             {
-                                message != '' && (
+                                message !== '' && (
                                     <div className="alert alert-danger alert-dismissible fade show">
                                         {message}
                                     </div>

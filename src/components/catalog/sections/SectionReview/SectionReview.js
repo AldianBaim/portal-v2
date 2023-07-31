@@ -1,8 +1,7 @@
-import { faStar, faXmark, faXmarkCircle } from '@fortawesome/free-solid-svg-icons'
+import { faStar, faXmarkCircle } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import axios from 'axios'
 import { useState } from 'react'
-import { set } from 'react-hook-form'
 import ReactStars from 'react-rating-stars-component'
 import { Link } from 'react-router-dom'
 import { BASE_URL } from '../../../../utils/config'
@@ -24,8 +23,8 @@ const SectionReview = ({ slug, token }) => {
                     Authorization: token,
                 },
             })
-            setSuccess(true)
-            setLoading(false)
+            if(response.data.status === 'success') setSuccess(true);
+            setLoading(false);
         } catch (error) {
             return error.message
         }
