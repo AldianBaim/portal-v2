@@ -42,6 +42,7 @@ const SectionAudioPlayer = ({ audio }) => {
                         onPlay={() => {
                           setPlayedAudio((prev) => {
                             if (!isNaN(prev) && index !== prev) {
+                              console.log(audio);
                               const audioElm =
                                 audioEl?.current[prev]?.audioEl?.current;
                               audioElm?.pause();
