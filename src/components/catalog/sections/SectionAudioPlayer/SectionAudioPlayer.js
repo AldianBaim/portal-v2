@@ -14,7 +14,6 @@ const SectionAudioPlayer = ({ audios }) => {
   });
   const audioEl = useRef([]);
   const [playedAudio, setPlayedAudio] = useState(null);
-  let number = 1;
 
   return (
     <section id="audioPlayer">
@@ -52,7 +51,7 @@ const SectionAudioPlayer = ({ audios }) => {
               .map((item, index) => {
                 return (
                   <tr key={index}>
-                    <td width="8%">{number++}</td>
+                    <td width="8%">{index + 1}</td>
                     <td width="40%" className="p-0 pt-1">
                       <ReactAudioPlayer
                         className="w-100 bg-transparent"
