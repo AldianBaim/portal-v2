@@ -6,7 +6,6 @@ import SwiperCore, { Grid, Autoplay } from "swiper";
 import 'swiper/css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQuoteLeft } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom';
 
 SwiperCore.use([Grid, Autoplay]);
 

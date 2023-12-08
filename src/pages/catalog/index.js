@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { useLocation, useSearchParams } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 import Hero from '../../components/catalog/hero'
 import SectionCatalog from '../../components/catalog/sections/SectionCatalog/SectionCatalog'
 import Layout from '../../components/global/Layout'
@@ -14,7 +14,7 @@ const Catalog = () => {
 
     const [loading, setLoading] = useState(false)
     const [books, setBooks] = useState([])
-    const [limit, setLimit] = useState(12)
+    const [limit] = useState(12)
     const [typeBook, setTypeBook] = useState('type_pdf')
     const [typeCatalogue, setTypeCatalogue] = useState('getPenggerakTextBooks')
 
@@ -130,8 +130,8 @@ const Catalog = () => {
     }, [title, typeSearchBook, popularBook, typeCatalogue, typeBook, level, lessonIPA, lessonIPS, lessonBIndonesia, lessonBInggris, lessonMatematika, lessonPKN, lessonInformatika, lessonPJOK, lessonIslam, lessonKristen, lessonKatolik, lessonHindu, lessonBuddha, lessonKhonghucu, lessonKepercayaan, lessonSeniTari, lessonSeniMusik, lessonSeniRupa, lessonSeniTeater, lessonSosiologi, lessonAntropologi, lessonEkonomi, lessonGeografi, lessonSejarah, lessonPrakarya, lessonIPAS, lessonTeknikKonstruksiDanPerumahan, lessonTeknikOtomotif, lessonTeknikElektronika, lessonTeknikPesawatUdara, lessonTeknikKonstruksiKapal, lessonTeknikKetenagalistrikan, lessonTeknikGeospasial, lessonTeknikGeologiPertambangan, lessonLayananKesehatan, lessonAgriteknologiPengolahanHasilPertanian, lessonManajementPerkantoranDanLayananBisnis, lessonUsahaLayananPariwisata, lessonDesainKomunikasiVisual, lessonTeknikFurniture, lessonKuliner, lessonBiologi, lessonFisika, lessonKimia, class1, class2, class3, class4, class5, class6, class7, class8, class9, class10, class11, class12, latestBook])
 
     const handleSetLevel = (type) => {
-        if (type == 'level_paud') {
-            if (checkActive == type) {
+        if (type === 'level_paud') {
+            if (checkActive === type) {
                 setCheckActive('')
                 setLevel('')
             } else {
@@ -139,8 +139,8 @@ const Catalog = () => {
                 setLevel(type)
             }
         }
-        if (type == 'level_sd') {
-            if (checkActive == type) {
+        if (type === 'level_sd') {
+            if (checkActive === type) {
                 setCheckActive('')
                 setLevel('')
             } else {
@@ -148,8 +148,8 @@ const Catalog = () => {
                 setLevel(type)
             }
         }
-        if (type == 'level_smp') {
-            if (checkActive == type) {
+        if (type === 'level_smp') {
+            if (checkActive === type) {
                 setCheckActive('')
                 setLevel('')
             } else {
@@ -157,8 +157,8 @@ const Catalog = () => {
                 setLevel(type)
             }
         }
-        if (type == 'level_sma') {
-            if (checkActive == type) {
+        if (type === 'level_sma') {
+            if (checkActive === type) {
                 setCheckActive('')
                 setLevel('')
             } else {

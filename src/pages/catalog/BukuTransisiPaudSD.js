@@ -17,7 +17,7 @@ const BukuTransisiPaudSD = () => {
 
     const [loading, setLoading] = useState(false)
     const [books, setBooks] = useState([])
-    const [limit, setLimit] = useState(12)
+    const [limit] = useState(12)
     const [typeBook, setTypeBook] = useState('type_pdf')
     const [typeCatalogue, setTypeCatalogue] = useState('getNonTextBooks')
 

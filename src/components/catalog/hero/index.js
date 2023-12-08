@@ -6,12 +6,12 @@ const Hero = ({ typeCatalogue, setTypeCatalogue, setURL }) => {
     let active1 = '';
     let active2 = '';
     let active3 = '';
-    let active4 = '';
+    // let active4 = '';
 
     typeCatalogue === 'getTextBooks' && (active1 = 'active-type-catalogue')
     typeCatalogue === 'getPenggerakTextBooks' && (active2 = 'active-type-catalogue')
     typeCatalogue === 'getNonTextBooks' && (active3 = 'active-type-catalogue')
-    typeCatalogue === 'getRecommendationBooks' && (active4 = 'active-type-catalogue')
+    // typeCatalogue === 'getRecommendationBooks' && (active4 = 'active-type-catalogue')
 
     return (
         <section className="bg-soft-blue" id="typeCatalogue" style={{ background: 'url(/assets/image/catalog/bg-hero.png)', backgroundRepeat: 'no-repeat', backgroundSize: '100%' }}>

@@ -22,7 +22,7 @@ const Register = () => {
         try {
             const response = await axios.post(`${BASE_URL}/api/user/register`, payload)
 
-            if (response.data.status == 'failed') {
+            if (response.data.status === 'failed') {
                 setMessage(response.data.message)
             } else {
                 setMessage('')
@@ -96,7 +96,7 @@ const Register = () => {
                                             {showPassword ? (<FontAwesomeIcon icon={faEye} />) : (<FontAwesomeIcon icon={faEyeSlash} />)}
                                         </span>
                                     </div>
-                                    {errors.password && errors.password.type == "required" && <small className="text-danger">Kata sandi wajib diisi</small>}
+                                    {errors.password && errors.password.type === "required" && <small className="text-danger">Kata sandi wajib diisi</small>}
                                 </div>
                                 <div className="form-group my-4">
                                     <div>

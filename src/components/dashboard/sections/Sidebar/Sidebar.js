@@ -22,25 +22,25 @@ const Sidebar = () => {
             <p>Halo, <strong>{user.fullname}</strong></p>
             <ul class="nav nav-pills flex-column border-0">
                 <li class="nav-item d-flex align-items-center">
-                    <Link to="/user/dashboard" className={`${pathname == '/user/dashboard' && 'active'} nav-link d-flex align-items-center text-center`}>
+                    <Link to="/user/dashboard" className={`${pathname === '/user/dashboard' && 'active'} nav-link d-flex align-items-center text-center`}>
                         <FontAwesomeIcon fixedWidth icon={faHome} className="me-2" />
                         <span>Beranda</span>
                     </Link>
                 </li>
                 <li class="nav-item d-flex align-items-center">
-                    <Link to="/user/profile" className={`${pathname == '/user/profile' && 'active'} nav-link d-flex align-items-center text-center`}>
+                    <Link to="/user/profile" className={`${pathname === '/user/profile' && 'active'} nav-link d-flex align-items-center text-center`}>
                         <FontAwesomeIcon fixedWidth icon={faUser} className="me-2" />
                         <span>Profil</span>
                     </Link>
                 </li>
                 <li class="nav-item d-flex align-items-center">
-                    <Link to="/user/riwayat-baca" className={`${pathname == '/user/riwayat-baca' && 'active'} nav-link d-flex align-items-center text-center`}>
+                    <Link to="/user/riwayat-baca" className={`${pathname === '/user/riwayat-baca' && 'active'} nav-link d-flex align-items-center text-center`}>
                         <FontAwesomeIcon fixedWidth icon={faBookOpen} className="me-2" />
                         <span>Riwayat Baca</span>
                     </Link>
                 </li>
                 <li class="nav-item d-flex align-items-center">
-                    <Link to="/user/riwayat-unduh" className={`${pathname == '/user/riwayat-unduh' && 'active'} nav-link d-flex align-items-center text-center`}>
+                    <Link to="/user/riwayat-unduh" className={`${pathname === '/user/riwayat-unduh' && 'active'} nav-link d-flex align-items-center text-center`}>
                         <FontAwesomeIcon fixedWidth icon={faDownload} className="me-2" />
                         <span>Riwayat Unduh</span>
                     </Link>

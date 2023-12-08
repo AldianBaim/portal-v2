@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form';
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import Layout from '../../components/global/Layout'
 import { BASE_URL } from '../../utils/config'
 
@@ -43,14 +43,14 @@ const ForgotPassword = () => {
                     <div className="card mt-2 shadow">
                         <div className="card-body p-4">
                             {
-                                messageFailed != '' && (
+                                messageFailed !== '' && (
                                     <div className="alert alert-danger alert-dismissible fade show">
                                         {messageFailed}
                                     </div>
                                 )
                             }
                             {
-                                messageSuccess != '' && (
+                                messageSuccess !== '' && (
                                     <div className="alert alert-success alert-dismissible fade show">
                                         {messageSuccess}
                                     </div>

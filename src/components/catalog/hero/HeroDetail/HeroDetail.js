@@ -1,4 +1,4 @@
-import { faCheck, faCircleExclamation, faDownload, faFile, faFileAudio, faFilePdf, faPlay } from '@fortawesome/free-solid-svg-icons'
+import { faCheck, faCircleExclamation, faFile, faFileAudio, faFilePdf, faPlay } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import axios from 'axios'
 import React from 'react'
@@ -34,7 +34,7 @@ const HeroDetail = ({ category, price_zone_1, price_zone_2, price_zone_3, price_
                     Authorization: token,
                 },
             })
-            if (response.data.status == 'success') {
+            if (response.data.status === 'success') {
                 setFailedReview(false)
                 setSuccessReview(true)
                 resetFieldReport('message')
@@ -52,7 +52,7 @@ const HeroDetail = ({ category, price_zone_1, price_zone_2, price_zone_3, price_
 
         try {
             const response = await axios.post(`${BASE_URL}/api/download/submit`, JSON.stringify(data))
-            if (response.data.status == 'success') {
+            if (response.data.status === 'success') {
                 resetFieldDownload('message')
                 window.location.replace(attachment)
             }
@@ -79,7 +79,7 @@ const HeroDetail = ({ category, price_zone_1, price_zone_2, price_zone_3, price_
                     Authorization: token,
                 },
             })
-            if (response.data.status == 'success') {
+            if (response.data.status === 'success') {
                 console.log('log pushed');
             }
         } catch (error) {
@@ -115,9 +115,9 @@ const HeroDetail = ({ category, price_zone_1, price_zone_2, price_zone_3, price_
                                     <img src={image || '/assets/image/catalog/book-placeholder.jpg'} className={styles['img-size']} alt="" />
                                 </div>
                                 <div className="col-lg-9 pt-5 pt-md-0">
-                                    {bookType == 'pdf' && <button className="btn btn-sm rounded-pill btn-outline-danger">Buku PDF</button>}
-                                    {bookType == 'audio' && <button className="btn btn-sm rounded-pill btn-outline-success">Buku Audio</button>}
-                                    {bookType == 'interactive' && <button className="btn btn-sm rounded-pill btn-outline-primary">Buku Interaktif</button>}
+                                    {bookType === 'pdf' && <button className="btn btn-sm rounded-pill btn-outline-danger">Buku PDF</button>}
+                                    {bookType === 'audio' && <button className="btn btn-sm rounded-pill btn-outline-success">Buku Audio</button>}
+                                    {bookType === 'interactive' && <button className="btn btn-sm rounded-pill btn-outline-primary">Buku Interaktif</button>}
 
                                     <h3 className="my-3">{title}</h3>
 
@@ -147,7 +147,7 @@ const HeroDetail = ({ category, price_zone_1, price_zone_2, price_zone_3, price_
                                                 >
                                                     <FontAwesomeIcon icon={faFilePdf} className="me-1" /> Baca Online
                                                 </button>
-                                                <small className="my-3 text-muted d-block">Telah diunduh {totalDownload.toLocaleString()} kali <a data-bs-toggle="modal" data-bs-target="#reportModal" className="text-decoration-none text-blue ms-2 fw-bold" style={{ cursor: 'pointer' }}><FontAwesomeIcon icon={faCircleExclamation} /> Lapor disini</a> jika menemukan kesalahan pada buku</small>
+                                                <small className="my-3 text-muted d-block">Telah diunduh {totalDownload.toLocaleString()} kali <a href="/#" data-bs-toggle="modal" data-bs-target="#reportModal" className="text-decoration-none text-blue ms-2 fw-bold" style={{ cursor: 'pointer' }}><FontAwesomeIcon icon={faCircleExclamation} /> Lapor disini</a> jika menemukan kesalahan pada buku</small>
                                             </>
                                         )
                                     }
@@ -160,7 +160,7 @@ const HeroDetail = ({ category, price_zone_1, price_zone_2, price_zone_3, price_
                                                 <a onClick={() => pushLog('download')} href={attachment} className="btn btn-sm btn-outline-primary py-2" target="_blank" rel="noreferrer" download="file.pdf">
                                                     <FontAwesomeIcon icon={faFileAudio} className="me-1" /> Unduh PDF
                                                 </a>
-                                                <small className="my-3 text-muted d-block">Telah diputar {totalPlay} kali <a data-bs-toggle="modal" data-bs-target="#reportModal" className="text-decoration-none text-blue ms-2 fw-bold" style={{ cursor: 'pointer' }}><FontAwesomeIcon icon={faCircleExclamation} /> Lapor disini</a> jika menemukan kesalahan pada audio</small>
+                                                <small className="my-3 text-muted d-block">Telah diputar {totalPlay} kali <a href="/#" data-bs-toggle="modal" data-bs-target="#reportModal" className="text-decoration-none text-blue ms-2 fw-bold" style={{ cursor: 'pointer' }}><FontAwesomeIcon icon={faCircleExclamation} /> Lapor disini</a> jika menemukan kesalahan pada audio</small>
                                             </>
                                         )
                                     }
@@ -170,7 +170,7 @@ const HeroDetail = ({ category, price_zone_1, price_zone_2, price_zone_3, price_
                                         bookType === 'interactive' && attachment && (
                                             <>
                                                 <a onClick={() => pushLog('read')} href={attachment} target="_blank" rel="noreferrer" className="btn btn-sm btn-orange py-2 me-3 my-2"><FontAwesomeIcon icon={faFile} className="me-2" />Baca Buku Interaktif</a>
-                                                <small className="my-3 text-muted d-block">Telah diunduh {totalDownload.toLocaleString()} kali <a data-bs-toggle="modal" data-bs-target="#reportModal" className="text-decoration-none text-blue ms-2 fw-bold" style={{ cursor: 'pointer' }}><FontAwesomeIcon icon={faCircleExclamation} /> Lapor disini</a> jika menemukan kesalahan pada naskah</small>
+                                                <small className="my-3 text-muted d-block">Telah diunduh {totalDownload.toLocaleString()} kali <a href="/#" data-bs-toggle="modal" data-bs-target="#reportModal" className="text-decoration-none text-blue ms-2 fw-bold" style={{ cursor: 'pointer' }}><FontAwesomeIcon icon={faCircleExclamation} /> Lapor disini</a> jika menemukan kesalahan pada naskah</small>
                                             </>
                                         )
                                     }
@@ -196,7 +196,7 @@ const HeroDetail = ({ category, price_zone_1, price_zone_2, price_zone_3, price_
                                         </div>
                                         <div className="col-lg-2 mb-2 mb-md-0">
                                             <div>Edisi</div>
-                                            {edition === "" || edition === null && <small className="text-muted">Belum ada</small>}
+                                            {edition === "" && <small className="text-muted">Belum ada</small>}
                                             {edition !== "" && <small className="text-muted">{edition}</small>}
                                         </div>
                                         <div className="col-lg-3 mb-2 mb-md-0">
