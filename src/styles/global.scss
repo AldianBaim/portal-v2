@@ -14,6 +14,12 @@ body {
 }
 
 // Background
+.bg-light-blue {
+  background-color: #EEF4FF !important;
+}
+.bg-soft-orange {
+  background-color: #FFF7F4 !important;
+}
 .bg-soft-blue {
   background-color: $primary !important;
 }
@@ -37,12 +43,20 @@ body {
 }
 
 // Text
+.text-orange {
+  color: #FF8A37 !important;
+}
+
 .text-blue {
   color: $blue !important;
 }
 
 .text-dark-blue {
   color: $dark-blue !important;
+}
+
+.card-rounded {
+  border-radius: 20px !important;
 }
 
 // Button
@@ -372,4 +386,24 @@ body {
 
 .slide-right {
   transform: translateX(100%);
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  background-color: white;
+  background-color: rgba(255, 255, 255, 0.5);
+  top: 30px;
+  right:10px;
+  padding: 30px;
+  color: #FF8A37 !important;
+  fill: #FF8A37 !important;
+  stroke: #FF8A37 !important;
+}
+
+.swiper-button-prev {
+  right: 80px !important;
+}
+
+.swiper-button-next {
+  right: 10px !important;
 }
