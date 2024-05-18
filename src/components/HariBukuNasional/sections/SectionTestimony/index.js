@@ -16,7 +16,7 @@ const SectionTestimony = () => {
                     <div className="col-lg-12">
                         <h1 className="mb-5 display-6 text-center">Lalu, Bagaimana Cara Penggunaan Buku Sastra?</h1>
                         <div className="row justify-content-between align-items-center">
-                            <div className="col-lg-5 offset-lg-1">
+                            <div className="col-lg-5 offset-lg-1 overflow-hidden">
                                 <Swiper
                                     effect="cards"
                                     loop

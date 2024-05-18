@@ -446,6 +446,7 @@ body {
     border: none;
     padding-top: calc(var(--index) * var(--cardTopPadding));
     margin-bottom: 30px;
+    // max-width: 300px;
   }
 
   .card-body {
