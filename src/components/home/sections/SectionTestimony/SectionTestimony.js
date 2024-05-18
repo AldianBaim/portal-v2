@@ -1,14 +1,13 @@
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperCore, { Grid, Autoplay } from "swiper";
+import SwiperCore, { Grid, Autoplay, Navigation } from "swiper";
 
 // Import Swiper styles
 import 'swiper/css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQuoteLeft } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom';
 
-SwiperCore.use([Grid, Autoplay]);
+SwiperCore.use([Grid, Autoplay, Navigation]);
 
 const SectionTestimony = ({ nightMode }) => {
     let linearBgColor = nightMode ? 'linear-gradient(to bottom, white,white, #6686b7, #6686b7)' : 'linear-gradient(to bottom, white, #e5f8ff, #e5f8ff)'
@@ -110,7 +109,9 @@ const SectionTestimony = ({ nightMode }) => {
             <Swiper
                 autoplay={{ delay: '0ms' }}
                 loop
-                speed={40000}
+                speed={1000}
+                navigation
+                modules={[Grid, Autoplay, Navigation]}
                 spaceBetween={5}
                 slidesPerView={3.5}
                 breakpoints={{
