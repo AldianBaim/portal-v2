@@ -9,6 +9,7 @@ import SectionSastraKurikulum from '../components/HariBukuNasional/sections/Sect
 import SectionGuideline from '../components/HariBukuNasional/sections/SectionGuideline'
 import SectionCatalog from '../components/HariBukuNasional/sections/SectionCatalog'
 import SectionTestimony from '../components/HariBukuNasional/sections/SectionTestimony'
+import SectionKurator from '../components/home/sections/SectionKurator/SectionKurator'
 
 const HariBukuNasional = () => {
 
@@ -28,7 +29,9 @@ const HariBukuNasional = () => {
             publisher: 'Pataba Press, Blora',
             published_year: '1952(cetakan terakhir 2015)',
             bentuk_sastra: 'Novel',
-            peruntukan: 'SD/MI'
+            peruntukan: 'SD/MI',
+            disclaimer: 'Tidak terdapat disclaimer/penafian yang perlu pendampingan khusus',
+            cover: 'komponis-kecil.png'
         },
         {
             title: 'Garuda Gaganeswara',
@@ -36,23 +39,89 @@ const HariBukuNasional = () => {
             publisher: 'Alif Republika',
             published_year: '2020',
             bentuk_sastra: 'Novel',
-            peruntukan: 'SD/MI'
+            peruntukan: 'SD/MI',
+            disclaimer: 'Kekerasan verbal, Kekerasan fisik',
+            cover: 'garuda-gaganeswara.png'
         },
         {
-            title: 'Garuda Gaganeswara',
-            writer: 'Ari Nilandary',
-            publisher: 'Alif Republika',
-            published_year: '2020',
+            title: 'Pak Supi, Kakek Pengungsi',
+            writer: 'S. Rukiah Kertapati',
+            publisher: 'Ultimus',
+            published_year: '1961, 2018',
             bentuk_sastra: 'Novel',
-            peruntukan: 'SD/MI'
+            peruntukan: 'SD/MI',
+            disclaimer: 'Terdapat istilah-istilah sadisme, menyinggung ras atau antar golongan tertentu',
+            cover: 'pak-supi.png'
         },
         {
-            title: 'Garuda Gaganeswara',
-            writer: 'Ari Nilandary',
-            publisher: 'Alif Republika',
-            published_year: '2020',
+            title: 'Pupus Putus Sekolah: Anak Berharga',
+            writer: 'Kurnia Harta Winata',
+            publisher: 'Kanisius',
+            published_year: '2022',
+            bentuk_sastra: 'Komik',
+            peruntukan: 'SD/MI',
+            disclaimer: 'Kalimat kurang sopan, trigger warning',
+            cover: 'pupus-putus.png'
+        },
+        {
+            title: 'Si Cemong Coak',
+            writer: 'Iwok Abqary',
+            publisher: 'Kemendikbudristek',
+            published_year: '2022',
             bentuk_sastra: 'Novel',
-            peruntukan: 'SD/MI'
+            peruntukan: 'SD/MI',
+            disclaimer: 'Terdapat istilah-istilah kekerasan verbal, terdapat perilaku kekerasan terhadap hewan, terdapat istilah kedokteran hewan, terdapat istilah biologi',
+            cover: 'si-cemong-coak.png'
+        },
+        {
+            title: 'Pilus Rumput Laut Untuk Rasi',
+            writer: 'Nabila Adani dan Salma Intifada',
+            publisher: 'Kemendikbudristek',
+            published_year: '2022',
+            bentuk_sastra: 'Novel',
+            peruntukan: 'SD/MI',
+            disclaimer: 'Tidak terdapat disclaimer/penafian yang perlu pendampingan khusus',
+            cover: 'pilus-rumput-laut.png'
+        },
+        {
+            title: 'Si Dul Anak Jakarta',
+            writer: 'Aman Datuk Madjowindo',
+            publisher: 'Balai Pustaka',
+            published_year: '1932 (Cetakan Terakhir 2006)',
+            bentuk_sastra: 'Novel',
+            peruntukan: 'SD/MI',
+            disclaimer: 'Kekerasan verbal dan fisik, beberapa norma sosial yang perlu pembahasan lebih lanjut',
+            cover: 'si-dul.png'
+        },
+        {
+            title: 'Si Jamin dan Si Johan',
+            writer: 'Merari Siregar',
+            publisher: 'Balai Pustaka',
+            published_year: '1921 (Cetakan Terakhir 2011)',
+            bentuk_sastra: 'Novel',
+            peruntukan: 'SD/MI',
+            disclaimer: 'Seksualitas, kekerasan fisik, kekerasan verbal, penggunaan bahasa',
+            cover: 'si-jamin-johan.png'
+        },
+        {
+            title: 'Seri Na Willa: Na Willa',
+            writer: 'Reda Gaudiaomo',
+            publisher: 'POST Press',
+            published_year: '2018',
+            bentuk_sastra: 'Novel',
+            peruntukan: 'SD/MI',
+            disclaimer: 'Unsur LGBTQ+, seksualitas, SARA, kekerasan fisik, kekerasan verbal',
+            cover: 'na-willa.png'
+        },
+        {
+            title: 'Menjebak Hantu Kuburan Pasirnaga',
+            writer: 'Sri Waluyati Sandi',
+            publisher: 'Balai Pustaka',
+            published_year: '1987',
+            bentuk_sastra: 'Novel',
+            peruntukan: 'SD/MI',
+            disclaimer: 'Tidak terdapat disclaimer/penafian yang perlu pendampingan khusus',
+            cover: 'menjebak-hantu.png'
         },
     ])
 
@@ -77,6 +146,7 @@ const HariBukuNasional = () => {
             <SectionSastraKurikulum/>
             <SectionGuideline setMode={(mode) => setMode(mode)}/>
             <SectionCatalog books={books} mode={mode}/>
+            <SectionKurator/>
             <SectionTestimony/>
             <SectionCTA/>
         </Layout>
