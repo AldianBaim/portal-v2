@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 const SectionCTA = () => {
     return (
-        <section className="py-4" style={{background: 'url(/assets/image/hari-buku-nasional/CTA.png)', backgroundRepeat: 'no-repeat', backgroundSize: '100%'}}>
+        <section className="py-5" style={{background: 'url(/assets/image/hari-buku-nasional/CTA.png)', backgroundRepeat: 'no-repeat', backgroundSize: 'cover'}}>
             <div className="container p-3">
                 <div className="row align-items-center justify-content-center text-center">
                     <div className="col-lg-7">

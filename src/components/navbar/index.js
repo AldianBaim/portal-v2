@@ -110,7 +110,7 @@ const Navbar = ({ nightMode }) => {
                     <div className="collapse navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav ms-auto">
                             <li className="nav-item mx-1">
-                                <NavLink to="/" className={({ isActive }) => isActive ? 'nav-link fw-bold' : 'nav-link'} aria-current="page">Beranda</NavLink>
+                                <NavLink to="/sastra-masuk-kurikulum" className={({ isActive }) => isActive ? 'nav-link fw-bold' : 'nav-link'} aria-current="page">Beranda</NavLink>
                             </li>
                             <li className="nav-item dropdown mx-1">
                                 <a className="nav-link dropdown-toggle dropdown-mobile" href="#" id="dropdownCatalogue" role="button" data-bs-toggle="dropdown" aria-expanded="false">

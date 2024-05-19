@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import CardProgram from "../../card/CardProgram"
 import { faLayerGroup, faTable } from "@fortawesome/free-solid-svg-icons"
 
-const SectionGuideline = () => {
+const SectionGuideline = ({setMode}) => {
     return (
         <section className="py-5">
             <div className="container p-3">
@@ -22,17 +22,17 @@ const SectionGuideline = () => {
                                 </div>
                             </div>
                             <div className="col-lg-6">
-                                <img src="/assets/image/hari-buku-nasional/Guideline-cover.png" className="w-100 h-100" alt="Guideline" />
+                                <img src="/assets/image/hari-buku-nasional/Guideline-cover-2.png" className="w-100 h-100" alt="Guideline" />
                             </div>
                         </div>
 
-                        <img src="/assets/image/hari-buku-nasional/Timeline.png" className="w-100" alt="Timeline" />
+                        <img src="/assets/image/hari-buku-nasional/Timeline-2.png" className="w-100" alt="Timeline" />
 
                         <div className="d-flex align-items-center justify-content-between mt-5">
                             <h1 className="display-6">Rekomendasi Buku Sastra yang <br /> Bisa Diterapkan</h1>
                             <div className="d-flex gap-3">
-                                <button className="btn btn-outline-secondary">Card <FontAwesomeIcon icon={faLayerGroup} /></button>
-                                <button className="btn btn-outline-primary">Tabel <FontAwesomeIcon icon={faTable} /></button>
+                                <button onClick={() => setMode('card')} className="btn btn-outline-secondary">Card <FontAwesomeIcon icon={faLayerGroup} /></button>
+                                <button onClick={() => setMode('table')} className="btn btn-outline-primary">Tabel <FontAwesomeIcon icon={faTable} /></button>
                             </div>
                         </div>
 

@@ -19,6 +19,7 @@ const HariBukuNasional = () => {
 
     const [popularBooks, setPopularBooks] = useState([])
     const [loading, setLoading] = useState(false)
+    const [mode, setMode] = useState('card')
 
     const [books, setBooks] = useState([
         {
@@ -26,6 +27,22 @@ const HariBukuNasional = () => {
             writer: 'Soesilo Toer',
             publisher: 'Pataba Press, Blora',
             published_year: '1952(cetakan terakhir 2015)',
+            bentuk_sastra: 'Novel',
+            peruntukan: 'SD/MI'
+        },
+        {
+            title: 'Garuda Gaganeswara',
+            writer: 'Ari Nilandary',
+            publisher: 'Alif Republika',
+            published_year: '2020',
+            bentuk_sastra: 'Novel',
+            peruntukan: 'SD/MI'
+        },
+        {
+            title: 'Garuda Gaganeswara',
+            writer: 'Ari Nilandary',
+            publisher: 'Alif Republika',
+            published_year: '2020',
             bentuk_sastra: 'Novel',
             peruntukan: 'SD/MI'
         },
@@ -58,8 +75,8 @@ const HariBukuNasional = () => {
             <Hero />
             <SectionIntro/>
             <SectionSastraKurikulum/>
-            <SectionGuideline/>
-            <SectionCatalog books={books}/>
+            <SectionGuideline setMode={(mode) => setMode(mode)}/>
+            <SectionCatalog books={books} mode={mode}/>
             <SectionTestimony/>
             <SectionCTA/>
         </Layout>

@@ -1,12 +1,18 @@
 // @import url("https://fonts.googleapis.com/css2?family=Manrope&display=swap");
 
 // Import font style
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&Neuton:ital,wght@0,200;0,300;0,400;0,700;0,800;1,400&display=swap");
 
 // Primary color
 $primary: #e5f8ff;
 $blue: #2b4da2;
+$orange: #f1883c;
 $dark-blue: #405272;
+
+$cards: 4;
+$cardHeight: 87vh;
+$cardTopPadding: 2em;
+$cardMargin: 4vw; 
 
 *,
 body {
@@ -43,6 +49,9 @@ body {
 }
 
 // Text
+.text-neuton {
+  font-family: 'Neuton' !important;
+}
 .text-orange {
   color: #FF8A37 !important;
 }
@@ -107,6 +116,18 @@ body {
 .btn-orange {
   background-color: #f1883c !important;
   color: #fff !important;
+}
+
+.btn-outline-orange {
+  font-weight: 600 !important;
+  border: 1px solid $orange !important;
+  background-color: rgba(0, 0, 0, 0) !important;
+  color: $orange !important;
+}
+
+.btn-outline-orange:hover {
+  background-color: $orange !important;
+  color: white !important;
 }
 
 .mt-n2 {
@@ -227,6 +248,7 @@ body {
     // border: 2px solid red !important;
   }
 }
+
 
 #navbar {
   // background-color: $primary;
@@ -386,6 +408,54 @@ body {
 
 .slide-right {
   transform: translateX(100%);
+}
+
+#cards {
+	list-style: none;
+	padding-left: 0;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(var(--cards), var(--cardHeight));
+	gap: var(--cardMargin);
+	padding-bottom: calc(var(--cards) * var(--cardTopPadding));
+	// margin-bottom: var(--cardMargin);
+
+  #card1 {
+    --index: 1;
+    top: 100px;
+  }
+  #card2 {
+    --index: 2;
+    top: 120px;
+  }
+  #card3 {
+    --index: 3;
+    top: 140px;
+  }
+  #card4 {
+    --index: 4;
+    top: 160px;
+  }
+  #card5 {
+    --index: 5;
+    top: 180px;
+  }
+
+  .card-program {
+    position: sticky;
+    border: none;
+    padding-top: calc(var(--index) * var(--cardTopPadding));
+    margin-bottom: 30px;
+    // max-width: 300px;
+  }
+
+  .card-body {
+    height: var(--cardHeight);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s;
+  }
 }
 
 .swiper-button-next,
