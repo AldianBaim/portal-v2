@@ -14,7 +14,7 @@ const SectionTestimony = () => {
             <div className="container p-3">
                 <div className="row align-items-center justify-content-center">
                     <div className="col-lg-12">
-                        <h1 className="mb-5 display-6 text-center">Lalu, Bagaimana Cara Penggunaan Buku Sastra?</h1>
+                        <h1 className="mb-5 display-6 text-center">Testimoni dan Panduan Sastra Masuk Kurikulum</h1>
                         <div className="row justify-content-between align-items-center">
                             <div className="col-lg-5 offset-lg-1 overflow-hidden">
                                 <Swiper
