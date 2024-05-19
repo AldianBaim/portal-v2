@@ -164,11 +164,13 @@ const Navbar = ({ nightMode }) => {
                                     </li>
                                 </ul>
                             </li>
-                            {/* <li className="nav-item mx-1">
-                                <a target="_blank" rel="noreferrer" href="https://pusbuk.kemdikbud.go.id" className={({ isActive }) => isActive ? 'nav-link fw-bold' : 'nav-link'} aria-current="page">Profil</a>
-                            </li> */}
                             <li className="nav-item mx-1">
                                 <div onClick={() => window.location.replace("https://pusbuk.kemdikbud.go.id")} className="nav-link" style={{ cursor: 'pointer' }}>Profil</div>
+                            </li>
+                            <li className="nav-item mx-1">
+                                <Link className="nav-link" to="/sastra-masuk-kurikulum">
+                                    Sastra Masuk Kurikulum <sup class="text-danger">Baru</sup>
+                                </Link>
                             </li>
                             {
                                 token && (
