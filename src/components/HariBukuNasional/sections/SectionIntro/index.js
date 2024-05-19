@@ -1,6 +1,6 @@
 const SectionIntro = () => {
     return (
-        <section className="py-5" style={{backgroundColor: '#FFFBF3'}}>
+        <section id="section-intro" className="py-5" style={{backgroundColor: '#FFFBF3'}}>
             <div className="container p-3">
                 <div className="row align-items-center justify-content-center text-center">
                     <div className="col-lg-9">
