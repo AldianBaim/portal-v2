@@ -45,7 +45,7 @@ const SectionCatalog = ({books, mode}) => {
                                                                 <div className="mt-4">
                                                                     <div className="d-flex gap-2 mb-2">
                                                                         <div className="py-1 px-3 rounded-pill bg-warning small">Novel</div>
-                                                                        <div className="py-1 px-3 rounded-pill bg-light-blue small">SMP/MTs</div>
+                                                                        <div className="py-1 px-3 rounded-pill bg-light-blue small">SD/MI</div>
                                                                     </div>
                                                                     <div className="text-muted small">Penulis &nbsp;&nbsp; : <span className="text-primary">{book.writer}</span></div>
                                                                     <div className="text-muted small">Penerbit : <span className="text-primary">{book.publisher}</span></div>
@@ -53,13 +53,11 @@ const SectionCatalog = ({books, mode}) => {
                                                             </div>
                                                         </div>
                                                         <div>
-                                                            <h6>Penafian (<i>Disclaimer)</i></h6>
+                                                            <h6>Penafian (Disclaimer)</h6>
                                                             <div className="text-muted">
-                                                            1) Hal 226  mengartikan Tuhan <br />
-                                                            2) Hal 398 Kata Jalang <br />
-                                                            3) Hal 403 Kata "tolol", "napsu dan garang" <br />
+                                                            {book.disclaimer}
                                                             </div>
-                                                            <button type="button" onClick={() => setDetail(book) } data-bs-toggle="modal" data-bs-target="#exampleModal" className="btn btn-sm btn-outline-orange py-2 px-3 rounded-pill mt-5">Lihat Detil</button>
+                                                            <button type="button" onClick={() => setDetail(book) } data-bs-toggle="modal" data-bs-target="#exampleModal" className="btn btn-sm btn-outline-orange py-2 px-3 rounded-pill mt-5">Lebih Detil</button>
                                                         </div>
                                                     </div>
                                                 </SwiperSlide>
