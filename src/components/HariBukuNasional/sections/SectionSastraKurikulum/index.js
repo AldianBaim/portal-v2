@@ -10,16 +10,16 @@ const SectionSastraKurikulum = () => {
                         <div id="cards">
                             <div className="card-program" id="card1">
                                 <CardProgram 
-                                    title="Mengasah Keterampilan Berpikir Kritis"
-                                    description="Sastra bukan hanya tentang membaca cerita, tetapi juga tentang menganalisis dan menafsirkan pesan yang tersembunyi di balik kata-kata. Ini membangun keterampilan berpikir kritis yang penting dalam menganalisis teks, mengevaluasi argumen, dan merumuskan pendapat." 
+                                    title="Melangkah ke Dunia yang Terbuka"
+                                    description="Memanfaatkan karya sastra dalam implementasi Kurikulum Merdeka untuk meingkatkan minat baca, menumbuhkan empati, dan mengasah kreativitas serta nalar kritis murid." 
                                     image="Card_1.png"
                                     backgroundColor="bg-soft-orange" 
                                 />
                             </div>
                             <div className="card-program" id="card2">
                                 <CardProgram 
-                                    title="Mengabadikan Warisan Budaya"
-                                    description="Sastra bukan hanya tentang membaca cerita, tetapi juga tentang menganalisis dan menafsirkan pesan yang tersembunyi di balik kata-kata. Ini membangun keterampilan berpikir kritis yang penting dalam menganalisis teks, mengevaluasi argumen, dan merumuskan pendapat."
+                                    title="Menyingkap Misteri Kreativitas"
+                                    description="Melalui sastra, kita memasuki dunia di mana imajinasi menjadi kenyataan. Cerita-cerita menakjubkan, puisi-puisi yang indah, dan drama-drama yang memukau menjadi jendela ke dalam kekayaan kreativitas manusia. Sastra mengajarkan kita bahwa tidak ada batasan untuk apa yang dapat kita ciptakan."
                                     backgroundColor="bg-light-blue" 
                                     image="Card_2.png"
                                 />
@@ -43,7 +43,7 @@ const SectionSastraKurikulum = () => {
                             <div className="card-program" id="card5">
                                 <CardProgram 
                                     title="Mengabadikan Warisan Budaya"
-                                    description="Sastra bukan hanya tentang membaca cerita, tetapi juga tentang menganalisis dan menafsirkan pesan yang tersembunyi di balik kata-kata. Ini membangun keterampilan berpikir kritis yang penting dalam menganalisis teks, mengevaluasi argumen, dan merumuskan pendapat."
+                                    description="Sastra dapat memperkenalkan dan membantu memahami sejarah dan budaya bangsa Indonesia. Sastra juga memberikan gambaran tentang bagaimana karakter dan indentitas manusia Indonesia. Ini yang akan membangun kesadaran berbangsa dan berbudaya Indonesia yang merdeka serta menumbuhkan karakter Profil Pelajar Pancasila."
                                     backgroundColor="bg-soft-orange" 
                                     image="Card_5.png"
                                 />

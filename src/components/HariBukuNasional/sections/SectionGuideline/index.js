@@ -26,6 +26,8 @@ const SectionGuideline = ({setMode}) => {
                             </div>
                         </div>
 
+                        <h1 className="mb-5 display-6 text-center">Bagaimana Mempersiapkan Guru dan Sekolah dalam membaca Sastra?</h1>
+                  
                         <img src="/assets/image/hari-buku-nasional/Timeline-2.png" className="w-100" alt="Timeline" />
 
 
