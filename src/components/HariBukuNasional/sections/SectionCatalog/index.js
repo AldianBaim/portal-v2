@@ -148,7 +148,7 @@ const SectionCatalog = ({books, mode}) => {
                                 <div>{detail.disclaimer}</div>
                             </div>
                             <div className="text-end">
-                                <a href="https://static.buku.kemdikbud.go.id/content/pengumuman/Panduan.pdf" target="_blank" className="btn btn-sm btn-orange rounded-pill px-3 py-1">Selengkapnya</a>
+                                <a href="https://drive.google.com/file/d/1DhLVShvIu-EGlncwTL0XuDOesgsE1U0Y/view?usp=drive_link" target="_blank" className="btn btn-sm btn-orange rounded-pill px-3 py-1">Selengkapnya</a>
                             </div>
                         </div>
                     </div>

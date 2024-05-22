@@ -8,7 +8,7 @@ const SectionCTA = () => {
                 <div className="row align-items-center justify-content-center text-center">
                     <div className="col-lg-7">
                         <h1 className="mb-4 display-5 text-white">Baca Panduan Sekarang</h1>
-                        <a href="https://static.buku.kemdikbud.go.id/content/pengumuman/Panduan.pdf" target="_blank" className="btn btn-orange rounded-pill px-4 py-2">Unduh Buku <FontAwesomeIcon icon={faDownload} className="ms-2" /></a>
+                        <a href="https://drive.google.com/file/d/1DhLVShvIu-EGlncwTL0XuDOesgsE1U0Y/view?usp=drive_link" target="_blank" className="btn btn-orange rounded-pill px-4 py-2">Unduh Buku <FontAwesomeIcon icon={faDownload} className="ms-2" /></a>
                     </div>
                 </div>
             </div>
