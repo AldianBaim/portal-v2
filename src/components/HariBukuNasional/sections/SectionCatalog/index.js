@@ -49,15 +49,9 @@ const SectionCatalog = ({books, mode}) => {
                                                                     </div>
                                                                     <div className="text-muted small">Penulis &nbsp;&nbsp; : <span className="text-primary">{book.writer}</span></div>
                                                                     <div className="text-muted small">Penerbit : <span className="text-primary">{book.publisher}</span></div>
+                                                                    <div className="text-muted small">Tahun Terbit : <span className="text-primary">{book.published_year}</span></div>
                                                                 </div>
                                                             </div>
-                                                        </div>
-                                                        <div>
-                                                            <h6>Penafian (Disclaimer)</h6>
-                                                            <div className="text-muted">
-                                                            {book.disclaimer}
-                                                            </div>
-                                                            <button type="button" onClick={() => setDetail(book) } data-bs-toggle="modal" data-bs-target="#exampleModal" className="btn btn-sm btn-outline-orange py-2 px-3 rounded-pill mt-5">Lebih Detil</button>
                                                         </div>
                                                     </div>
                                                 </SwiperSlide>
@@ -77,7 +71,6 @@ const SectionCatalog = ({books, mode}) => {
                                                 <th>Bentuk Sastra</th>
                                                 <th>Peruntukan</th>
                                                 <th>Tahun Terbit</th>
-                                                <th>Opsi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -90,7 +83,6 @@ const SectionCatalog = ({books, mode}) => {
                                                     <td>{book.bentuk_sastra}</td>
                                                     <td>Kelas {book.peruntukan}</td>
                                                     <td>{book.published_year}</td>
-                                                    <td><a role="button" onClick={() => setDetail(book) } data-bs-toggle="modal" data-bs-target="#exampleModal" className="text-blue text-decoration-none rounded-pill py-2">Lihat Detail</a></td>
                                                 </tr>
                                             ))}
                                         </tbody>
@@ -143,10 +135,6 @@ const SectionCatalog = ({books, mode}) => {
                                 <p className="text-muted">Gema Tanah Air berisikan kumpulan puisi dan prosa tahun 1942 sampai 1951. H.B. Jassin menghimpun karya-karya terpilih para sastrawan Indonesia tanpa memandang kecenderungan ideologi politisnya. Buku ini berisikan cerita perjuangan rakyat dalam masa-masa sulit setelah kemerdekaan yang digambarkan oleh para sastrawan Indonesia di masa itu yang dihimpun menjadi 3 bagian. Ketiga bagian tersebut berisikan puisi dan prosa yang menuliskan semangat baru era reformasi, yang cenderung bercerita tentang pengalaman manusia dan masyarakatnya saat setelah kemerdekaan, ketimbang kecenderungan politis.</p>
                             </div> */}
 
-                            <div className="card card-rounded border-0 bg-light p-4 mb-4">
-                                <h5 className="mb-3">Catatan Penafian/Disclaimer secara Detail</h5>
-                                <div>{detail.disclaimer}</div>
-                            </div>
                             <div className="text-end">
                                 <a href="#" target="_blank" className="btn btn-sm btn-orange rounded-pill px-3 py-1">Selengkapnya</a>
                             </div>
