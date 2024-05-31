@@ -7,7 +7,7 @@ const AboutProgram = () => {
             <div className="container p-3 py-5">
                 <div className="text-center">
                     <h2>Tentang Program</h2>
-                    <p className="lead mt-2">Lorem ipsum dolor sit amet consectetur</p>
+                    <p className="lead mt-2">Dukung kampanye pengajaran sastra di sekolah<br/>untuk menumbuhkan kecintaan siswa terhadap literatur.</p>
                     <div className="row justify-content-center mt-5">
                         <div className="col-lg-2 mb-3">
                             <Link to="/sastra-masuk-kurikulum/tentang-program" className="text-decoration-none text-dark">

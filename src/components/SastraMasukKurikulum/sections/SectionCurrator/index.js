@@ -12,7 +12,7 @@ const Currator = ({curratorsSD, curratorsSMP, curratorsSMA, loading}) => {
                     <div className="row justify-content-center">
                         <div className="col-lg-9">
                             <h2>Daftar Kurator</h2>
-                            <p className="lead mt-2">Tim kurator adalah Lorem ipsum dolor sit amet consectetur. <br /> Lorem ipsum dolor sit amet.</p>
+                            <p className="lead mt-2">Kenali para kurator sastra kami dan temukan buku-buku pilihan yang dapat menginspirasi siswa dan memperkaya pembelajaran di kelas.</p>
                             <div className="text-start mt-5 mb-4">
                                 <h4>Kurator Rekomendasi Buku SD</h4>
                                 <hr className="dashed" />
