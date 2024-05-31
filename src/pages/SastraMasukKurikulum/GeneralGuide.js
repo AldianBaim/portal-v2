@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
 import Layout from "../../components/SastraMasukKurikulum/layout"
 const GeneralGuide = () => {
 
@@ -146,7 +146,7 @@ const GeneralGuide = () => {
                                 <div className="mt-5" id="daftar-buku">
                                     <hr className="dashed" />
                                     <h5>Cara Penggunaan</h5>
-                                    <div className="mt-3">Daftar buku untuk setiap jenjang dapat dilihat di halaman <a href="">Daftar Buku</a>.</div>
+                                    <div className="mt-3">Daftar buku untuk setiap jenjang dapat dilihat di halaman <NavLink to="/sastra-masuk-kurikulum/rekomendasi-buku" className="text-blue text-decoration-none">Daftar Buku</NavLink>.</div>
                                 </div>
                             </div>
                         </div>
