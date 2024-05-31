@@ -46,7 +46,7 @@ const SastraMasukKurikulum = () => {
                 element.scrollIntoView({ behavior: 'smooth' });
             }
         }
-    }, [location]);
+    }, [location, location.hash]);
 
     return (
         <Layout>

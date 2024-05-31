@@ -26,12 +26,12 @@ const SastraFAQ = () => {
                         </ol>
                     </nav>
                     <hr />
-                    <h4 className="mt-5">Pertanyaan yang Sering Ditanyakan</h4>
-                    <div className="row">
+                    <div className="row align-items-center">
                         <div className="col-lg-6">
+                            <h4 className="mt-5">Pertanyaan yang Sering Ditanyakan</h4>
                             <div class="accordion accordion-flush mt-3" id="accordionFlushExample">
                                 {
-                                    FAQ.map((item, index) => {
+                                    FAQ?.map((item, index) => {
                                         return (
                                             <div class="accordion-item" key={index}>
                                                 <h2 class="accordion-header" id={`flush-heading-${index}`}>
@@ -49,7 +49,7 @@ const SastraFAQ = () => {
                             </div>
                         </div>
                         <div className="col-lg-4 offset-lg-1 d-flex justify-content-center">
-                            <img src="https://via.placeholder.com/400x200" width={"400px"} height={"200px"} alt="" />
+                            <img src="/assets/image/hari-buku-nasional/FAQ.png" width={"300px"} height={"300px"} alt="" />
                         </div>
                     </div>
                     <div className="text-center mt-5">

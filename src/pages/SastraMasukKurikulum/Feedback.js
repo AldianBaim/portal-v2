@@ -1,6 +1,6 @@
-import { Link, useNavigate } from "react-router-dom"
+import { Link, NavLink, useNavigate } from "react-router-dom"
 import Layout from "../../components/SastraMasukKurikulum/layout"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import axios from "axios"
 import { BASE_URL } from "../../utils/config"
 import { useForm } from "react-hook-form"
@@ -12,32 +12,33 @@ const Feedback = () => {
     const [loading, setLoading] = useState(false)
     const [message, setMessage] = useState('')
     const { resetField, register, getValues, handleSubmit, formState: { errors } } = useForm();
+    const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem('user_token'))
 
     const onSubmit = async (data) => {
         setLoading(true)
-        const payload = JSON.stringify(data)
-
+        data.user_id = 1
         try {
-            const response = await axios.post(`${BASE_URL}/api/user/register`, payload)
-
-            if (response.data.status == 'failed') {
-                setMessage(response.data.message)
-            } else {
-                setMessage('')
-                navigate(`/login?register=success&email=${getValues('email')}`)
-                resetField('email')
-            }
+            const response = await axios.post(`${BASE_URL}/api/entry/sastra_feedback`, data)
+            console.log(response)
+            // if (response.data.status == 'failed') {
+            //     setMessage(response.data.message)
+            // } else {
+            //     setMessage('')
+            //     navigate(`/login?register=success&email=${getValues('email')}`)
+            //     resetField('email')
+            // }
         } catch (error) {
-            return error.message
+            setMessage(error.message)
         } finally {
-            resetField('password')
-            resetField('confirm_password')
             setLoading(false)
-            setTimeout(() => {
-                window.scrollTo({ top: '0', behavior: 'smooth' })
-            }, 500)
         }
     }
+
+    useEffect(() => {
+        if (!isLoggedIn) {
+            setMessage(`Silahkan <a href="/login" className="text-decoration-none text-blue">Login</a> terlebih dahulu untuk mengisi umpan balik`)
+        }
+    })
 
     return (
         <Layout>
@@ -53,9 +54,7 @@ const Feedback = () => {
                     
                     {
                         message !== '' && (
-                            <div className="alert alert-danger alert-dismissible fade show">
-                                {message}
-                            </div>
+                            <div className="alert alert-warning alert-dismissible fade show" dangerouslySetInnerHTML={{ __html: message }}></div>
                         )
                     }
                     <div className="row">
@@ -63,8 +62,8 @@ const Feedback = () => {
                             <form onSubmit={handleSubmit(onSubmit)}>
                                 <div className="form-group mb-3">
                                     <label className="form-label fw-bold">Nama Lengkap</label>
-                                    <input {...register('name', { required: true })} type="text" className="form-control" placeholder="Masukan nama lengkap" />
-                                    {errors.name && errors.name.type === 'required' && <small className="text-danger">Nama lengkap harus diisi</small>}
+                                    <input {...register('nama', { required: true })} type="text" className="form-control" placeholder="Masukan nama lengkap" />
+                                    {errors.nama && errors.nama.type === 'required' && <small className="text-danger">Nama lengkap harus diisi</small>}
                                 </div>
                                 <div className="form-group mb-3">
                                     <label className="form-label fw-bold">Email</label>
@@ -73,13 +72,13 @@ const Feedback = () => {
                                 </div>
                                 <div className="form-group mb-3">
                                     <label className="form-label fw-bold">Nomor Whatsapp</label>
-                                    <input {...register('phone', { required: true })} type="text" className="form-control" placeholder="Masukan nomor telepon" />
-                                    {errors.phone && errors.phone.type === 'required' && <small className="text-danger">Nomor telepon harus diisi</small>}
+                                    <input {...register('whatsapp', { required: true })} type="text" className="form-control" placeholder="Masukan nomor telepon" />
+                                    {errors.whatsapp && errors.whatsapp.type === 'required' && <small className="text-danger">Nomor telepon harus diisi</small>}
                                 </div>
                                 <div className="form-group mb-3">
                                     <label className="form-label fw-bold">Pertanyaan, Saran, atau Masukan</label>
-                                    <textarea {...register('name', { required: true })} type="text" rows="7" className="form-control" placeholder="Masukan nama lengkap"></textarea>
-                                    {errors.name && errors.name.type === 'required' && <small className="text-danger">Nama lengkap harus diisi</small>}
+                                    <textarea {...register('content', { required: true })} type="text" rows="7" className="form-control" placeholder="Masukan nama lengkap"></textarea>
+                                    {errors.content && errors.content.type === 'required' && <small className="text-danger">Nama lengkap harus diisi</small>}
                                 </div>
                                 <div className="form-group d-grid gap-2">
                                     {loading && (
@@ -87,7 +86,7 @@ const Feedback = () => {
                                             <div className="spinner-border" role="status"></div>
                                         </button>
                                     )}
-                                    {!loading && <button type="submit" className="btn btn-orange py-2">Kirim</button>}
+                                    {!loading && <button disabled={!isLoggedIn} type="submit" className="btn btn-orange py-2">Kirim</button>}
                                 </div>
                             </form>
                         </div>

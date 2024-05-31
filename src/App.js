@@ -37,6 +37,8 @@ import AboutProgram from "./pages/SastraMasukKurikulum/AboutProgram";
 import TeachingModule from "./pages/SastraMasukKurikulum/TeachingModule";
 import GeneralGuide from "./pages/SastraMasukKurikulum/GeneralGuide";
 import Feedback from "./pages/SastraMasukKurikulum/Feedback";
+import ObjectiveProgram from "./pages/SastraMasukKurikulum/ObjectiveProgram";
+import CurrationStage from "./pages/SastraMasukKurikulum/CurrationStage";
 
 const App = () => {
   useEffect(() => {
@@ -147,6 +149,14 @@ const App = () => {
         <Route
           path="tentang-program"
           element={ <AboutProgram /> }
+        />
+        <Route
+          path="tujuan-program"
+          element={ <ObjectiveProgram /> }
+        />
+        <Route
+          path="tahapan-kurasi"
+          element={ <CurrationStage /> }
         />
         <Route
           path="modul-ajar"

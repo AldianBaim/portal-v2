@@ -11,10 +11,9 @@ import PdfViewer from "../../components/global/PdfViewer"
 const TeachingModule = () => {
 
     const [modules, setModules] = useState([])
-    const [title, setTitle] = useState('')
     const [attachment, setAttachment] = useState(null)
     const [loading, setLoading] = useState(false)
-    console.log(attachment)
+
     useEffect(() => {
         setLoading(true)
 
@@ -58,14 +57,25 @@ const TeachingModule = () => {
                                     </thead>
                                     <tbody>
                                         {
+                                            loading && (
+                                                <tr>
+                                                    <td colSpan="6" className="text-center">
+                                                        <div className="spinner-border" role="status">
+                                                            <span className="visually-hidden">Loading...</span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            )
+                                        }
+                                        {
                                             modules.map((module, index) => (
                                                 <tr key={index}>
                                                     <td>{module.judul}</td>
                                                     <td>Bahasa</td>
                                                     <td>{module.kelas.toUpperCase()}</td>
                                                     <td>{module.karya}</td>
-                                                    <td><FontAwesomeIcon icon={faDownload} /></td>
-                                                    <td role="button" data-bs-toggle="modal" data-bs-target="#readBook" onClick={() => setAttachment(module.url)} ><FontAwesomeIcon icon={faBookOpen} /></td>
+                                                    <td><a href={module.url} download={module.judul} target="_blank" className="text-decoration-none text-blue"><FontAwesomeIcon icon={faDownload} /></a></td>
+                                                    <td role="button" data-bs-toggle="modal" data-bs-target="#readBook" onClick={() => setAttachment(module.url)} ><FontAwesomeIcon className="text-blue" icon={faBookOpen} /></td>
                                                 </tr>
                                             ))
                                         }

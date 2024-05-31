@@ -24,7 +24,7 @@ const Navbar = ({ nightMode }) => {
                     <div className="collapse navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav ms-auto">
                             <li className="nav-item mx-2">
-                                <NavLink to="/sastra-masuk-kurikulum" className={({ isActive }) => isActive ? 'nav-link fw-bold' : 'nav-link'} aria-current="page">BERANDA</NavLink>
+                                <NavLink to="/sastra-masuk-kurikulum" className={({ isActive }) => isActive ? 'nav-link' : 'nav-link'} aria-current="page">BERANDA</NavLink>
                             </li>
                             <li className="nav-item mx-2">
                                 <NavLink to="/sastra-masuk-kurikulum/panduan-umum" className={({ isActive }) => isActive ? 'nav-link fw-bold' : 'nav-link'} aria-current="page">PANDUAN UMUM</NavLink>
