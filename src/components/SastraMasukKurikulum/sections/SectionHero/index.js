@@ -3,12 +3,12 @@ import { Link } from "react-router-dom"
 const Hero = () => {
 
     return (
-        <section id="hero" className={`position-relative`}>
+        <section id="hero" className={`position-relative bg-soft-blue`}>
             <div className="container p-3 py-5">
                 <div className="row">
                     <div className="col-lg-7 order-last order-md-first my-5 my-md-auto">
                         <h1 className="display-6 mb-3">Sastra Masuk Kurikulum</h1>
-                        <p className="lead lh-lg">Memanfaatkan karya sastra dalam implementasi kurikulum <br /> merdeka untuk meningkatkan minat baca, menumbuhkan <br /> empati, dan mengasah kreativitas serta nalar kritis murid</p>
+                        <p className="lead">Memanfaatkan karya sastra dalam implementasi kurikulum <br /> merdeka untuk meningkatkan minat baca, menumbuhkan <br /> empati, dan mengasah kreativitas serta nalar kritis murid</p>
                         <Link to="#program-guide" className="btn btn-outline-primary mt-3">Pelajari Selengkapnya..</Link>
                     </div>
                     <div className="col-lg-5">

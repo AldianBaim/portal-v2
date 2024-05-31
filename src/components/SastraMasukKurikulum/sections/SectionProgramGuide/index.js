@@ -16,7 +16,9 @@ const ProgramGuide = () => {
                     </div>
                 </div>
             </div>
-            <img src="/assets/image/hari-buku-nasional/ornamen-1.png" alt="Ornamen" />
+            <div className="position-absolute bottom-0">
+                <img src="/assets/image/hari-buku-nasional/ornamen-1.png" alt="Ornamen" />
+            </div>
         </section >
     )
 }
