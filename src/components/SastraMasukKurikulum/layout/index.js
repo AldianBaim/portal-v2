@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import Footer from '../footer';
 import Navbar from '../navbar';
 
@@ -15,6 +16,11 @@ const Layout = ({ children, guide }) => {
                 {children}
             </main>
             <Footer guide={guide} />
+            <NavLink to="/sastra-masuk-kurikulum/feedback">
+                <button className="btn btn-outline-primary p-2 btn-feedback">
+                    Saran & Masukan
+                </button>
+            </NavLink>
         </>
     )
 }

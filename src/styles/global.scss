@@ -89,7 +89,17 @@ body {
 
 .card-hover:hover {
   transform: translate(0, -5px);
-  cursor: pointer;
+  cursor: 
+  pointer;
+}
+
+.btn-feedback {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%) rotate(270deg);
+  transform-origin: right bottom;
+  z-index: 10000 !important;
 }
 
 .placeholder {

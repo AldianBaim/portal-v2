@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
 import Layout from "../../components/SastraMasukKurikulum/layout"
 import { useEffect, useState } from "react"
 import axios from "axios"
@@ -40,7 +40,7 @@ const SastraFAQ = () => {
                                                     </button>
                                                 </h2>
                                                 <div id={`flush-collapse-${index}`} class="accordion-collapse collapse" aria-labelledby={`flush-heading-${index}`} data-bs-parent="#accordionFlushExample">
-                                                    <div class="accordion-body">{item?.answer}</div>
+                                                    <div class="accordion-body" dangerouslySetInnerHTML={{__html: item?.answer}}></div>
                                                 </div>
                                             </div>
                                         )
@@ -54,7 +54,7 @@ const SastraFAQ = () => {
                     </div>
                     <div className="text-center mt-5">
                         <div>Masih punya pertanyaan lain?</div>
-                        <button type="button" class="btn btn-primary mt-3">Hubungi kami</button>
+                        <NavLink to="/sastra-masuk-kurikulum/feedback" className="btn btn-outline-primary mt-3">Hubungi kami</NavLink>
                     </div>
                 </div>
             </section>
