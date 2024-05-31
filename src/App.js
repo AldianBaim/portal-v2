@@ -35,6 +35,8 @@ import RecommendationBook from "./pages/SastraMasukKurikulum/RecommendationBook"
 import DetailBook from "./pages/SastraMasukKurikulum/DetailBook";
 import AboutProgram from "./pages/SastraMasukKurikulum/AboutProgram";
 import TeachingModule from "./pages/SastraMasukKurikulum/TeachingModule";
+import GeneralGuide from "./pages/SastraMasukKurikulum/GeneralGuide";
+import Feedback from "./pages/SastraMasukKurikulum/Feedback";
 
 const App = () => {
   useEffect(() => {
@@ -149,6 +151,14 @@ const App = () => {
         <Route
           path="modul-ajar"
           element={ <TeachingModule /> }
+        />
+        <Route
+          path="panduan-umum"
+          element={ <GeneralGuide /> }
+        />
+        <Route
+          path="feedback"
+          element={ <Feedback /> }
         />
       </Route>
 

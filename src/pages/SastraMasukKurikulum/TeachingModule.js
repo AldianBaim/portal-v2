@@ -3,7 +3,29 @@ import Layout from "../../components/SastraMasukKurikulum/layout"
 import Sidebar from "../../components/SastraMasukKurikulum/sidebar"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBookOpen, faDownload } from "@fortawesome/free-solid-svg-icons"
+import axios from "axios"
+import { BASE_URL } from "../../utils/config"
+import { useEffect, useState } from "react"
+import Modal from "../../components/catalog/modal/Modal"
+import PdfViewer from "../../components/global/PdfViewer"
 const TeachingModule = () => {
+
+    const [modules, setModules] = useState([])
+    const [title, setTitle] = useState('')
+    const [attachment, setAttachment] = useState(null)
+    const [loading, setLoading] = useState(false)
+    console.log(attachment)
+    useEffect(() => {
+        setLoading(true)
+
+        axios
+        .get(`${BASE_URL}/api/entry/sastra_modulajar`)
+        .then(response => setModules(response.data.results))
+        .catch(error => console.log(error))
+        .finally(() => setLoading(false))
+        .finally(() => setLoading(false))
+
+    }, [])
 
     return (
         <Layout>
@@ -27,6 +49,7 @@ const TeachingModule = () => {
                                 <table className="table">
                                     <thead>
                                         <tr>
+                                            <th>Judul</th>
                                             <th>Mata Pelajaran</th>
                                             <th>Kelas</th>
                                             <th>Sastra Yang Digunakan</th>
@@ -35,13 +58,14 @@ const TeachingModule = () => {
                                     </thead>
                                     <tbody>
                                         {
-                                            Array(5).fill().map((_, index) => (
-                                                <tr>
-                                                    <td>Bahasa Indonesia</td>
-                                                    <td>V</td>
-                                                    <td>Na Willa karya Reda Gaudiamo halaman 48-54</td>
+                                            modules.map((module, index) => (
+                                                <tr key={index}>
+                                                    <td>{module.judul}</td>
+                                                    <td>Bahasa</td>
+                                                    <td>{module.kelas.toUpperCase()}</td>
+                                                    <td>{module.karya}</td>
                                                     <td><FontAwesomeIcon icon={faDownload} /></td>
-                                                    <td><FontAwesomeIcon icon={faBookOpen} /></td>
+                                                    <td role="button" data-bs-toggle="modal" data-bs-target="#readBook" onClick={() => setAttachment(module.url)} ><FontAwesomeIcon icon={faBookOpen} /></td>
                                                 </tr>
                                             ))
                                         }
@@ -51,6 +75,21 @@ const TeachingModule = () => {
                         </div>
                     </div>
                 </div>
+
+                <Modal id="readBook" setCloseModal={() => setAttachment(null)}>
+                    {
+                    attachment && 
+                    <object
+                        type="application/pdf"
+                        data={attachment}
+                        width="100%"
+                        style={{height: '90vh'}}
+                    >
+                        <PdfViewer url={attachment}></PdfViewer>
+                    </object>
+                    }
+                </Modal>
+
             </section>
         </Layout>
     )
