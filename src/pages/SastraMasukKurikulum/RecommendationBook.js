@@ -30,7 +30,7 @@ const RecommendationBook = () => {
     useEffect(() => {
         setLoading(true)
         axios
-        .get(`${BASE_URL}/api/entry/sastra_buku?filter[jenjang]=${level && level}`)
+        .get(`${BASE_URL}/api/sastra/buku?filter[jenjang]=${level && level}`)
         .then(response => {
             setBooks(response.data.results)
             setFilteredData(response.data.results)
@@ -103,7 +103,7 @@ const RecommendationBook = () => {
                         }
 
                         {
-                            !loading && filteredData?.length === 0 && <div className="text-center">Buku tidak ditemukan</div>
+                            !loading && filteredData?.length === 0 && <div className="text-center py-5">Daftar buku sedang dalam proses peninjauan kembali.</div>
                         }
 
                         {

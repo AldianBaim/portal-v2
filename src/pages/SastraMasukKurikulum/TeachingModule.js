@@ -18,7 +18,7 @@ const TeachingModule = () => {
         setLoading(true)
 
         axios
-        .get(`${BASE_URL}/api/entry/sastra_modulajar`)
+        .get(`${BASE_URL}/api/sastra/modulajar`)
         .then(response => setModules(response.data.results))
         .catch(error => console.log(error))
         .finally(() => setLoading(false))
@@ -71,7 +71,7 @@ const TeachingModule = () => {
                                             modules.map((module, index) => (
                                                 <tr key={index}>
                                                     <td>{module.judul}</td>
-                                                    <td>Bahasa</td>
+                                                    <td>{module.mapel}</td>
                                                     <td>{module.kelas.toUpperCase()}</td>
                                                     <td>{module.karya}</td>
                                                     <td><a href={module.url} download={module.judul} target="_blank" className="text-decoration-none text-blue"><FontAwesomeIcon icon={faDownload} /></a></td>

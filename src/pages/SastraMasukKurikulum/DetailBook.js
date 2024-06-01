@@ -14,8 +14,8 @@ const DetailBook = () => {
         const id = pathSegments[pathSegments.length - 1];
 
         axios
-        .get(`${BASE_URL}/api/entry/sastra_buku/detail/${id}`)
-        .then(res => setBook(res.data))
+        .get(`${BASE_URL}/api/sastra/buku/${id}`)
+        .then(res => setBook(res.data[0]))
         .catch(err => console.log(err))
 
     }, [location])

@@ -1,34 +1,49 @@
-import { Link, NavLink, useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 import Layout from "../../components/SastraMasukKurikulum/layout"
 import { useEffect, useState } from "react"
 import axios from "axios"
 import { BASE_URL } from "../../utils/config"
 import { useForm } from "react-hook-form"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons"
 const Feedback = () => {
 
-    const navigate = useNavigate()
     const [loading, setLoading] = useState(false)
-    const [message, setMessage] = useState('')
-    const { resetField, register, getValues, handleSubmit, formState: { errors } } = useForm();
+    const [message, setMessage] = useState(null)
+    const { register, setValue ,handleSubmit, formState: { errors } } = useForm();
     const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem('user_token'))
+    const user = JSON.parse(localStorage.getItem('user_profile'))
 
     const onSubmit = async (data) => {
         setLoading(true)
-        data.user_id = 1
+
+        const payload = new FormData()
+        payload.append('user_id', data.user_id)
+        payload.append('email', data.email)
+        payload.append('nama', data.nama)
+        payload.append('content', data.content)
+
         try {
-            const response = await axios.post(`${BASE_URL}/api/entry/sastra_feedback`, data)
+            const response = await axios.post(`${BASE_URL}/api/sastra/feedback`, payload, {
+                headers: {
+                    Authorization: isLoggedIn
+                }
+            })
             console.log(response)
-            // if (response.data.status == 'failed') {
-            //     setMessage(response.data.message)
-            // } else {
-            //     setMessage('')
-            //     navigate(`/login?register=success&email=${getValues('email')}`)
-            //     resetField('email')
-            // }
+            if (response.data.status == 'failed') {
+                setMessage({
+                    status: 'failed',
+                    content: response.data.message
+                })
+            } else {
+                setMessage({
+                    status: 'success',
+                    content: response.data.message
+                })
+            }
         } catch (error) {
-            setMessage(error.message)
+            setMessage({
+                status: 'failed',
+                content: error.message
+            })
         } finally {
             setLoading(false)
         }
@@ -36,7 +51,14 @@ const Feedback = () => {
 
     useEffect(() => {
         if (!isLoggedIn) {
-            setMessage(`Silahkan <a href="/login" className="text-decoration-none text-blue">Login</a> terlebih dahulu untuk mengisi umpan balik`)
+            setMessage({
+                status: 'warning',
+                content: 'Silahkan <a href="/login?callback=sastra-masuk-kurikulum/feedback" className="text-decoration-none text-blue">Login</a> terlebih dahulu untuk mengisi umpan balik'
+            })
+        } else {
+            setValue('user_id', user?.user_id)
+            setValue('nama', user?.fullname)
+            setValue('email', user?.email)
         }
     })
 
@@ -53,8 +75,20 @@ const Feedback = () => {
                     <hr />
                     
                     {
-                        message !== '' && (
-                            <div className="alert alert-warning alert-dismissible fade show" dangerouslySetInnerHTML={{ __html: message }}></div>
+                        message?.status === 'success' && message?.content !== '' && (
+                            <div className="alert alert-success alert-dismissible fade show" dangerouslySetInnerHTML={{ __html: message?.content }}></div>
+                        )
+                    }
+
+                    {
+                        message?.status === 'warning' && message?.content !== '' && (
+                            <div className="alert alert-warning alert-dismissible fade show" dangerouslySetInnerHTML={{ __html: message?.content }}></div>
+                        )
+                    }
+
+                    {
+                        message?.status === 'failed' && message?.content !== '' && (
+                            <div className="alert alert-warning alert-dismissible fade show" dangerouslySetInnerHTML={{ __html: message?.content }}></div>
                         )
                     }
                     <div className="row">

@@ -25,6 +25,7 @@ const Login = () => {
     const [message, setMessage] = useState('')
     const [captcha, setCaptcha] = useState('')
     const { resetField, register, handleSubmit, formState: { errors } } = useForm();
+    const [URLParams, setURLParams] = useSearchParams();
 
     useEffect(() => {
         params === 'success' && (setSuccessRegister(true))
@@ -47,7 +48,12 @@ const Login = () => {
                 resetField('email')
                 localStorage.setItem('user_token', response.data.token)
                 localStorage.setItem('user_profile', JSON.stringify(response.data.result))
-                navigate('/')
+
+                if(URLParams.get('callback')) {
+                    window.location = `${window.location.origin.toString()}/${URLParams.get('callback')}`
+                } else {
+                    navigate('/')
+                }
             }
             resetField('password')
         } catch (error) {
