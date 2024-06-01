@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 const Hero = () => {
 
     return (
-        <section id="hero" className={`position-relative bg-soft-blue`}>
+        <section id="hero" className={`position-relative bg-soft-blue`} style={{ padding: '80px 0' }}>
             <div className="container p-3 py-5">
                 <div className="row">
                     <div className="col-lg-7 order-last order-md-first my-5 my-md-auto">

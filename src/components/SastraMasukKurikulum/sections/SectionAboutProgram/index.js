@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 const AboutProgram = () => {
 
     return (
-        <section className="bg-soft-orange" id="program-guide">
+        <section className="bg-soft-orange" id="program-guide" style={{ padding: '80px 0' }}>
             <div className="container p-3 py-5">
                 <div className="text-center">
                     <h2>Tentang Program</h2>

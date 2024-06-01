@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 const ProgramGuide = () => {
 
     return (
-        <section className="position-relative">
+        <section className="position-relative" style={{ padding: '80px 0' }}>
             <div className="container p-3 py-5 position-relative">
                 <div className="row justify-content-center text-center">
                     <div className="col-lg-6">
