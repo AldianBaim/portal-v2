@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 import axios from "axios"
 import { BASE_URL } from "../../utils/config"
 import { useForm } from "react-hook-form"
+import Swal from "sweetalert2"
 const Feedback = () => {
 
     const [loading, setLoading] = useState(false)
@@ -13,40 +14,55 @@ const Feedback = () => {
     const user = JSON.parse(localStorage.getItem('user_profile'))
 
     const onSubmit = async (data) => {
-        setLoading(true)
+        Swal.fire({
+            title: 'Konfirmasi Masukan, Saran atau Pertanyaan',
+            text: "Apakah anda akan melanjutkan mengirim?",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: 'grey',
+            confirmButtonText: 'Lanjutkan mengirim',
+            cancelButtonText: 'Periksa kembali'
+        }).then(async (result) => {
+            if (result.isConfirmed) {
+                setLoading(true)
 
-        const payload = new FormData()
-        payload.append('user_id', data.user_id)
-        payload.append('email', data.email)
-        payload.append('nama', data.nama)
-        payload.append('content', data.content)
+                const payload = new FormData()
+                payload.append('user_id', data.user_id)
+                payload.append('email', data.email)
+                payload.append('nama', data.nama)
+                payload.append('content', data.content)
 
-        try {
-            const response = await axios.post(`${BASE_URL}/api/sastra/feedback`, payload, {
-                headers: {
-                    Authorization: isLoggedIn
+                try {
+                    const response = await axios.post(`${BASE_URL}/api/sastra/feedback`, payload, {
+                        headers: {
+                            Authorization: isLoggedIn
+                        }
+                    })
+
+                    if (response.data.status == 'failed') {
+                        setMessage({
+                            status: 'failed',
+                            content: response.data.message
+                        })
+                    } else {
+                        setMessage({
+                            status: 'success',
+                            content: response.data.message
+                        })
+                    }
+                } catch (error) {
+                    setMessage({
+                        status: 'failed',
+                        content: error.message
+                    })
+                } finally {
+                    setLoading(false)
+                    const feedback = document.getElementById('feedback')
+                    feedback.scrollIntoView({ behavior: 'smooth' })
                 }
-            })
-            console.log(response)
-            if (response.data.status == 'failed') {
-                setMessage({
-                    status: 'failed',
-                    content: response.data.message
-                })
-            } else {
-                setMessage({
-                    status: 'success',
-                    content: response.data.message
-                })
             }
-        } catch (error) {
-            setMessage({
-                status: 'failed',
-                content: error.message
-            })
-        } finally {
-            setLoading(false)
-        }
+        })
     }
 
     useEffect(() => {
@@ -64,7 +80,7 @@ const Feedback = () => {
 
     return (
         <Layout>
-            <section>
+            <section id="feedback">
                 <div className="container p-3 py-5">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
