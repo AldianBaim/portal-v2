@@ -99,16 +99,18 @@ const RecommendationBook = () => {
                                         <NavLink onClick={(e) => book.status == 'draft' && e.preventDefault()} className={`${book.status == 'draft' && 'opacity-50'} text-decoration-none`} to={`/sastra-masuk-kurikulum/rekomendasi-buku/${book.id}`}>
                                             <div className="card card-hover border-0 h-100">
                                                 <div className="position-relative">
-                                                    <img
-                                                        src={book.cover}
-                                                        className="w-100 position-relative"
-                                                        alt="Cover"
-                                                    />
+                                                    <div className="image-container">
+                                                        <img
+                                                            src={book.cover}
+                                                            className=""
+                                                            alt="Cover"
+                                                        />
+                                                    </div>
                                                     <div className="rounded-pill px-2 py-1 small bg-secondary d-inline-block text-white position-absolute bottom-0 start-0 m-2 fw-bold">
                                                         {book.jenjang.toUpperCase()}
                                                     </div>
                                                 </div>
-                                                <div className="card-body pt-1">
+                                                <div className="card-body pt-2 px-0">
                                                     <h5 className="card-title mb-3 text-dark">{book.judul}</h5>
                                                     {book.status == 'publish' && <a href="#" className="text-decoration-none text-blue">Lihat detail</a>}
                                                     {book.status == 'draft' && <a href="#" className="text-decoration-none text-orange">Dalam proses</a>}
