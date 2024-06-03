@@ -15,7 +15,7 @@ const DetailBook = () => {
 
         axios
         .get(`${BASE_URL}/api/sastra/buku/${id}`)
-        .then(res => setBook(res.data[0]))
+        .then(res => setBook(res.data))
         .catch(err => console.log(err))
 
     }, [location])
