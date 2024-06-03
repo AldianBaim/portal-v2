@@ -104,16 +104,6 @@ const HariBukuNasional = () => {
             cover: 'si-jamin-johan.png'
         },
         {
-            title: 'Seri Na Willa: Na Willa',
-            writer: 'Reda Gaudiaomo',
-            publisher: 'POST Press',
-            published_year: '2018',
-            bentuk_sastra: 'Novel',
-            peruntukan: 'SD/MI',
-            disclaimer: 'Unsur LGBTQ+, seksualitas, SARA, kekerasan fisik, kekerasan verbal',
-            cover: 'na-willa.png'
-        },
-        {
             title: 'Menjebak Hantu Kuburan Pasirnaga',
             writer: 'Sri Waluyati Sandi',
             publisher: 'Balai Pustaka',
