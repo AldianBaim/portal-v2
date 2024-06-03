@@ -66,7 +66,7 @@ const DetailBook = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-lg-3">
+                        <div className="col-lg-3 d-none d-lg-block">
                             <div id="list-example" class="list-group sticky-top" style={{top: '100px', zIndex: '100'}} role="tablist">
                                 <a class="list-group-item list-group-item-action" href="#">Identitas Buku</a>
                                 <a class="list-group-item list-group-item-action" href="#tujuan-buku">Tujuan Buku</a>

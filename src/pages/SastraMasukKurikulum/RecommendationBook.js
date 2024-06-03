@@ -58,10 +58,18 @@ const RecommendationBook = () => {
                             <FontAwesomeIcon icon={faNewspaper} className="me-2" />
                             Panduan Umum
                         </NavLink>
-                        <a href="#" className="btn btn-sm btn-outline-secondary">
-                            <FontAwesomeIcon icon={faFileAlt} className="me-2" />
-                            Dokumen Kepmen
-                        </a>
+                        <div class="dropdown">
+                            <a href="#" className="btn btn-sm btn-outline-secondary" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                <FontAwesomeIcon icon={faFileAlt} className="me-2" />
+                                Dokumen Kepmen
+                            </a>
+
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <li><a href="https://static.buku.kemdikbud.go.id/content/sastra/dokumen/Salinan-SK-Sastra-Sekolah-Dasar.pdf" target="_blank" class="dropdown-item">SD</a></li>
+                                <li><a href="#" class="dropdown-item">SMP</a></li>
+                                <li><a href="#" class="dropdown-item">SMA</a></li>
+                            </ul>
+                        </div>
                     </div>
 
                     <div className="mt-4 mb-3">Filter berdasarkan tingkat :</div>

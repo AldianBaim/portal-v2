@@ -13,7 +13,7 @@ const AboutProgram = () => {
                             <Link to="/sastra-masuk-kurikulum/tentang-program" className="text-decoration-none text-dark">
                                 <div class="card rounded-3 shadow bg-soft-orange card-hover">
                                     <div className="d-flex align-items-center justify-content-center card-img-top" style={{width: '100%', height: '200px'}}>
-                                        <img src="/assets/image/hari-buku-nasional/img-tentang-program.png" width={80} alt="..."/>
+                                        <img src="/assets/image/hari-buku-nasional/img-tentang-program.svg" width={100} alt="..."/>
                                     </div>
                                     <div class="card-body p-0 py-1">
                                         <h5 class="card-title">Apa itu program "Sastra Masuk Kurikulum"</h5>
@@ -25,7 +25,7 @@ const AboutProgram = () => {
                             <Link to="/sastra-masuk-kurikulum/tujuan-program" className="text-decoration-none text-dark">
                                 <div class="card rounded-3 shadow bg-soft-orange card-hover h-100 rounded p-2">
                                     <div className="d-flex align-items-center justify-content-center card-img-top" style={{width: '100%', height: '200px'}}>
-                                        <img src="/assets/image/hari-buku-nasional/img-tujuan-program.png" width={80} alt="..."/>
+                                        <img src="/assets/image/hari-buku-nasional/img-tujuan-program.svg" width={100} alt="..."/>
                                     </div>
                                     <div class="card-body p-0 py-1">
                                         <h5 class="card-title">Tujuan Sastra Masuk Kurikulum</h5>
@@ -37,7 +37,7 @@ const AboutProgram = () => {
                             <Link to="/sastra-masuk-kurikulum/tahapan-kurasi" className="text-decoration-none text-dark">
                                 <div class="card rounded-3 shadow bg-soft-orange card-hover h-100 rounded p-2">
                                     <div className="d-flex align-items-center justify-content-center card-img-top" style={{width: '100%', height: '200px'}}>
-                                        <img src="/assets/image/hari-buku-nasional/img-tahapan-kurasi.png" width={80} alt="..."/>
+                                        <img src="/assets/image/hari-buku-nasional/img-tahapan-kurasi.svg" width={100} alt="..."/>
                                     </div>
                                     <div class="card-body p-0 py-1">
                                         <h5 class="card-title">Proses dan Kriteria Kurasi</h5>
@@ -49,7 +49,7 @@ const AboutProgram = () => {
                             <Link to="/sastra-masuk-kurikulum/modul-ajar" className="text-decoration-none text-dark">
                                 <div class="card rounded-3 shadow bg-soft-orange card-hover h-100 rounded p-2">
                                     <div className="d-flex align-items-center justify-content-center card-img-top" style={{width: '100%', height: '200px'}}>
-                                        <img src="/assets/image/hari-buku-nasional/img-module-ajar.png" width={80} alt="..."/>
+                                        <img src="/assets/image/hari-buku-nasional/img-module-ajar.svg" width={100} alt="..."/>
                                     </div>
                                     <div class="card-body p-0 py-1">
                                         <h5 class="card-title">Modul Ajar</h5>

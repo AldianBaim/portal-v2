@@ -1,7 +1,10 @@
 import { Link, NavLink } from "react-router-dom"
 import Layout from "../../components/SastraMasukKurikulum/layout"
+import { useState } from "react"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faAngleDown, faAngleUp } from "@fortawesome/free-solid-svg-icons"
 const GeneralGuide = () => {
-
+    const [showMore, setShowMore] = useState(false)
     return (
         <Layout>
             <section className="position-relative">
@@ -40,65 +43,87 @@ const GeneralGuide = () => {
                                             tingkat ini adalah syarat dari pembelajaran akademik yang bergantung pada
                                             teks sebagai sumber belajar utama.
                                         </p>
-                                        <p>
-                                            Pada tingkat yang lebih tinggi lagi, membaca melibatkan dialog kritis dan
-                                            reflektif antara pembaca dan teks yang dibaca. Di tingkat ini, sang pembaca
-                                            menempatkan tafsir yang diajukan oleh penulis sebagai satu versi dari sekian
-                                            banyak alternatif yang mungkin diajukan tentang tema bahasan. Membaca pada
-                                            tingkat ini bisa menjadi pengalaman transformatif. Yang diperoleh pembaca
-                                            bukan hanya pengetahuan, tetapi juga pemahaman akan beragam perspektif,
-                                            pengalaman emosional, dan nilai-nilai (values) yang baru. Dengan kata lain,
-                                            membaca pada tingkat ini dapat mengasah empati dan menjadi bagian dari
-                                            pendidikan karakter.
-                                        </p>
-                                        <p>
-                                            Aspirasi kami di Kementerian Pendidikan, Kebudayaan, Riset dan Teknologi
-                                            adalah agar semua murid dapat menjadi pembaca yang kritis dan reflektif. Dalam
-                                            hal ini, karya sastra adalah media pembelajaran yang sangat potensial. Karya
-                                            sastra mengundang pembaca untuk menghayati dunia batin tokoh-tokoh yang
-                                            melihat dan mengalami sesuatu dengan caranya masing-masing. Karya-karya
-                                            sastra terbaik juga mengupas isu-isu kompleks dan menyajikan perdebatan moral
-                                            yang mendorong pembaca keluar dari pemikiran hitam-putih dan memikirkan
-                                            ulang opini serta prasangka-prasangka yang mungkin tak disadari sebelumnya.
-                                        </p>
-                                        <p>
-                                            Agar murid mendapat pengalaman transformatif, tentu tidak cukup meminta
-                                            mereka sekadar membaca karya sastra. Murid perlu mendiskusikan dan
-                                            memperdebatkan beragam tafsir terhadap sebuah karya. Mereka perlu dipandu
-                                            mengubah tafsir yang mereka pilih ke wahana yang berbeda: dari prosa ke
-                                            puisi atau sebaliknya; dari teks menjadi gambar, drama, atau film; dan dari fiksi
-                                            menjadi kritik sastra atau karya ilmiah. Model pembelajaran seperti ini terbuka
-                                            lebar di Kurikulum Merdeka. Meski demikian, model pembelajaran berbasis sastra
-                                            adalah hal baru yang belum banyak diterapkan di Indonesia. 
-                                        </p>
-                                        <p>
-                                            Program Sastra Masuk Kurikulum dirancang untuk membantu guru
-                                            memanfaatkan karya sastra dalam pembelajaran Kurikulum Merdeka. Seperti
-                                            tersaji dalam panduan yang sedang anda baca ini, program Sastra Masuk
-                                            Kurikulum menyediakan daftar buku yang direkomendasikan beserta ringkasan,
-                                            disclaimer/penaifan, dan pemetaan ke capaian pembelajaran mata pelajaran dan
-                                            elemen Profil Pelajar Pancasila yang relevan. Akan terlihat bahwa ada banyak
-                                            karya sastra Indonesia, dari yang klasik sampai kontemporer, yang bisa menjadi
-                                            bagian dari pembelajaran berbagai mata pelajaran dan projek penguatan Profil
-                                            Pelajar Pancasila.
-                                        </p>
-                                        <p>
-                                            Saya menyampaikan apresiasi yang tinggi pada para penulis, kritikus,
-                                            dan guru yang menjadi kurator buku, serta guru-guru lain yang telah berbagi
-                                            praktik pembelajaran berbasis sastra dan mengembangkan modul-modul ajar
-                                            program Sastra Masuk Sekolah. Terima kasih untuk Perpustakaan Nasional yang
-                                            turut mendukung penyediaan buku-buku yang direkomendasikan. Saya juga
-                                            menyampaikan selamat kepada tim Pusat Perbukuan, Badan Standar, Kurikulum,
-                                            dan Asesmen Pendidikan Kemendikbudristek yang telah mengawal program
-                                            Sastra Masuk Kurikulum ini dengan baik.
-                                        </p>
-                                        <p>
-                                            Akhir kata, saya mengajak para guru untuk membaca panduan ini dan
-                                            memanfaatkan berbagai perangkat Sastra Masuk Kurikulum yang telah
-                                            disediakan. Harapan saya, suatu saat nanti penggunaan karya sastra menjadi
-                                            bagian “normal” dari pembelajaran di sekolah seluruh Indonesia - sehingga
-                                            melahirkan generasi baru pembaca sastra yang kritis dan reflektif
-                                        </p>
+
+                                        {
+                                            showMore && (
+                                                <>
+                                                    <p>
+                                                        Pada tingkat yang lebih tinggi lagi, membaca melibatkan dialog kritis dan
+                                                        reflektif antara pembaca dan teks yang dibaca. Di tingkat ini, sang pembaca
+                                                        menempatkan tafsir yang diajukan oleh penulis sebagai satu versi dari sekian
+                                                        banyak alternatif yang mungkin diajukan tentang tema bahasan. Membaca pada
+                                                        tingkat ini bisa menjadi pengalaman transformatif. Yang diperoleh pembaca
+                                                        bukan hanya pengetahuan, tetapi juga pemahaman akan beragam perspektif,
+                                                        pengalaman emosional, dan nilai-nilai (values) yang baru. Dengan kata lain,
+                                                        membaca pada tingkat ini dapat mengasah empati dan menjadi bagian dari
+                                                        pendidikan karakter.
+                                                    </p>
+                                                    <p>
+                                                        Aspirasi kami di Kementerian Pendidikan, Kebudayaan, Riset dan Teknologi
+                                                        adalah agar semua murid dapat menjadi pembaca yang kritis dan reflektif. Dalam
+                                                        hal ini, karya sastra adalah media pembelajaran yang sangat potensial. Karya
+                                                        sastra mengundang pembaca untuk menghayati dunia batin tokoh-tokoh yang
+                                                        melihat dan mengalami sesuatu dengan caranya masing-masing. Karya-karya
+                                                        sastra terbaik juga mengupas isu-isu kompleks dan menyajikan perdebatan moral
+                                                        yang mendorong pembaca keluar dari pemikiran hitam-putih dan memikirkan
+                                                        ulang opini serta prasangka-prasangka yang mungkin tak disadari sebelumnya.
+                                                    </p>
+                                                    <p>
+                                                        Agar murid mendapat pengalaman transformatif, tentu tidak cukup meminta
+                                                        mereka sekadar membaca karya sastra. Murid perlu mendiskusikan dan
+                                                        memperdebatkan beragam tafsir terhadap sebuah karya. Mereka perlu dipandu
+                                                        mengubah tafsir yang mereka pilih ke wahana yang berbeda: dari prosa ke
+                                                        puisi atau sebaliknya; dari teks menjadi gambar, drama, atau film; dan dari fiksi
+                                                        menjadi kritik sastra atau karya ilmiah. Model pembelajaran seperti ini terbuka
+                                                        lebar di Kurikulum Merdeka. Meski demikian, model pembelajaran berbasis sastra
+                                                        adalah hal baru yang belum banyak diterapkan di Indonesia. 
+                                                    </p>
+                                                    <p>
+                                                        Program Sastra Masuk Kurikulum dirancang untuk membantu guru
+                                                        memanfaatkan karya sastra dalam pembelajaran Kurikulum Merdeka. Seperti
+                                                        tersaji dalam panduan yang sedang anda baca ini, program Sastra Masuk
+                                                        Kurikulum menyediakan daftar buku yang direkomendasikan beserta ringkasan,
+                                                        disclaimer/penaifan, dan pemetaan ke capaian pembelajaran mata pelajaran dan
+                                                        elemen Profil Pelajar Pancasila yang relevan. Akan terlihat bahwa ada banyak
+                                                        karya sastra Indonesia, dari yang klasik sampai kontemporer, yang bisa menjadi
+                                                        bagian dari pembelajaran berbagai mata pelajaran dan projek penguatan Profil
+                                                        Pelajar Pancasila.
+                                                    </p>
+                                                    <p>
+                                                        Saya menyampaikan apresiasi yang tinggi pada para penulis, kritikus,
+                                                        dan guru yang menjadi kurator buku, serta guru-guru lain yang telah berbagi
+                                                        praktik pembelajaran berbasis sastra dan mengembangkan modul-modul ajar
+                                                        program Sastra Masuk Sekolah. Terima kasih untuk Perpustakaan Nasional yang
+                                                        turut mendukung penyediaan buku-buku yang direkomendasikan. Saya juga
+                                                        menyampaikan selamat kepada tim Pusat Perbukuan, Badan Standar, Kurikulum,
+                                                        dan Asesmen Pendidikan Kemendikbudristek yang telah mengawal program
+                                                        Sastra Masuk Kurikulum ini dengan baik.
+                                                    </p>
+                                                    <p>
+                                                        Akhir kata, saya mengajak para guru untuk membaca panduan ini dan
+                                                        memanfaatkan berbagai perangkat Sastra Masuk Kurikulum yang telah
+                                                        disediakan. Harapan saya, suatu saat nanti penggunaan karya sastra menjadi
+                                                        bagian “normal” dari pembelajaran di sekolah seluruh Indonesia - sehingga
+                                                        melahirkan generasi baru pembaca sastra yang kritis dan reflektif
+                                                    </p>
+
+                                                </>
+                                            )
+                                        }
+
+                                        <a role="button" onClick={() => setShowMore(!showMore)} className="text-decoration-none text-blue">
+                                            {
+                                                showMore ? (
+                                                    <>
+                                                        Lihat lebih sedikit <FontAwesomeIcon icon={faAngleUp} />
+                                                    </>
+                                                ) : (
+                                                    <>
+                                                        Lihat lebih banyak <FontAwesomeIcon icon={faAngleDown} />
+                                                    </>
+                                                )
+                                            }
+                                        </a>
                                     </div>
 
                                 </div>
