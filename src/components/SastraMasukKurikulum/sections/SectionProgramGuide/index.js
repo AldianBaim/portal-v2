@@ -3,10 +3,10 @@ import { Link } from "react-router-dom"
 const ProgramGuide = () => {
 
     return (
-        <section className="position-relative" style={{ padding: '80px 0' }}>
+        <section className="bg-soft-orange position-relative" style={{ padding: '80px 0' }}>
             <div className="container p-3 py-5 position-relative">
                 <div className="row justify-content-center text-center">
-                    <div className="col-lg-6">
+                    <div className="col-md-9 col-lg-6">
                         <h2>Panduan Program & Daftar Buku</h2>
                         <p className="lead mt-4">Tingkatkan efektivitas pengajaran di kelas dengan panduan kami yang mudah diikuti dan dirancang khusus untuk para pendidik.</p>
                         <div className="d-flex justify-content-center gap-3">

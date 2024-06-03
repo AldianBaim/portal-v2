@@ -6,7 +6,7 @@ const Currator = ({curratorsSD, curratorsSMP, curratorsSMA, loading}) => {
     const [detailCurrator, setDetailCurrator] = useState()
 
     return (
-        <section className="border" id="kurator" style={{ padding: '80px 0' }}>
+        <section className="bg-soft-blue" id="kurator" style={{ padding: '80px 0' }}>
             <div className="container p-3 py-5">
                 <div className="text-center">
                     <div className="row justify-content-center">
