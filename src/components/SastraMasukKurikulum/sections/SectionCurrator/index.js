@@ -83,7 +83,7 @@ const Currator = ({curratorsSD, curratorsSMP, curratorsSMA, loading}) => {
                             <div class="modal-header border-0 p-2">
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
-                            <div class="modal-body px-5 py-4">
+                            <div class="modal-body px-3 px-lg-5 py-4">
                                 <div className="d-flex flex-column  align-items-center align-items-lg-start flex-lg-row gap-5">
                                     <img src={detailCurrator?.foto} className="rounded-circle" width={200} height={200} alt="" />
                                     <div>

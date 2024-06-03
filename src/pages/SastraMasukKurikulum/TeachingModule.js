@@ -38,12 +38,12 @@ const TeachingModule = () => {
                     </nav>
                     <hr />
                     <div className="row mt-4">
-                        <div className="col-lg-3">
+                        <div className="col-lg-3 mb-4">
                             <Sidebar/>
                         </div>
                         <div className="col-lg-9">
                             <h4 className="mb-4">Modul Ajar</h4>
-                            <p className="lh-lg">Modul ajar adalah Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus atque, <br /> tempore mollitia ipsa amet ipsam rerum maiores quos illo magnam magni quas odit, <br /> veniam nihil, sit minima temporibus dolor adipisci.</p>
+                            {/* <p className="lh-lg">Modul ajar adalah Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus atque, <br /> tempore mollitia ipsa amet ipsam rerum maiores quos illo magnam magni quas odit, <br /> veniam nihil, sit minima temporibus dolor adipisci.</p> */}
                             <div className="table-responsive">
                                 <table className="table">
                                     <thead>

@@ -15,12 +15,12 @@ const ObjectiveProgram = () => {
                     </nav>
                     <hr />
                     <div className="row mt-4">
-                        <div className="col-lg-3">
+                        <div className="col-lg-3 mb-4">
                             <Sidebar/>
                         </div>
                         <div className="col-lg-9">
                             <h4 className="mb-4">Tujuan Program Sastra Masuk Kurikulum</h4>
-                            <p className="lh-lg">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum, commodi provident voluptate doloremque consequatur architecto ex aspernatur natus quod, rerum odio optio accusamus nihil, ratione quasi. Est pariatur a officia?</p>
+                            {/* <p className="lh-lg">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum, commodi provident voluptate doloremque consequatur architecto ex aspernatur natus quod, rerum odio optio accusamus nihil, ratione quasi. Est pariatur a officia?</p> */}
                         </div>
                     </div>
                 </div>

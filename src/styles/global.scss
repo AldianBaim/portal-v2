@@ -93,6 +93,10 @@ body {
   pointer;
 }
 
+.blur {
+  filter: blur(3px);
+}
+
 .btn-feedback {
   position: fixed;
   top: 50%;

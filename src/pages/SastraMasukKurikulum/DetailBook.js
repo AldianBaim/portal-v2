@@ -48,7 +48,7 @@ const DetailBook = () => {
                                         <div><b>Penulis : </b> {book?.penulis}</div>
                                         <div><b>Penerbit : </b> {book?.penerbit}</div>
                                         <div><b>Tahun Terbit : </b> {book?.tahun_terbit}</div>
-                                        <div><b>Bentuk Sastra : </b> {book?.bentuk_id}</div>
+                                        <div><b>Bentuk Sastra : </b> {book?.bentuk}</div>
                                         <div><b>Jenjang : </b> {book?.jenjang.toUpperCase()}</div>
                                     </div>
                                 </div>

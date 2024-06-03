@@ -15,9 +15,7 @@ const GeneralGuide = () => {
                     <hr />
 
                     <div className="row">
-                        <div className="col-lg-2 mb-3">
-                        </div>
-                        <div className="col-lg-7">
+                        <div className="col-lg-7 offset-lg-2 order-last order-lg-first mt-4 mt-lg-0">
                             <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-offset="0" class="scrollspy-example" tabindex="0">                            
                                 <div className="mt-2">
                                     <h5>Kata Pengantar</h5>
@@ -104,16 +102,6 @@ const GeneralGuide = () => {
                                     </div>
 
                                 </div>
-                                <div className="mt-5" id="tim-penyusun">
-                                    <hr className="dashed mb-4" />
-                                    <h5>Tim Penyusun</h5>
-                                    <div className="mt-3">
-                                        <div><b>Penulis  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: </b>Tim Penyusun Pusat Perbukuan</div>
-                                        <div><b>Desainer &nbsp;:</b> Kiata Alma Setra</div>
-                                        <div><b>Editor   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: </b>Tim Penyusun Pusat Perbukuan</div>
-                                    </div>
-                                    <hr className="dashed mt-4" />
-                                </div>
                                 <div className="mt-5" id="cara-penggunaan">
                                     <h5>Cara Penggunaan</h5>
                                     <div className="mt-3">
@@ -145,17 +133,27 @@ const GeneralGuide = () => {
                                 </div>
                                 <div className="mt-5" id="daftar-buku">
                                     <hr className="dashed" />
-                                    <h5>Cara Penggunaan</h5>
+                                    <h5>Daftar Buku</h5>
                                     <div className="mt-3">Daftar buku untuk setiap jenjang dapat dilihat di halaman <NavLink to="/sastra-masuk-kurikulum/rekomendasi-buku" className="text-blue text-decoration-none">Daftar Buku</NavLink>.</div>
+                                </div>
+                                <div className="mt-3" id="tim-penyusun">
+                                    <hr className="dashed mb-4" />
+                                    <h5>Tim Penyusun</h5>
+                                    <div className="mt-3">
+                                        <div><b>Penulis  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: </b>Tim Penyusun Pusat Perbukuan</div>
+                                        <div><b>Desainer &nbsp;:</b> Kiata Alma Setra</div>
+                                        <div><b>Editor   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: </b>Tim Penyusun Pusat Perbukuan</div>
+                                    </div>
+                                    <hr className="dashed mt-4" />
                                 </div>
                             </div>
                         </div>
                         <div className="col-lg-3">
                             <div id="list-example" class="list-group sticky-top" style={{top: '100px', zIndex: '100'}} role="tablist">
                                 <a class="list-group-item list-group-item-action" href="#">Kata Pengantar</a>
-                                <a class="list-group-item list-group-item-action" href="#tim-penyusun">Tim Penyusun</a>
                                 <a class="list-group-item list-group-item-action" href="#cara-penggunaan">Cara Penggunaan</a>
                                 <a class="list-group-item list-group-item-action" href="#daftar-buku">Daftar Buku</a>
+                                <a class="list-group-item list-group-item-action" href="#tim-penyusun">Tim Penyusun</a>
                             </div>
                         </div>
                     </div>

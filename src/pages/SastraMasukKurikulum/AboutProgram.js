@@ -15,7 +15,7 @@ const AboutProgram = () => {
                     </nav>
                     <hr />
                     <div className="row mt-4">
-                        <div className="col-lg-3">
+                        <div className="col-lg-3 mb-4">
                             <Sidebar/>
                         </div>
                         <div className="col-lg-9">

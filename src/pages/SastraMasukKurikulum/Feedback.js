@@ -106,13 +106,13 @@ const Feedback = () => {
                                 </div>
                                 <div className="form-group mb-3">
                                     <label className="form-label fw-bold">Nomor Whatsapp</label>
-                                    <input {...register('whatsapp', { required: true })} type="text" className="form-control" placeholder="Masukan nomor telepon" />
-                                    {errors.whatsapp && errors.whatsapp.type === 'required' && <small className="text-danger">Nomor telepon harus diisi</small>}
+                                    <input {...register('whatsapp', { required: true })} type="text" className="form-control" placeholder="Masukan nomor whatsapp" />
+                                    {errors.whatsapp && errors.whatsapp.type === 'required' && <small className="text-danger">Nomor whatsapp harus diisi</small>}
                                 </div>
                                 <div className="form-group mb-3">
                                     <label className="form-label fw-bold">Pertanyaan, Saran, atau Masukan</label>
-                                    <textarea {...register('content', { required: true })} type="text" rows="7" className="form-control" placeholder="Masukan nama lengkap"></textarea>
-                                    {errors.content && errors.content.type === 'required' && <small className="text-danger">Nama lengkap harus diisi</small>}
+                                    <textarea {...register('content', { required: true })} type="text" rows="7" className="form-control" placeholder="Masukan saran, pertanyaan, atau masukan"></textarea>
+                                    {errors.content && errors.content.type === 'required' && <small className="text-danger">Pertanyaan, saran, atau masukan harus diisi</small>}
                                 </div>
                                 <div className="form-group d-grid gap-2">
                                     {loading && (
