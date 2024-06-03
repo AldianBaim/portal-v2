@@ -20,19 +20,19 @@ const SastraMasukKurikulum = () => {
         setLoading(true)
 
         axios
-        .get(`${BASE_URL}/api/entry/sastra_kurator?filter[jenjang]=sd`)
+        .get(`${BASE_URL}/api/entry/sastra_kurator?filter[jenjang]=sd&orderby=nama&direction=asc`)
         .then(response => setCurratorsSD(response.data.results))
         .catch(error => console.log(error))
         .finally(() => setLoading(false))
 
         axios
-        .get(`${BASE_URL}/api/entry/sastra_kurator?filter[jenjang]=smp`)
+        .get(`${BASE_URL}/api/entry/sastra_kurator?filter[jenjang]=smp&orderby=nama&direction=asc`)
         .then(response => setCurratorsSMP(response.data.results))
         .catch(error => console.log(error))
         .finally(() => setLoading(false))
 
         axios
-        .get(`${BASE_URL}/api/entry/sastra_kurator?filter[jenjang]=sma`)
+        .get(`${BASE_URL}/api/entry/sastra_kurator?filter[jenjang]=sma&orderby=nama&direction=asc`)
         .then(response => setCurratorsSMA(response.data.results))
         .catch(error => console.log(error))
         .finally(() => setLoading(false))

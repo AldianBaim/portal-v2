@@ -36,9 +36,6 @@ const Navbar = ({ nightMode }) => {
                                 <NavLink to="/sastra-masuk-kurikulum/tentang-program" className={({ isActive }) => isActive ? 'nav-link fw-bold' : 'nav-link'} aria-current="page">TENTANG PROGRAM</NavLink>
                             </li>
                             <li className="nav-item mx-2">
-                                <NavLink to="/sastra-masuk-kurikulum/#kurator" className={({ isActive }) => isActive ? 'nav-link fw-bold' : 'nav-link'} aria-current="page">KURATOR</NavLink>
-                            </li>
-                            <li className="nav-item mx-2">
                                 <NavLink to="/sastra-masuk-kurikulum/faq" className={({ isActive }) => isActive ? 'nav-link fw-bold' : 'nav-link'} aria-current="page">FAQ</NavLink>
                             </li>
                         </ul>

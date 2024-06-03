@@ -18,7 +18,7 @@ const GeneralGuide = () => {
                         <div className="col-lg-7 offset-lg-2 order-last order-lg-first mt-4 mt-lg-0">
                             <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-offset="0" class="scrollspy-example" tabindex="0">                            
                                 <div className="mt-2">
-                                    <h5>Kata Pengantar</h5>
+                                    <h4>Kata Pengantar</h4>
 
                                     <div className="mt-3">
                                         <p>
@@ -103,7 +103,7 @@ const GeneralGuide = () => {
 
                                 </div>
                                 <div className="mt-5" id="cara-penggunaan">
-                                    <h5>Cara Penggunaan</h5>
+                                    <h4>Cara Penggunaan</h4>
                                     <div className="mt-3">
                                         <h6 className="fw-bold">Bagaimana dapat melakukan program ini?</h6>
                                         <p>
@@ -133,12 +133,12 @@ const GeneralGuide = () => {
                                 </div>
                                 <div className="mt-5" id="daftar-buku">
                                     <hr className="dashed" />
-                                    <h5>Daftar Buku</h5>
+                                    <h4>Daftar Buku</h4>
                                     <div className="mt-3">Daftar buku untuk setiap jenjang dapat dilihat di halaman <NavLink to="/sastra-masuk-kurikulum/rekomendasi-buku" className="text-blue text-decoration-none">Daftar Buku</NavLink>.</div>
                                 </div>
                                 <div className="mt-3" id="tim-penyusun">
                                     <hr className="dashed mb-4" />
-                                    <h5>Tim Penyusun</h5>
+                                    <h4>Tim Penyusun</h4>
                                     <div className="mt-3">
                                         <div><b>Penulis  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: </b>Tim Penyusun Pusat Perbukuan</div>
                                         <div><b>Desainer &nbsp;:</b> Kiata Alma Setra</div>

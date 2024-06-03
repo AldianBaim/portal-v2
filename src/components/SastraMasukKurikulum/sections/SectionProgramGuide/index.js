@@ -10,8 +10,8 @@ const ProgramGuide = () => {
                         <h2>Panduan Program & Daftar Buku</h2>
                         <p className="lead mt-4">Tingkatkan efektivitas pengajaran di kelas dengan panduan kami yang mudah diikuti dan dirancang khusus untuk para pendidik.</p>
                         <div className="d-flex justify-content-center gap-3">
-                            <Link to="/sastra-masuk-kurikulum/panduan-umum" className="btn btn-outline-danger mt-3">Panduan Umum</Link>
-                            <Link to="/sastra-masuk-kurikulum/rekomendasi-buku" className="btn btn-outline-primary mt-3">Daftar Buku</Link>
+                            <Link to="/sastra-masuk-kurikulum/panduan-umum" className="btn btn-lg btn-outline-danger mt-3">Panduan Umum</Link>
+                            <Link to="/sastra-masuk-kurikulum/rekomendasi-buku" className="btn btn-lg btn-outline-primary mt-3">Daftar Buku</Link>
                         </div>
                     </div>
                 </div>
