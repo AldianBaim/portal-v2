@@ -159,7 +159,10 @@ const GeneralGuide = () => {
                                 <div className="mt-5" id="daftar-buku">
                                     <hr className="dashed" />
                                     <h4>Daftar Buku</h4>
-                                    <div className="mt-3">Daftar buku untuk setiap jenjang dapat dilihat di halaman <NavLink to="/sastra-masuk-kurikulum/rekomendasi-buku" className="text-blue text-decoration-none">Daftar Buku</NavLink>.</div>
+                                    <div className="mt-3">
+                                        Daftar buku untuk setiap jenjang dapat dilihat di halaman <NavLink to="/sastra-masuk-kurikulum/rekomendasi-buku" className="text-blue text-decoration-none">Daftar Buku</NavLink>. <br />
+                                        Daftar buku masih dapat bertambah/berkurang sewaktu-waktu.
+                                    </div>
                                 </div>
                                 <div className="mt-3" id="tim-penyusun">
                                     <hr className="dashed mb-4" />

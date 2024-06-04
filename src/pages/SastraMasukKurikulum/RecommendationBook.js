@@ -52,6 +52,11 @@ const RecommendationBook = () => {
                             <li className="breadcrumb-item active" aria-current="page">Daftar Rekomendasi Buku</li>
                         </ol>
                     </nav>
+                    
+                    <div class="alert alert-info">
+                        <strong>Catatan:</strong> Daftar buku dapat bertambah/berkurang sewaktu-waktu
+                    </div>
+
                     <hr />
                     <div className="d-flex gap-3">
                         <NavLink to="/sastra-masuk-kurikulum/panduan-umum" className="btn btn-sm btn-outline-primary ms-0 ms-lg-auto">
