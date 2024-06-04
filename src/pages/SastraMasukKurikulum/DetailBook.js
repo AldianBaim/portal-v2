@@ -36,7 +36,7 @@ const DetailBook = () => {
                     <div className="row">
                         <div className="col-lg-2 mb-3">
                             <div class="list-group sticky-top" style={{top: '100px', zIndex: '100'}} >
-                                <img src={book?.cover} className="w-100" alt="Book" />
+                                <img src={book?.cover} className="w-100 card-rounded" alt="Book" />
                             </div>
                         </div>
                         <div className="col-lg-7">
