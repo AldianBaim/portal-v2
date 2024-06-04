@@ -20,7 +20,7 @@ const ObjectiveProgram = () => {
                         </div>
                         <div className="col-lg-9">
                             <h4 className="mb-4">Tujuan Program Sastra Masuk Kurikulum</h4>
-                            {/* <p className="lh-lg">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum, commodi provident voluptate doloremque consequatur architecto ex aspernatur natus quod, rerum odio optio accusamus nihil, ratione quasi. Est pariatur a officia?</p> */}
+                            <blockquote class="blockquote border-start border-5 ps-4">Memanfaatkan karya sastra dalam implementasi kurikulum merdeka untuk meningkatkan minat baca, menumbuhkan empati, dan mengasah kreativitas serta nalar kritis murid</blockquote>
                         </div>
                     </div>
                 </div>
