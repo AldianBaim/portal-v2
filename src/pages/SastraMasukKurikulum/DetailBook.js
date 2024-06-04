@@ -27,7 +27,8 @@ const DetailBook = () => {
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><Link to="/sastra-masuk-kurikulum" className="text-decoration-none text-blue">Beranda</Link></li>
-                            <li class="breadcrumb-item active" aria-current="page">Daftar Rekomendasi Buku</li>
+                            <li class="breadcrumb-item"><Link to="/sastra-masuk-kurikulum/rekomendasi-buku" className="text-decoration-none text-blue">Daftar Rekomendasi Buku</Link></li>
+                            <li class="breadcrumb-item active" aria-current="page">Detail</li>
                         </ol>
                     </nav>
                     <hr />
