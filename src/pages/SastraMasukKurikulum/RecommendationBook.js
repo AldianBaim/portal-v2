@@ -65,7 +65,7 @@ const RecommendationBook = () => {
                             </a>
 
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <li><a href="https://static.buku.kemdikbud.go.id/content/sastra/dokumen/Salinan-SK-Sastra-Sekolah-Dasar.pdf" target="_blank" class="dropdown-item">SD</a></li>
+                                <li><a href="#" class="dropdown-item">SD</a></li>
                                 <li><a href="#" class="dropdown-item">SMP</a></li>
                                 <li><a href="#" class="dropdown-item">SMA</a></li>
                             </ul>
