@@ -21,7 +21,7 @@ const AboutProgram = () => {
                                 </div>
                             </Link>
                         </div>
-                        <div className="col-md-3 col-6 col-xl-2 mb-3">
+                        {/* <div className="col-md-3 col-6 col-xl-2 mb-3">
                             <Link to="/sastra-masuk-kurikulum/tujuan-program" className="text-decoration-none text-dark">
                                 <div class="card rounded-3 shadow bg-soft-orange card-hover h-100 rounded p-2">
                                     <div className="d-flex align-items-center justify-content-center card-img-top" style={{width: '100%', height: '200px'}}>
@@ -32,7 +32,7 @@ const AboutProgram = () => {
                                     </div>
                                 </div>
                             </Link>
-                        </div>
+                        </div> */}
                         <div className="col-md-3 col-6 col-xl-2 mb-3">
                             <Link to="/sastra-masuk-kurikulum/tahapan-kurasi" className="text-decoration-none text-dark">
                                 <div class="card rounded-3 shadow bg-soft-orange card-hover h-100 rounded p-2">
