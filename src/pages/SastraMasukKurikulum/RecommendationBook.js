@@ -9,7 +9,7 @@ import CardSkeletonBook from "../../components/HariBukuNasional/card/CardSkeleto
 const RecommendationBook = () => {
 
     const [books, setBooks] = useState([])
-    const [limit, setLimit] = useState(10)
+    const [limit, setLimit] = useState(12)
     const [loading, setLoading] = useState(false)
     const [level, setLevel] = useState("")
     // State untuk menyimpan input pencarian dan hasil pencarian
@@ -134,7 +134,7 @@ const RecommendationBook = () => {
                         {
                             books.length > limit && filteredData?.length > 0 && (
                                 <div className="text-center mt-3">
-                                    <button onClick={() => setLimit(limit + 10)} className="btn btn-outline-primary">Muat data lainnya..</button>
+                                    <button onClick={() => setLimit(limit + 12)} className="btn btn-outline-primary">Muat data lainnya..</button>
                                 </div>
                             )
                         }
