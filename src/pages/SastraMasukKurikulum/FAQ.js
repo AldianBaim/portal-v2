@@ -9,7 +9,7 @@ const SastraFAQ = () => {
 
     useEffect(() => {
         axios
-        .get(`${BASE_URL}/api/entry/sastra_faq?orderby=ordernum&direction=asc`)
+        .get(`${BASE_URL}/api/entry/sastra_faq?orderby=ordernum&direction=asc&filter[publish]=1&perpage=30`)
         .then(res => setFAQ(res.data.results))
         .catch(err => console.log(err))
 

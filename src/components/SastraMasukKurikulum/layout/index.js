@@ -17,7 +17,7 @@ const Layout = ({ children, guide }) => {
             </main>
             <Footer guide={guide} />
             <NavLink to="/sastra-masuk-kurikulum/feedback">
-                <button className="btn btn-sm btn-primary bg-light text-primary p-2 position-fixed bottom-0 end-0 me-2">
+                <button className="btn btn-sm btn-primary bg-light text-primary rounded-0 p-2 position-fixed bottom-0 end-0 me-2">
                     Saran & Masukan
                 </button>
             </NavLink>

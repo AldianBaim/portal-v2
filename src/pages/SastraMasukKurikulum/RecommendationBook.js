@@ -42,6 +42,17 @@ const RecommendationBook = () => {
         .finally(() => setLoading(false))
     }, [level])
 
+    const countWords =(text) => {
+        // Memecah string berdasarkan spasi atau tanda baca lain yang biasanya memisahkan kata
+        let words = text.split(/\s+/);
+    
+        // Menghapus elemen kosong yang mungkin ada di array
+        words = words.filter(word => word.trim().length > 0);
+    
+        // Mengembalikan jumlah kata
+        return words.length;
+    }
+
     return (
         <Layout>
             <section>
@@ -116,7 +127,7 @@ const RecommendationBook = () => {
                                                     </div>
                                                 </div>
                                                 <div className="card-body pt-2 px-0">
-                                                    <h5 className="card-title mb-3 text-dark">{book.judul}</h5>
+                                                    <h5 className={`${countWords(book.judul) > 7 && 'text-1rem'} card-title mb-3 text-dark`}>{book.judul}</h5>
                                                     {book.status == 'publish' && <a href="#" className="text-decoration-none text-blue">Lihat detail</a>}
                                                     {book.status == 'draft' && <a href="#" className="text-decoration-none text-orange">Dalam proses</a>}
                                                 </div>
