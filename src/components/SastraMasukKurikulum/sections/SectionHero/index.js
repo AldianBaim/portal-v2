@@ -8,7 +8,7 @@ const Hero = () => {
                 <div className="row">
                     <div className="col-lg-7 order-last order-md-first my-5 my-md-auto">
                         <h1 className="fw-bold mb-3" style={{ fontSize: '3rem', color: '#2F3E59'}}>Sastra Masuk Kurikulum</h1>
-                        <p className="lead">Memanfaatkan karya sastra dalam implementasi kurikulum <br /> merdeka untuk meningkatkan minat baca, menumbuhkan <br /> empati, dan mengasah kreativitas serta nalar kritis murid</p>
+                        <p className="lead">Memanfaatkan karya sastra dalam implementasi Kurikulum Merdeka untuk meningkatkan minat baca, menumbuhkan empati, dan mengasah kreativitas serta nalar kritis murid.</p>
                         <Link to="#program-guide" className="btn btn-outline-primary my-3">Pelajari Selengkapnya..</Link>
                     </div>
                     <div className="col-lg-5">
