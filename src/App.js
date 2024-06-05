@@ -2,7 +2,6 @@ import { Navigate, Route, Routes } from "react-router-dom";
 
 //Import pages
 import Home from "../src/pages/index";
-import HariBukuNasional from "../src/pages/HariBukuNasional";
 import FAQ from "../src/pages/FAQ";
 import NotFound from "../src/pages/error/notFound";
 import Login from "../src/pages/auth/Login";
@@ -30,6 +29,16 @@ import ReadHistory from "./pages/dashboard/ReadHistory";
 import BukuRekomendasi from "./pages/catalog/BukuRekomendasi";
 import DetailBukuRekomendasi from "./pages/catalog/DetailBukuRekomendasi";
 import Shortener from "./pages/Shortener";
+import SastraMasukKurikulum from "./pages/SastraMasukKurikulum";
+import SastraFAQ from "./pages/SastraMasukKurikulum/FAQ";
+import RecommendationBook from "./pages/SastraMasukKurikulum/RecommendationBook";
+import DetailBook from "./pages/SastraMasukKurikulum/DetailBook";
+import AboutProgram from "./pages/SastraMasukKurikulum/AboutProgram";
+import TeachingModule from "./pages/SastraMasukKurikulum/TeachingModule";
+import GeneralGuide from "./pages/SastraMasukKurikulum/GeneralGuide";
+import Feedback from "./pages/SastraMasukKurikulum/Feedback";
+import ObjectiveProgram from "./pages/SastraMasukKurikulum/ObjectiveProgram";
+import CurrationStage from "./pages/SastraMasukKurikulum/CurrationStage";
 
 const App = () => {
   useEffect(() => {
@@ -58,7 +67,6 @@ const App = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/sastra-masuk-kurikulum" element={<HariBukuNasional />} />
       <Route path="/faq" element={<FAQ />} />
       <Route path="/test" element={<Test />} />
       <Route path="/katalog" element={<Catalog />} />
@@ -120,6 +128,47 @@ const App = () => {
               <ReadHistory />
             </ProtectedRoute>
           }
+        />
+      </Route>
+
+      {/* Route sastra masuk kurikulum */}
+      <Route path="/sastra-masuk-kurikulum" element={ <SastraMasukKurikulum /> } />
+      <Route path="/sastra-masuk-kurikulum/*">
+        <Route
+          path="faq"
+          element={ <SastraFAQ /> }
+        />
+        <Route
+          path="rekomendasi-buku"
+          element={ <RecommendationBook /> }
+        />
+        <Route
+          path="rekomendasi-buku/:id"
+          element={ <DetailBook /> }
+        />
+        <Route
+          path="tentang-program"
+          element={ <AboutProgram /> }
+        />
+        <Route
+          path="tujuan-program"
+          element={ <ObjectiveProgram /> }
+        />
+        <Route
+          path="tahapan-kurasi"
+          element={ <CurrationStage /> }
+        />
+        <Route
+          path="modul-ajar"
+          element={ <TeachingModule /> }
+        />
+        <Route
+          path="panduan-umum"
+          element={ <GeneralGuide /> }
+        />
+        <Route
+          path="feedback"
+          element={ <Feedback /> }
         />
       </Route>
 
