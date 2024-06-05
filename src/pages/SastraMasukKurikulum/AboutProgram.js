@@ -3,7 +3,7 @@ import Layout from "../../components/SastraMasukKurikulum/layout"
 import Sidebar from "../../components/SastraMasukKurikulum/sidebar"
 import { useState } from "react"
 const AboutProgram = () => {
-    const totalBook = 170
+    const totalBook = 166
     const [showMore, setSHowMore] = useState(false)
     return (
         <Layout>
