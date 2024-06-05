@@ -40,7 +40,7 @@ const CurrationStage = () => {
                                                 <ul className="mt-2">
                                                     <li>SD : <a href="http://ringkas.kemdikbud.go.id/KriteriaJenjangSD" target="_blank" className="text-decoration-none text-blue small">[Unduh Dokumen]</a></li>
                                                     <li>SMP : <a href="http://ringkas.kemdikbud.go.id/KriteriaJenjangSMP" target="_blank" className="text-decoration-none text-blue small">[Unduh Dokumen]</a></li>
-                                                    <li>SD : <a href="http://ringkas.kemdikbud.go.id/KriteriaJenjangSMA" target="_blank" className="text-decoration-none text-blue small">[Unduh Dokumen]</a></li>
+                                                    <li>SMA : <a href="http://ringkas.kemdikbud.go.id/KriteriaJenjangSMA" target="_blank" className="text-decoration-none text-blue small">[Unduh Dokumen]</a></li>
                                                 </ul>
                                             </li>
                                         </ul>
