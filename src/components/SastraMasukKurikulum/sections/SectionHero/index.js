@@ -13,7 +13,7 @@ const Hero = () => {
                     </div>
                     <div className="col-lg-5">
                         <div class="ratio ratio-16x9">
-                            <iframe src="https://www.youtube.com/embed/Jvwj-A0XAqI?rel=0" className="card-rounded" title="YouTube video" allowfullscreen></iframe>
+                            <iframe src="https://www.youtube.com/embed/0w0OvOEv43w?rel=0" className="card-rounded" title="YouTube video" allowfullscreen></iframe>
                         </div>
                     </div>
                 </div>
