@@ -38,7 +38,7 @@ const BukuTeksK13 = () => {
         let lessonPattern = lessonFilter.join('&');
 
         // Default routing endpoints
-        let ENDPOINTS_URL = `${BASE_URL}/api/catalogue/${typeCatalogue}?limit=2000&${typeBook}&order_by=updated_at${latestBook}`;
+        let ENDPOINTS_URL = `${BASE_URL}/api/catalogue/${typeCatalogue}?limit=2000&${typeBook}&order_by=updated_at`;
 
         if (latestBook) ENDPOINTS_URL += `&${latestBook}`;
         if (level) ENDPOINTS_URL += `&${level}`;
