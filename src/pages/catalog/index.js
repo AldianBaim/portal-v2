@@ -18,20 +18,6 @@ const Catalog = () => {
     const [typeBook, setTypeBook] = useState('type_pdf')
     const [typeCatalogue, setTypeCatalogue] = useState('getPenggerakTextBooks')
 
-    // Filter jenjang kelas
-    const [class1, setClass1] = useState("");
-    const [class2, setClass2] = useState("");
-    const [class3, setClass3] = useState("");
-    const [class4, setClass4] = useState("");
-    const [class5, setClass5] = useState("");
-    const [class6, setClass6] = useState("");
-    const [class7, setClass7] = useState("");
-    const [class8, setClass8] = useState("");
-    const [class9, setClass9] = useState("");
-    const [class10, setClass10] = useState("");
-    const [class11, setClass11] = useState("");
-    const [class12, setClass12] = useState("");
-
     // Handle filter audio book from homepage link
     // const [typeAudio] = useState(location.state !== null ? location.state.type : null)
 
@@ -54,7 +40,7 @@ const Catalog = () => {
         let lessonPattern = lessonFilter.join('&');
 
         // Default routing endpoints
-        let ENDPOINTS_URL = `${BASE_URL}/api/catalogue/${typeCatalogue}?limit=2000&${typeBook}&order_by=updated_at${latestBook}`;
+        let ENDPOINTS_URL = `${BASE_URL}/api/catalogue/${typeCatalogue}?limit=2000&${typeBook}&order_by=updated_at`;
 
         if (latestBook) ENDPOINTS_URL += `&${latestBook}`;
         if (level) ENDPOINTS_URL += `&${level}`;
