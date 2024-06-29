@@ -55,7 +55,7 @@ const DetailBook = () => {
                                 </div>
                             
                                 <div className="mt-5" id="tujuan-buku">
-                                    <h5>Mengapa Buku ini Perlu Diajarkan dalam Kelas</h5>
+                                    <h5>Mengapa Buku ini Perlu Dibaca oleh Para Murid?</h5>
 
                                     <div className="mt-3">
                                         <p dangerouslySetInnerHTML={{ __html: book?.urgensi }}></p>
