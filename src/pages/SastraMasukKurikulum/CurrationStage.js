@@ -46,7 +46,7 @@ const CurrationStage = () => {
                                         </ul>
                                     </li>
                                     <li>
-                                        Kriteria Satrawi adalah kriteria umum yang bersifat tambahan atau tidak wajib, tetapi menjadi pertimbangan dalam kurasi buku sastra.
+                                        Kriteria Sastrawi adalah kriteria umum yang bersifat tambahan atau tidak wajib, tetapi menjadi pertimbangan dalam kurasi buku sastra.
 
                                         <ul className="mt-2">
                                             <li>Penulis buku sastra merepresentasikan gender dan daerah;</li>
