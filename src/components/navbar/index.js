@@ -1,4 +1,4 @@
-import { faDoorOpen, faSignOut, faTachometerAlt } from '@fortawesome/free-solid-svg-icons';
+import { faDoorOpen, faSignOut, faTachometerAlt, faUserCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react'
 import { Link, NavLink, useNavigate, useLocation } from 'react-router-dom'
@@ -121,7 +121,7 @@ const Navbar = ({ nightMode }) => {
                                     <li>
                                         <Link className="dropdown-item p-2" to="/katalog/buku-kurikulum-merdeka">
                                             <img src="/assets/image/home/Group 79.png" width={30} alt="" />
-                                            <span className="ms-2 my-auto">Buku Kurikulum Merdeka</span>
+                                            <span className="ms-2 my-auto">Buku Teks Kurikulum Merdeka</span>
                                         </Link>
                                     </li>
                                     <li>
@@ -164,11 +164,13 @@ const Navbar = ({ nightMode }) => {
                                     </li>
                                 </ul>
                             </li>
-                            {/* <li className="nav-item mx-1">
-                                <a target="_blank" rel="noreferrer" href="https://pusbuk.kemdikbud.go.id" className={({ isActive }) => isActive ? 'nav-link fw-bold' : 'nav-link'} aria-current="page">Profil</a>
-                            </li> */}
                             <li className="nav-item mx-1">
                                 <div onClick={() => window.location.replace("https://pusbuk.kemdikbud.go.id")} className="nav-link" style={{ cursor: 'pointer' }}>Profil</div>
+                            </li>
+                            <li className="nav-item mx-1">
+                                <Link className="nav-link" to="/sastra-masuk-kurikulum">
+                                    Sastra Masuk Kurikulum <sup class="text-danger">Baru</sup>
+                                </Link>
                             </li>
                             {
                                 token && (
@@ -200,12 +202,10 @@ const Navbar = ({ nightMode }) => {
                                                 aria-expanded="false"
                                             >
                                                 <strong>{user && user.name}</strong>
-                                                <img
-                                                    className="rounded-circle"
-                                                    src={user && user.avatar}
-                                                    alt=""
-                                                    style={{ width: "40px", height: "40px" }}
-                                                />
+                                                {user.avatar
+                                                    ? (<img className="rounded-circle" src={user.avatar} alt="" style={{ width: "40px", height: "40px" }}/>)
+                                                    : (<FontAwesomeIcon icon={faUserCircle} size="xl" />)
+                                                }                                                
                                             </a>
                                             <ul className="dropdown-menu dropdown-menu-end profile" aria-labelledby="navbarDropdown">
                                                 <li className="py-0">

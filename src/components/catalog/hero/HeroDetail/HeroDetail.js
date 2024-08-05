@@ -11,8 +11,9 @@ import Modal from '../../modal/Modal'
 import styles from './HeroDetail.module.scss'
 import { Modal as modal } from 'bootstrap'
 import { formatPrice } from '../../../../utils/helper'
+import PdfViewer from '../../../global/PdfViewer'
 
-const HeroDetail = ({ category, price_zone_1, price_zone_2, price_zone_3, price_zone_4, price_zone_5A, price_zone_5B, id, token, image, slug, bookType, title, publisher, isbn, edition, writer, attachment, totalDownload, totalRead }) => {
+const HeroDetail = ({ category, price_zone_1, price_zone_2, price_zone_3, price_zone_4, price_zone_5A, price_zone_5B, id, token, image, slug, bookType, title, publisher, isbn, edition, writer, attachment, totalDownload, totalRead, totalPlay }) => {
     const [loading, setLoading] = useState(false)
     const [failedReview, setFailedReview] = useState(false)
     const [successReview, setSuccessReview] = useState(false)
@@ -65,7 +66,6 @@ const HeroDetail = ({ category, price_zone_1, price_zone_2, price_zone_3, price_
     }
 
     const pushLog = async (type) => {
-
         const payload = {
             slug: slug,
             activity: type
@@ -123,7 +123,7 @@ const HeroDetail = ({ category, price_zone_1, price_zone_2, price_zone_3, price_
 
                                     {/* Handle type book PDF */}
                                     {
-                                        bookType === 'pdf' && (
+                                        bookType === 'pdf' && attachment && (
                                             <>
                                                 {
                                                     !token ? (
@@ -154,20 +154,20 @@ const HeroDetail = ({ category, price_zone_1, price_zone_2, price_zone_3, price_
 
                                     {/* Handle book type audio */}
                                     {
-                                        bookType === 'audio' && (
+                                        bookType === 'audio' && attachment && (
                                             <>
                                                 <a onClick={() => pushLog('play')} href="#audioPlayer" className="btn btn-sm btn-orange py-2 me-3 my-2"><FontAwesomeIcon icon={faPlay} className="me-2" /> Putar Audio</a>
                                                 <a onClick={() => pushLog('download')} href={attachment} className="btn btn-sm btn-outline-primary py-2" target="_blank" rel="noreferrer" download="file.pdf">
                                                     <FontAwesomeIcon icon={faFileAudio} className="me-1" /> Unduh PDF
                                                 </a>
-                                                <small className="my-3 text-muted d-block">Telah diputar {totalRead.toLocaleString()} kali <a data-bs-toggle="modal" data-bs-target="#reportModal" className="text-decoration-none text-blue ms-2 fw-bold" style={{ cursor: 'pointer' }}><FontAwesomeIcon icon={faCircleExclamation} /> Lapor disini</a> jika menemukan kesalahan pada audio</small>
+                                                <small className="my-3 text-muted d-block">Telah diputar {totalPlay} kali <a data-bs-toggle="modal" data-bs-target="#reportModal" className="text-decoration-none text-blue ms-2 fw-bold" style={{ cursor: 'pointer' }}><FontAwesomeIcon icon={faCircleExclamation} /> Lapor disini</a> jika menemukan kesalahan pada audio</small>
                                             </>
                                         )
                                     }
 
                                     {/* Handle book type interactive */}
                                     {
-                                        bookType === 'interactive' && (
+                                        bookType === 'interactive' && attachment && (
                                             <>
                                                 <a onClick={() => pushLog('read')} href={attachment} target="_blank" rel="noreferrer" className="btn btn-sm btn-orange py-2 me-3 my-2"><FontAwesomeIcon icon={faFile} className="me-2" />Baca Buku Interaktif</a>
                                                 <small className="my-3 text-muted d-block">Telah diunduh {totalDownload.toLocaleString()} kali <a data-bs-toggle="modal" data-bs-target="#reportModal" className="text-decoration-none text-blue ms-2 fw-bold" style={{ cursor: 'pointer' }}><FontAwesomeIcon icon={faCircleExclamation} /> Lapor disini</a> jika menemukan kesalahan pada naskah</small>
@@ -222,18 +222,19 @@ const HeroDetail = ({ category, price_zone_1, price_zone_2, price_zone_3, price_
                 </div>
             </div>
             <Modal id="readModal" title={title}>
-                <object
+                {!!attachment && <object
                     type="application/pdf"
                     data={attachment}
                     width="100%"
-                    height="800"
+                    style={{height: '90vh'}}
                     aria-label={title}
                 >
-                    <p>Silahkan klik tombol unduh untuk membaca</p>
-                    <a className="btn btn-light" href={attachment}><i className="fas fa-fw fa-download" /> Unduh</a>
+                    <PdfViewer url={attachment}></PdfViewer>
                 </object>
+                
+                }
             </Modal>
-            <div className="modal fade" id="reportModal" tabindex="-1" aria-labelledby="reportModalLabel" aria-hidden="true">
+            <div className="modal fade" id="reportModal" tabIndex="-1" aria-labelledby="reportModalLabel" aria-hidden="true">
                 <div className="modal-dialog">
                     <div className="modal-content bg-">
                         <div className="modal-header bg-warning">
@@ -269,7 +270,7 @@ const HeroDetail = ({ category, price_zone_1, price_zone_2, price_zone_3, price_
                     </div>
                 </div>
             </div>
-            <div className="modal fade" id="downloadModal" tabindex="-1" aria-labelledby="downloadModalLabel" aria-hidden="true">
+            <div className="modal fade" id="downloadModal" tabIndex="-1" aria-labelledby="downloadModalLabel" aria-hidden="true">
                 <div className="modal-dialog">
                     <div className="modal-content bg-">
                         <div className="modal-header bg-light text-white">
@@ -311,14 +312,14 @@ const HeroDetail = ({ category, price_zone_1, price_zone_2, price_zone_3, price_
                     </div>
                 </div>
             </div>
-            <div class="modal fade" id="hetModal" tabindex="-1" aria-labelledby="hetModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content bg-light">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="hetModalLabel">Daftar HET</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div className="modal fade" id="hetModal" tabIndex="-1" aria-labelledby="hetModalLabel" aria-hidden="true">
+                <div className="modal-dialog">
+                    <div className="modal-content bg-light">
+                        <div className="modal-header">
+                            <h5 className="modal-title" id="hetModalLabel">Daftar HET</h5>
+                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div class="modal-body">
+                        <div className="modal-body">
                             <table className="table table-striped">
                                 <tbody>
                                     <tr>
@@ -352,15 +353,15 @@ const HeroDetail = ({ category, price_zone_1, price_zone_2, price_zone_3, price_
                     </div>
                 </div>
             </div>
-            <div class="modal fade" id="zonaModal" data-bs-backdrop="static">
-                <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Keterangan Zona</h5>
-                            {/* <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> */}
+            <div className="modal fade" id="zonaModal" data-bs-backdrop="static">
+                <div className="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+                    <div className="modal-content">
+                        <div className="modal-header">
+                            <h5 className="modal-title" id="exampleModalLabel">Keterangan Zona</h5>
+                            {/* <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> */}
                             <button type="button" className="btn btn-sm btn-primary mb-2" data-bs-toggle="modal" data-bs-target="#hetModal">Kembali</button>
                         </div>
-                        <div class="modal-body">
+                        <div className="modal-body">
                             <table className="table table-striped">
                                 <tbody>
                                     <tr>

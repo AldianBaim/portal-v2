@@ -23,12 +23,14 @@ const BukuNonTeks = () => {
     const [popularBook, setPopularBook] = useState('')
     const [latestBook, setLatestBook] = useState('')
 
-    // State for filter level
+    // State for filter
     const [level, setLevel] = useState('')
+    const [tag, setTag] = useState('Buku Model')
 
 
     useEffect(() => {
-        let ENDPOINTS_URL = `${BASE_URL}/api/catalogue/${typeCatalogue}?limit=2000&${typeBook}&${level}&${latestBook}`;
+        let ENDPOINTS_URL = `${BASE_URL}/api/catalogue/${typeCatalogue}?limit=2000&${typeBook}&${level}&${latestBook}&tag=${tag}`;
+
         // Filter route endpoints for popular book
         popularBook && (ENDPOINTS_URL = `${BASE_URL}/api/statistic/${popularBook}?qty=20`)
 
@@ -44,7 +46,7 @@ const BukuNonTeks = () => {
                 setTypeCatalogue('getTextBooks');
             }
             if (typeSearchBook === 'Nonteks') {
-                ENDPOINTS_URL = `${BASE_URL}/api/catalogue/getNonTextBooks?title=${title}&limit=20&offset=0`;
+                ENDPOINTS_URL = `${BASE_URL}/api/catalogue/getNonTextBooks?title=${title}&limit=20&offset=0&sort=desc`;
                 setTypeCatalogue('getNonTextBooks');
             }
         }
@@ -53,14 +55,14 @@ const BukuNonTeks = () => {
             setLoading(true)
             try {
                 const response = await axios.get(ENDPOINTS_URL)
-                setBooks(response.data.results)
+                setBooks(response.data.results.reverse())
                 setLoading(false)
             } catch (err) {
                 return err.message;
             }
         };
         getBooks()
-    }, [title, typeSearchBook, popularBook, typeCatalogue, typeBook, level, latestBook])
+    }, [title, typeSearchBook, popularBook, typeCatalogue, typeBook, level, latestBook, tag])
 
     const filterSearchCatalogue = (data) => {
         setTitle(data.title)
@@ -71,8 +73,13 @@ const BukuNonTeks = () => {
         data.typeCatalogue === 'getNonTextBooks' && setTypeSearchBook('Nonteks')
     }
 
-    const handleFilterLevel = (filter) => {
-        filter === level ? setLevel("") : setLevel(filter)
+    const handleFilter = (filter, type) => {
+        if(type == 'level') {
+            filter === level ? setLevel("") : setLevel(filter)
+        }
+        if(type == 'tag') {
+            filter === tag ? setTag("") : setTag(filter)
+        }
     }
 
     return (
@@ -94,7 +101,9 @@ const BukuNonTeks = () => {
                 typeCatalogue={typeCatalogue}
                 setSearchTypeCatalogue={(data) => filterSearchCatalogue(data)}
                 level={level}
-                setLevelNonText={(filter) => handleFilterLevel(filter)}
+                setLevelNonText={(filter) => handleFilter(filter, 'level')}
+                tag={tag}
+                setTagNonText={(filter) => handleFilter(filter, 'tag')}
             />
         </Layout>
     )
