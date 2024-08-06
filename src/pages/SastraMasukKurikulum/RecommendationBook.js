@@ -65,7 +65,7 @@ const RecommendationBook = () => {
                     </nav>
                     
                     <div class="alert alert-info">
-                        <strong>Catatan:</strong> Daftar buku dapat bertambah/berkurang sewaktu-waktu
+                        <strong>Catatan:</strong> Daftar rekomendasi buku Sastra Masuk Kurikulum ini sifatnya terus berkembang. Publik dapat menyampaikan masukan terkait buku yang direkomendasikan untuk memperkaya daftar ini melalui mekanisme yang telah ditentukan.
                     </div>
 
                     <hr />
