@@ -101,7 +101,7 @@ const RecommendationBook = () => {
                             <span className="input-group-text bg-white border-start-0" id="basic-addon1"><FontAwesomeIcon icon={faSearch} /></span>
                         </div>
                     </div>
-                    <div className="mt-4 text-end">Total : {filteredData?.length} Buku</div>
+                    {/* <div className="mt-4 text-end">Total : {filteredData?.length} Buku</div> */}
 
                     <div className="row mt-4">
                         {
