@@ -13,7 +13,7 @@ const Hero = () => {
                     </div>
                     <div className="col-lg-5">
                         <div class="ratio ratio-16x9">
-                            <iframe width="560" height="315" className="card-rounded" title="YouTube video" src="https://www.youtube.com/embed/Pjz3ZGI-jS8?si=_Vrj8dvTDdzPtcZJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            <iframe width="560" height="315" className="card-rounded" title="Implementasi Sastra Masuk Kurikulum" src="https://www.youtube.com/embed/ACaSt47k7yA?si=D4VlCKTifZgr5Lsz" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                         </div>
                     </div>
                 </div>
