@@ -65,7 +65,7 @@ const RecommendationBook = () => {
                     </nav>
                     
                     <div class="alert alert-info">
-                        <strong>Catatan:</strong> Daftar buku dapat bertambah/berkurang sewaktu-waktu
+                        <strong>Catatan:</strong> Daftar rekomendasi buku Sastra Masuk Kurikulum ini sifatnya terus berkembang. Publik dapat menyampaikan masukan terkait buku yang direkomendasikan untuk memperkaya daftar ini melalui mekanisme yang telah ditentukan.
                     </div>
 
                     <hr />
@@ -101,7 +101,7 @@ const RecommendationBook = () => {
                             <span className="input-group-text bg-white border-start-0" id="basic-addon1"><FontAwesomeIcon icon={faSearch} /></span>
                         </div>
                     </div>
-                    <div className="mt-4 text-end">Total : {filteredData?.length} Buku</div>
+                    {/* <div className="mt-4 text-end">Total : {filteredData?.length} Buku</div> */}
 
                     <div className="row mt-4">
                         {
