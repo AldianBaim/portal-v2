@@ -41,7 +41,7 @@ const Survey = () => {
                                     </div>
                                 </div>
 
-                                <a href="" className='text-blue text-decoration-none'>Lihat selengkapnya &#8594;</a>
+                                <a target="_blank" href="https://odk.101.my.id/-/single/GYATsG11IkD85QtG8JhsBAntrBke18k?&d[/data/Awal/A/nama]=Oriza&d[/data/Awal/A/surel]=ahmadoriza@gmail.com&d[/data/Awal/A/no_hp]=087778086140" className='text-blue text-decoration-none'>Lihat selengkapnya &#8594;</a>
                             </div>
                         </div>
                         <div className="col-lg-4">
@@ -67,14 +67,14 @@ const Survey = () => {
                                     </div>
                                 </div>
 
-                                <a href="" className='text-blue text-decoration-none'>Lihat selengkapnya &#8594;</a>
+                                <a target="_blank" href="https://odk.101.my.id/-/single/fMhQNdJzBREQwg0XX0ZIjI92vOwUpN3?&d[/data/A/nama]=Oriza&d[/data/A/surel]=ahmadoriza@gmail.com&d[/data/A/no_hp]=087778086140" className='text-blue text-decoration-none'>Lihat selengkapnya &#8594;</a>
                             </div>
                         </div>
                         <div className="col-lg-4">
                             <div className="card border-0 shadow-sm rounded p-3">
                                 <div className="d-flex align-items-center gap-2">
                                     <img src="/assets/image/guide/survey/purple.svg" alt="" />
-                                    <h6 className='mb-0'>M-03 Responden Guru</h6>
+                                    <h6 className='mb-0'>M-03 Responden Siswa</h6>
                                 </div>
                                 <div className='p-1 my-3' style={{ borderRadius: '10px', backgroundColor: '#D7F5E8' }}>
                                     <div className="row p-2">
@@ -93,7 +93,7 @@ const Survey = () => {
                                     </div>
                                 </div>
 
-                                <a href="" className='text-blue text-decoration-none'>Lihat selengkapnya &#8594;</a>
+                                <a target="_blank" href="https://odk.101.my.id/-/single/L90Zo0gesxOPrKlkrxUQKSrtZJChE05?&d[/data/identitas/nama_siswa]=Oriza&d[/data/identitas/surel]=ahmadoriza@gmail.com&d[/data/identitas/no_telp]=087778086140" className='text-blue text-decoration-none'>Lihat selengkapnya &#8594;</a>
                             </div>
                         </div>
                     </div>
