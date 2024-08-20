@@ -1,5 +1,9 @@
 {
   "projects": {
-    "default": "sibi-katalog"
-  }
+    "default": "buku-kemdikbud-92185",
+    "buku-kemdikbud": "buku-kemdikbud-92185"
+  },
+  "targets": {},
+  "etags": {},
+  "dataconnectEmulatorConfig": {}
 }
