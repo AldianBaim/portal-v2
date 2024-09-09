@@ -39,6 +39,7 @@
     "sass": "^1.49.11",
     "sweetalert2": "^11.7.27",
     "swiper": "^8.0.7",
+    "swr": "^2.2.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

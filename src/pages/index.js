@@ -10,6 +10,51 @@ import SectionPopularBook from '../components/home/sections/SectionPopularBook/S
 import SectionStats from '../components/home/sections/SectionStats/SectionStats'
 import SectionTestimony from '../components/home/sections/SectionTestimony/SectionTestimony'
 import { BASE_URL } from '../utils/config'
+import useSWR from 'swr';
+
+const fetcher = (url) => fetch(url).then((res) => res.json());
+
+function useStatisticBook() {
+    const { data, error, isValidating } = useSWR(`${BASE_URL}/api/statistic/getSummary`, fetcher, {
+        refreshInterval: 18000000,    // Re-fetch setiap 5 Jam
+        dedupingInterval: 18000000,   // Cegah fetching ulang dalam 5 Jam
+        revalidateOnFocus: false,  // Jangan revalidate saat window fokus kembali
+        revalidateOnReconnect: false
+    });
+
+    const statisticBook = data ?? {};
+    const loadingStatisticBook = isValidating ?? false;
+  
+    return { statisticBook, errorStatisticBook: error ,loadingStatisticBook };
+}
+
+function useAudioBooks() {
+    const { data, error, isValidating } = useSWR(`${BASE_URL}/api/catalogue/getPenggerakTextBooks?limit=4&type_audio`, fetcher, {
+        refreshInterval: 18000000,    // Re-fetch setiap 5 Jam
+        dedupingInterval: 18000000,   // Cegah fetching ulang dalam 5 Jam
+        revalidateOnFocus: false,  // Jangan revalidate saat window fokus kembali
+        revalidateOnReconnect: false
+    });
+
+    const audioBooks = data?.results ?? [];
+    const loadingAudioBooks = isValidating ?? false;
+  
+    return { audioBooks, errorAudioBooks: error ,loadingAudioBooks };
+}
+
+function usePopularBooks() {
+    const { data, error, isValidating } = useSWR(`${BASE_URL}/api/statistic/getPopularCatalogue?qty=4`, fetcher, {
+        refreshInterval: 18000000,    // Re-fetch setiap 5 Jam
+        dedupingInterval: 18000000,   // Cegah fetching ulang dalam 5 Jam
+        revalidateOnFocus: false,  // Jangan revalidate saat window fokus kembali
+        revalidateOnReconnect: false
+    });
+
+    const popularBooks = data?.results ?? [];
+    const loadingPopularBooks = isValidating ?? false;
+  
+    return { popularBooks, errorPopularBooks: error ,loadingPopularBooks };
+}
 
 const Home = () => {
 
@@ -18,56 +63,21 @@ const Home = () => {
     let hours = (new Date()).getHours();
     hours >= 18 || hours <= 6 ? (nightMode = true) : (nightMode = false)
 
-    const [popularBooks, setPopularBooks] = useState([])
-    const [audioBooks, setAudioBooks] = useState([])
-    const [statisticBook, setStatisticBook] = useState([])
-    const [loading, setLoading] = useState(false)
-
-    useEffect(() => {
-        setLoading(true)
-        const getPopularBooks = async () => {
-            try {
-                const response = await axios.get(`${BASE_URL}/api/statistic/getPopularCatalogue?qty=4`);
-                setPopularBooks(response.data.results)
-                setLoading(false)
-            } catch (error) {
-                return error.message
-            }
-        }
-        const getAudioBooks = async () => {
-            setLoading(true)
-            try {
-                const response = await axios.get(`${BASE_URL}/api/catalogue/getPenggerakTextBooks?limit=4&type_audio`);
-                setAudioBooks(response.data.results)
-                setLoading(false)
-            } catch (error) {
-                return error.message
-            }
-        }
-        const getStatisticBook = async () => {
-            try {
-                const response = await axios.get(`${BASE_URL}/api/statistic/getSummary`);
-                setStatisticBook(response.data)
-            } catch (error) {
-                return error.message
-            }
-        }
-        getStatisticBook();
-        getPopularBooks();
-        getAudioBooks();
-    }, [])
+    const { statisticBook } = useStatisticBook();
+    const { audioBooks, loadingAudioBooks } = useAudioBooks();
+    const { popularBooks, loadingPopularBooks } = usePopularBooks();
 
     return (
         <Layout>
             <Hero nightMode={nightMode} />
-            <SectionStats data={statisticBook} />
+            <SectionStats data={statisticBook ?? {}} />
             <SectionPopularBook
-                loading={loading}
-                popularBooks={popularBooks}
+                loading={loadingPopularBooks}
+                popularBooks={popularBooks ?? []}
             />
             <SectionAccessBook />
             <SectionAudioBook
-                loading={loading}
+                loading={loadingAudioBooks}
                 audioBooks={audioBooks}
             />
             <SectionBookForAll />

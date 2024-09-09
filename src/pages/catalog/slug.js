@@ -9,62 +9,63 @@ import SectionReview from "../../components/catalog/sections/SectionReview/Secti
 import SectionTestimonyComment from "../../components/catalog/sections/SectionTestimonyComment/SectionTestimonyComment";
 import Layout from "../../components/global/Layout";
 import { BASE_URL } from "../../utils/config";
+import useSWR from 'swr';
+
+const fetcher = (url) => fetch(url).then((res) => res.json());
+
+function useBookDetail(slug) {
+  const { data, error, isValidating } = useSWR(`${BASE_URL}/api/catalogue/getDetails?slug=${slug}`, fetcher, {
+      refreshInterval: 18000000,    // Re-fetch setiap 5 Jam
+      dedupingInterval: 18000000,   // Cegah fetching ulang dalam 5 Jam
+      revalidateOnFocus: false,  // Jangan revalidate saat window fokus kembali
+      revalidateOnReconnect: false
+  });
+
+  const book = data?.results ?? [];
+  const loadingBook = isValidating ?? false;
+
+  return { book, errorBook: error ,loadingBook };
+}
+
+function useReviews(slug) {
+  const { data, error, isValidating } = useSWR(`${BASE_URL}/api/review/getReviews?slug=${slug}&limit=5&offset=0`, fetcher, {
+      refreshInterval: 18000000,    // Re-fetch setiap 5 Jam
+      dedupingInterval: 18000000,   // Cegah fetching ulang dalam 5 Jam
+      revalidateOnFocus: false,  // Jangan revalidate saat window fokus kembali
+      revalidateOnReconnect: false
+  });
+
+  const reviews = data?.results ?? [];
+  const loadingReviews = isValidating ?? false;
+
+  return { reviews, errorReviews: error ,loadingReviews };
+}
+
+function useRecommendBooks(slug) {
+  const { data, error, isValidating } = useSWR(`${BASE_URL}/api/catalogue/getRecommendCatalogue?slug=${slug}&qty=8`, fetcher, {
+      refreshInterval: 18000000,    // Re-fetch setiap 5 Jam
+      dedupingInterval: 18000000,   // Cegah fetching ulang dalam 5 Jam
+      revalidateOnFocus: false,  // Jangan revalidate saat window fokus kembali
+      revalidateOnReconnect: false
+  });
+
+  const recommendBooks = data?.results ?? [];
+  const loadingRecommendBooks = isValidating ?? false;
+
+  return { recommendBooks, errorRecommendBooks: error ,loadingRecommendBooks };
+}
 
 const CatalogDetail = () => {
   const token = localStorage.getItem("user_token");
   const { slug } = useParams();
-  const [loading, setLoading] = useState(false);
-  const [book, setBook] = useState([1]);
-  const [reviews, setReviews] = useState([]);
-  const [recommendBooks, setRecommendBooks] = useState([]);
-
-  useEffect(() => {
-    setLoading(true);
-    const getRecommendBooks = async () => {
-      try {
-        let response = await axios.get(
-          `${BASE_URL}/api/catalogue/getRecommendCatalogue?slug=${slug}&qty=8`
-        );
-        setRecommendBooks(response.data.results);
-        setLoading(false);
-      } catch (err) {
-        return err.message;
-      } finally {
-        setLoading(false);
-      }
-    };
-    const getBookDetail = async () => {
-      try {
-        const response = await axios.get(
-          `${BASE_URL}/api/catalogue/getDetails?slug=${slug}`
-        );
-        setBook(response.data.results);
-      } catch (error) {
-        return error.message;
-      } finally {
-        setLoading(false);
-      }
-    };
-    const getReviews = async () => {
-      try {
-        const response = await axios.get(
-          `${BASE_URL}/api/review/getReviews?slug=${slug}&limit=5&offset=0`
-        );
-        setReviews(response.data.results);
-      } catch (error) {
-        return error.message;
-      } finally {
-        setLoading(false);
-      }
-    };
-    getReviews();
-    getBookDetail();
-    getRecommendBooks();
-  }, [slug]);
+  
+  const { recommendBooks, loadingRecommendBooks } = useRecommendBooks(slug);
+  const { book, loadingBook } = useBookDetail(slug);
+  const { reviews } = useReviews(slug);
 
   return (
     <Layout>
-      {book.length !== 0 ? (
+      {book.length !== 0 || loadingBook ? (
         <>
           <SectionBreadcumb
             category={book.category}
@@ -87,7 +88,7 @@ const CatalogDetail = () => {
             totalDownload={book.total_download}
             totalRead={book.total_read}
             totalPlay={book.total_play}
-            loading={loading}
+            loading={loadingBook}
             category={book.category}
             price_zone_1={book.price_zone_1}
             price_zone_2={book.price_zone_2}
@@ -104,7 +105,7 @@ const CatalogDetail = () => {
           {recommendBooks.length !== 0 && (
             <SectionRecommended
               recommendBooks={recommendBooks}
-              loading={loading}
+              loading={loadingRecommendBooks}
             />
           )}
         </>
