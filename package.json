@@ -39,6 +39,7 @@
     "sass": "^1.49.11",
     "sweetalert2": "^11.7.27",
     "swiper": "^8.0.7",
+<<<<<<< HEAD
     "web-vitals": "^2.1.4",
     "workbox-background-sync": "^6.5.3",
     "workbox-broadcast-update": "^6.5.3",
@@ -52,6 +53,10 @@
     "workbox-routing": "^6.5.3",
     "workbox-strategies": "^6.5.3",
     "workbox-streams": "^6.5.3"
+=======
+    "swr": "^2.2.5",
+    "web-vitals": "^2.1.4"
+>>>>>>> aca73b3594b6763a38f3f2ab01976691252a90f2
   },
   "scripts": {
     "start": "react-scripts start",
