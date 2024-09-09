@@ -33,7 +33,7 @@ const RecommendationBook = () => {
         setLoading(true)
 
         axios
-        .get(`${BASE_URL}/api/sastra/buku?filter[jenjang]=${level && level}`)
+        .get(`https://api.buku.kemdikbud.go.id/api/sastra/buku?filter[jenjang]=${level && level}`)
         .then(response => {
             setBooks(response.data.results)
             setFilteredData(response.data.results)
