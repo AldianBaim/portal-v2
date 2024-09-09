@@ -261,7 +261,8 @@ const SectionCatalog = ({ level, setLevelNonText, tag, setTagNonText, setLatestB
                                             </div>
                                             <div className="card-body overflow-auto" style={{ height: '230px' }}>
                                                 {
-                                                    lessons.map((lesson, index) => (
+                                                    // Add sort by lesson label
+                                                    lessons.sort((a, b) => a.label.localeCompare(b.label)).map((lesson, index) => (
                                                         (
                                                             <div className="form-check" key={index}>
                                                                 <input onChange={() => setLesson(lesson.code)} className="form-check-input" type="checkbox" value="" id={lesson.label} />
