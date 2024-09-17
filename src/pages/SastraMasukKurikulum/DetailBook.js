@@ -2,7 +2,8 @@ import { Link, useLocation } from "react-router-dom"
 import Layout from "../../components/SastraMasukKurikulum/layout"
 import { useEffect, useState } from "react"
 import axios from "axios"
-import { BASE_URL } from "../../utils/config"
+import { BASE_URL_PUSDATIN } from "../../utils/config"
+
 const DetailBook = () => {
 
     const location = useLocation()
@@ -14,7 +15,7 @@ const DetailBook = () => {
         const id = pathSegments[pathSegments.length - 1];
 
         axios
-        .get(BASE_URL + `/api/sastra/buku/${id}`)
+        .get(BASE_URL_PUSDATIN + `/api/sastra/buku/${id}`)
         .then(res => setBook(res.data))
         .catch(err => console.log(err))
 

@@ -6,7 +6,7 @@ import Hero from "../../components/SastraMasukKurikulum/sections/SectionHero"
 import SectionProgramGuide from "../../components/SastraMasukKurikulum/sections/SectionProgramGuide"
 import { useEffect, useState } from "react"
 import axios from "axios"
-import { BASE_URL } from "../../utils/config"
+import { BASE_URL_PUSDATIN } from "../../utils/config"
 
 const SastraMasukKurikulum = () => {
 
@@ -20,19 +20,19 @@ const SastraMasukKurikulum = () => {
         setLoading(true)
 
         axios
-        .get(`${BASE_URL}/api/entry/sastra_kurator?filter[jenjang]=sd&orderby=nama&direction=asc`)
+        .get(`${BASE_URL_PUSDATIN}/api/entry/sastra_kurator?filter[jenjang]=sd&orderby=nama&direction=asc`)
         .then(response => setCurratorsSD(response.data.results))
         .catch(error => console.log(error))
         .finally(() => setLoading(false))
 
         axios
-        .get(`${BASE_URL}/api/entry/sastra_kurator?filter[jenjang]=smp&orderby=nama&direction=asc`)
+        .get(`${BASE_URL_PUSDATIN}/api/entry/sastra_kurator?filter[jenjang]=smp&orderby=nama&direction=asc`)
         .then(response => setCurratorsSMP(response.data.results))
         .catch(error => console.log(error))
         .finally(() => setLoading(false))
 
         axios
-        .get(`${BASE_URL}/api/entry/sastra_kurator?filter[jenjang]=sma&orderby=nama&direction=asc`)
+        .get(`${BASE_URL_PUSDATIN}/api/entry/sastra_kurator?filter[jenjang]=sma&orderby=nama&direction=asc`)
         .then(response => setCurratorsSMA(response.data.results))
         .catch(error => console.log(error))
         .finally(() => setLoading(false))

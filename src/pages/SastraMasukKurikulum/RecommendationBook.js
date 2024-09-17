@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faFileAlt, faNewspaper, faSearch } from "@fortawesome/free-solid-svg-icons"
 import { useEffect, useState } from "react"
 import axios from "axios"
-import { BASE_URL } from "../../utils/config"
+import { BASE_URL_PUSDATIN } from "../../utils/config"
 import CardSkeletonBook from "../../components/HariBukuNasional/card/CardSkeletonBook"
 const RecommendationBook = () => {
 
@@ -33,7 +33,7 @@ const RecommendationBook = () => {
         setLoading(true)
 
         axios
-        .get(`${BASE_URL}/api/sastra/buku?filter[jenjang]=${level && level}`)
+        .get(`${BASE_URL_PUSDATIN}/api/sastra/buku?filter[jenjang]=${level && level}`)
         .then(response => {
             setBooks(response.data.results)
             setFilteredData(response.data.results)
