@@ -14,7 +14,7 @@ const DetailBook = () => {
         const id = pathSegments[pathSegments.length - 1];
 
         axios
-        .get(`https://api.buku.kemdikbud.go.id/api/sastra/buku/${id}`)
+        .get(BASE_URL + `/api/sastra/buku/${id}`)
         .then(res => setBook(res.data))
         .catch(err => console.log(err))
 

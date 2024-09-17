@@ -38,7 +38,7 @@ const BukuTeksK13 = () => {
         let lessonPattern = lessonFilter.join('&');
 
         // Default routing endpoints
-        let ENDPOINTS_URL = `https://api.buku.kemdikbud.go.id/api/catalogue/${typeCatalogue}?limit=100&${typeBook}&order_by=updated_at`;
+        let ENDPOINTS_URL = `${BASE_URL}/api/catalogue/${typeCatalogue}?limit=100&${typeBook}&order_by=updated_at`;
 
         if (latestBook) ENDPOINTS_URL += `&${latestBook}`;
         if (level) ENDPOINTS_URL += `&${level}`;
@@ -52,7 +52,7 @@ const BukuTeksK13 = () => {
         if (title !== null && !popularBook) {
             setTypeBook('')
             if (typeSearchBook === 'Kurikulum Merdeka') {
-                ENDPOINTS_URL = `https://api.buku.kemdikbud.go.id/api/catalogue/getPenggerakTextBooks?title=${title}&limit=20&offset=0`;
+                ENDPOINTS_URL = `${BASE_URL}/api/catalogue/getPenggerakTextBooks?title=${title}&limit=20&offset=0`;
                 setTypeCatalogue('getPenggerakTextBooks');
             }
             if (typeSearchBook === 'Teks K13') {
