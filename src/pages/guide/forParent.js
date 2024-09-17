@@ -1,5 +1,4 @@
-import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import Layout from '../../components/global/Layout'
 import Hero from '../../components/guide/Hero/Hero'
 import SectionIntroParent from '../../components/guide/sections/SectionIntro/SectionIntroParent'
