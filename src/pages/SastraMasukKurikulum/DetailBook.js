@@ -25,22 +25,22 @@ const DetailBook = () => {
             <section className="position-relative">
                 <div className="container p-3 py-5">
                     <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><Link to="/sastra-masuk-kurikulum" className="text-decoration-none text-blue">Beranda</Link></li>
-                            <li class="breadcrumb-item"><Link to="/sastra-masuk-kurikulum/rekomendasi-buku" className="text-decoration-none text-blue">Daftar Rekomendasi Buku</Link></li>
-                            <li class="breadcrumb-item active" aria-current="page">Detail</li>
+                        <ol className="breadcrumb">
+                            <li className="breadcrumb-item"><Link to="/sastra-masuk-kurikulum" className="text-decoration-none text-blue">Beranda</Link></li>
+                            <li className="breadcrumb-item"><Link to="/sastra-masuk-kurikulum/rekomendasi-buku" className="text-decoration-none text-blue">Daftar Rekomendasi Buku</Link></li>
+                            <li className="breadcrumb-item active" aria-current="page">Detail</li>
                         </ol>
                     </nav>
                     <hr />
 
                     <div className="row">
                         <div className="col-lg-2 mb-3">
-                            <div class="list-group sticky-top" style={{top: '100px', zIndex: '100'}} >
+                            <div className="list-group sticky-top" style={{top: '100px', zIndex: '100'}} >
                                 <img src={book?.cover} className="w-100 card-rounded" alt="Book" />
                             </div>
                         </div>
                         <div className="col-lg-7">
-                            <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-offset="0" class="scrollspy-example" tabindex="0">
+                            <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-offset="0" className="scrollspy-example" tabindex="0">
                                 <h3>{book?.judul}</h3>
 
                                 <div className="mt-5" id="identitas-buku">
@@ -68,10 +68,10 @@ const DetailBook = () => {
                             </div>
                         </div>
                         <div className="col-lg-3 d-none d-lg-block">
-                            <div id="list-example" class="list-group sticky-top" style={{top: '100px', zIndex: '100'}} role="tablist">
-                                <a class="list-group-item list-group-item-action" href="#">Identitas Buku</a>
-                                <a class="list-group-item list-group-item-action" href="#tujuan-buku">Tujuan Buku</a>
-                                <a class="list-group-item list-group-item-action" href="#penggunaan-buku">Penggunaan Buku</a>
+                            <div id="list-example" className="list-group sticky-top" style={{top: '100px', zIndex: '100'}} role="tablist">
+                                <a className="list-group-item list-group-item-action" href="#">Identitas Buku</a>
+                                <a className="list-group-item list-group-item-action" href="#tujuan-buku">Tujuan Buku</a>
+                                <a className="list-group-item list-group-item-action" href="#penggunaan-buku">Penggunaan Buku</a>
                             </div>
                         </div>
                     </div>
