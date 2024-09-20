@@ -79,41 +79,12 @@ const BukuTeksK13 = () => {
     }, [title, typeSearchBook, popularBook, typeCatalogue, typeBook, level, lessonFilter, classFilter ,latestBook])
 
     const handleSetLevel = (type) => {
-        if (type == 'level_paud') {
-            if (checkActive == type) {
-                setCheckActive('')
-                setLevel('')
-            } else {
-                setCheckActive(type)
-                setLevel(type)
-            }
-        }
-        if (type == 'level_sd') {
-            if (checkActive == type) {
-                setCheckActive('')
-                setLevel('')
-            } else {
-                setCheckActive(type)
-                setLevel(type)
-            }
-        }
-        if (type == 'level_smp') {
-            if (checkActive == type) {
-                setCheckActive('')
-                setLevel('')
-            } else {
-                setCheckActive(type)
-                setLevel(type)
-            }
-        }
-        if (type == 'level_sma') {
-            if (checkActive == type) {
-                setCheckActive('')
-                setLevel('')
-            } else {
-                setCheckActive(type)
-                setLevel(type)
-            }
+        if (checkActive == type) {
+            setCheckActive('')
+            setLevel('')
+        } else {
+            setCheckActive(type)
+            setLevel(type)
         }
     }
 
