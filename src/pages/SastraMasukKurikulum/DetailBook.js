@@ -65,6 +65,9 @@ const DetailBook = () => {
                                     <h5 >Bagaimana Cara Menggunakan Buku Ini?</h5>
                                     <p dangerouslySetInnerHTML={{ __html: book?.penggunaan }}></p>
                                 </div>
+                                <div className="mt-5">
+                                    <a href={`https://search.siplah.kemdikbud.go.id/search?keyword=${book?.judul}&locationId=4&locationName=Pulau%20Jawa&sort=RELEVANCE`} target="_blank" className="btn btn-orange rounded-pill px-4 py-2">Dapatkan Buku</a>
+                                </div>
                             </div>
                         </div>
                         <div className="col-lg-3 d-none d-lg-block">
