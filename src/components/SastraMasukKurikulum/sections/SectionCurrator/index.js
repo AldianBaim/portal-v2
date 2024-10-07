@@ -77,13 +77,13 @@ const Currator = ({curratorsSD, curratorsSMP, curratorsSMA, loading}) => {
                 </div>
 
 
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-lg modal-dialog-scrollable">
-                        <div class="modal-content">
-                            <div class="modal-header border-0 p-2">
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div className="modal-dialog modal-lg modal-dialog-scrollable">
+                        <div className="modal-content">
+                            <div className="modal-header border-0 p-2">
+                                <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
-                            <div class="modal-body px-3 px-lg-5 py-4">
+                            <div className="modal-body px-3 px-lg-5 py-4">
                                 <div className="d-flex flex-column  align-items-center align-items-lg-start flex-lg-row gap-5">
                                     <img src={detailCurrator?.foto} className="rounded-circle" width={200} height={200} alt="" />
                                     <div>

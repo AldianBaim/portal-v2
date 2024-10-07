@@ -156,12 +156,12 @@ const SectionKurator = () => {
                                                     !currator.showDesk ? (
                                                         <td>
                                                             {currator.intro} &nbsp;
-                                                            <button class="text-blue bg-transparent border-0 ps-0" onClick={() => showDesk(index)}>selengkapnya &gt;</button>
+                                                            <button className="text-blue bg-transparent border-0 ps-0" onClick={() => showDesk(index)}>selengkapnya &gt;</button>
                                                         </td>
                                                     ) : (
                                                         <td>
                                                             {currator.description} 
-                                                            <button class="text-blue bg-transparent border-0 ps-0" onClick={() => hideDesk(currator.id)}>&lt; kembali</button>
+                                                            <button className="text-blue bg-transparent border-0 ps-0" onClick={() => hideDesk(currator.id)}>&lt; kembali</button>
                                                         </td>
                                                     )
                                                 }

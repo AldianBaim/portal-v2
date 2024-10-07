@@ -169,7 +169,7 @@ const Navbar = ({ nightMode }) => {
                             </li>
                             <li className="nav-item mx-1">
                                 <Link className="nav-link" to="/sastra-masuk-kurikulum">
-                                    Sastra Masuk Kurikulum <sup class="text-danger">Baru</sup>
+                                    Sastra Masuk Kurikulum <sup className="text-danger">Baru</sup>
                                 </Link>
                             </li>
                             {

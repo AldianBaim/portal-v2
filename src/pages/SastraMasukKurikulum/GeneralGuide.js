@@ -10,16 +10,16 @@ const GeneralGuide = () => {
             <section className="position-relative">
                 <div className="container p-3 py-5">
                     <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><Link to="/sastra-masuk-kurikulum" className="text-decoration-none text-blue">Beranda</Link></li>
-                            <li class="breadcrumb-item active" aria-current="page">Panduan Umum Program</li>
+                        <ol className="breadcrumb">
+                            <li className="breadcrumb-item"><Link to="/sastra-masuk-kurikulum" className="text-decoration-none text-blue">Beranda</Link></li>
+                            <li className="breadcrumb-item active" aria-current="page">Panduan Umum Program</li>
                         </ol>
                     </nav>
                     <hr />
 
                     <div className="row">
                         <div className="col-lg-7 offset-lg-2 order-last order-lg-first mt-4 mt-lg-0">
-                            <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-offset="0" class="scrollspy-example" tabindex="0">                            
+                            <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-offset="0" className="scrollspy-example" tabindex="0">                            
                                 <div className="mt-2">
                                     <h4>Kata Pengantar</h4>
 
@@ -177,11 +177,11 @@ const GeneralGuide = () => {
                             </div>
                         </div>
                         <div className="col-lg-3">
-                            <div id="list-example" class="list-group sticky-top" style={{top: '100px', zIndex: '100'}} role="tablist">
-                                <a class="list-group-item list-group-item-action" href="#">Kata Pengantar</a>
-                                <a class="list-group-item list-group-item-action" href="#cara-penggunaan">Cara Penggunaan</a>
-                                <a class="list-group-item list-group-item-action" href="#daftar-buku">Daftar Buku</a>
-                                <a class="list-group-item list-group-item-action" href="#tim-penyusun">Tim Penyusun</a>
+                            <div id="list-example" className="list-group sticky-top" style={{top: '100px', zIndex: '100'}} role="tablist">
+                                <a className="list-group-item list-group-item-action" href="#">Kata Pengantar</a>
+                                <a className="list-group-item list-group-item-action" href="#cara-penggunaan">Cara Penggunaan</a>
+                                <a className="list-group-item list-group-item-action" href="#daftar-buku">Daftar Buku</a>
+                                <a className="list-group-item list-group-item-action" href="#tim-penyusun">Tim Penyusun</a>
                             </div>
                         </div>
                     </div>

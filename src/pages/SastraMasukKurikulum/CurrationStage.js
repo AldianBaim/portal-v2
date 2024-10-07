@@ -10,9 +10,9 @@ const CurrationStage = () => {
             <section>
                 <div className="container p-3 py-5">
                     <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><Link to="/sastra-masuk-kurikulum" className="text-decoration-none text-blue">Beranda</Link></li>
-                            <li class="breadcrumb-item active" aria-current="page">Tahapan Kurasi</li>
+                        <ol className="breadcrumb">
+                            <li className="breadcrumb-item"><Link to="/sastra-masuk-kurikulum" className="text-decoration-none text-blue">Beranda</Link></li>
+                            <li className="breadcrumb-item active" aria-current="page">Tahapan Kurasi</li>
                         </ol>
                     </nav>
                     <hr />

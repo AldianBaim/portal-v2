@@ -4,7 +4,7 @@ export const lessons = [
     { label: 'Bahasa Indonesia', code: 'subject_indonesia' },
     { label: 'Bahasa Inggris', code: 'subject_inggris' },
     { label: 'Matematika', code: 'subject_matematika' },
-    { label: 'PKN', code: 'subject_ppkn' },
+    { label: 'Pendidikan Pancasila', code: 'subject_ppkn' },
     { label: 'Informatika', code: 'subject_informatika' },
     { label: 'PJOK', code: 'subject_pjok' },
     { label: 'Agama Islam', code: 'subject_agama_islam' },

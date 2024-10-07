@@ -13,75 +13,105 @@ const SectionTestimony = ({ nightMode }) => {
     let linearBgColor = nightMode ? 'linear-gradient(to bottom, white,white, #6686b7, #6686b7)' : 'linear-gradient(to bottom, white, #e5f8ff, #e5f8ff)'
     const data = [
         {
-            comment: 'Bukunya bagus bagus',
-            avatar: '/assets/image/testimony/pic1.webp',
-            name: 'Aldiansyah Ibrahim',
-            school: 'SMK TI Garuda Nusantara'
+            comment: 'Terimakasih banyak SIBI sangat membantu kami kalangan siswa dan guru berkebutuhan khusus',
+            avatar: '/assets/image/testimony/1-hafidz.jpeg',
+            name: 'Hafidz Dali',
+            school: 'Guru Sekolah Luar Biasa'
         },
         {
-            comment: 'Buku Elektronik Interaktif keren sekali',
-            avatar: '/assets/image/testimony/pic2.webp',
-            name: 'Luella Syifa',
-            school: 'SMK TI Garuda Nusantara'
+            comment: 'Keren! Ada buku audio dan buku interaktif yg sangat menarik',
+            avatar: '/assets/image/testimony/2-ria.jpeg',
+            name: 'Ria Irianti',
+            school: 'Guru Sekolah Dasar'
         },
         {
-            comment: 'Animasi Buku Interaktifnya sangat menarik',
-            avatar: '/assets/image/testimony/pic4.webp',
-            name: 'Hadyan Palupi',
-            school: 'MA Persis Tasikmalaya'
+            comment: 'Sangat bermanfaat membantu guru dan siswa belajar dengan mudah di era digital',
+            avatar: '/assets/image/testimony/3-devi.jpeg',
+            name: 'Devi Yulianti',
+            school: 'Guru Sekolah Menengah Pertama'
         },
         {
-            comment: 'Sangat membantu saya buat belajar',
-            avatar: '/assets/image/testimony/pic3.webp',
-            name: 'Mochamad Firman',
-            school: 'SMPN 1 Padalarang'
+            comment: 'Dengan adanya SIBI membantu saya selaku orangtua dalam membingbing anak belajar di rumah',
+            avatar: '/assets/image/testimony/4-aulia.jpeg',
+            name: 'Aulia Azhari',
+            school: 'Orang tua siswa'
         },
         {
-            comment: 'Sangat memudahkan dan membantu siswa maupun guru mendapat wawasan',
-            avatar: '/assets/image/testimony/pic5.jpeg',
-            name: 'Nui',
-            school: 'Guru SMK Telkom Bandung'
+            comment: 'Selain buku pelajaran ternyata buku ceritanya sangat seru, saya jadi banyak bahan untuk cerita ke anak, terimakasih SIBI',
+            avatar: '/assets/image/testimony/5-gaos.jpeg',
+            name: 'Gaos Firdaus',
+            school: 'Orang tua'
         },
         {
-            comment: 'Pembelajar menjadi lebih efektif, efesien dan menarik',
-            avatar: '/assets/image/testimony/pic6.jpeg',
-            name: 'Bella',
-            school: 'Guru SMPN 3 Baleendah'
+            comment: 'Buku audio sangat membantu guru dalam proses pembelajaran, terutama untuk siswa dengan gaya belajar audio',
+            avatar: '/assets/image/testimony/6-maya.jpeg',
+            name: 'Maya N Chairiah ',
+            school: 'SMAN 1 Margaasih'
         },
         {
-            comment: 'Buku-bukunya lengkap dan variatif',
-            avatar: '/assets/image/testimony/pic7.jpeg',
-            name: 'Radit',
-            school: 'Siswa SMPN 3 Baleendah'
+            comment: 'Buku di SIBI menginspirasi guru-guru SMK untuk merancang project yang menyenangkan di sekolah',
+            avatar: '/assets/image/testimony/7-asep.jpeg',
+            name: 'Asep Doni',
+            school: 'Guru Sekolah Menengah Kejuruan'
         },
         {
-            comment: 'Support system yang bagus untuk kemajuan pendidikan',
-            avatar: '/assets/image/testimony/pic8.jpeg',
-            name: 'Naila',
-            school: 'Umum'
+            comment: 'Buku SIBI sangat bagus dan menarik ada audio sama interaktif',
+            avatar: '/assets/image/testimony/8-adlie.jpeg',
+            name: 'Adlie Ahmad',
+            school: 'Siswa Sekolah Dasar'
         },
         {
-            comment: 'Support system yang bagus untuk kemajuan pendidikan',
-            avatar: '/assets/image/testimony/pic8.jpeg',
-            name: 'Naila',
-            school: 'Umum'
+            comment: 'Terimakasih banyak SIBI sangat membantu kami kalangan siswa dan guru berkebutuhan khusus',
+            avatar: '/assets/image/testimony/1-hafidz.jpeg',
+            name: 'Hafidz Dali',
+            school: 'Guru Sekolah Luar Biasa'
         },
         {
-            comment: 'Support system yang bagus untuk kemajuan pendidikan',
-            avatar: '/assets/image/testimony/pic8.jpeg',
-            name: 'Naila',
-            school: 'Umum'
+            comment: 'Keren! Ada buku audio dan buku interaktif yg sangat menarik',
+            avatar: '/assets/image/testimony/2-ria.jpeg',
+            name: 'Ria Irianti',
+            school: 'Guru Sekolah Dasar'
         },
         {
-            comment: 'Support system yang bagus untuk kemajuan pendidikan',
-            avatar: '/assets/image/testimony/pic8.jpeg',
-            name: 'Naila',
-            school: 'Umum'
+            comment: 'Sangat bermanfaat membantu guru dan siswa belajar dengan mudah di era digital',
+            avatar: '/assets/image/testimony/3-devi.jpeg',
+            name: 'Devi Yulianti',
+            school: 'Guru Sekolah Menengah Pertama'
+        },
+        {
+            comment: 'Dengan adanya SIBI membantu saya selaku orangtua dalam membingbing anak belajar di rumah',
+            avatar: '/assets/image/testimony/4-aulia.jpeg',
+            name: 'Aulia Azhari',
+            school: 'Orang tua siswa'
+        },
+        {
+            comment: 'Selain buku pelajaran ternyata buku ceritanya sangat seru, saya jadi banyak bahan untuk cerita ke anak, terimakasih SIBI',
+            avatar: '/assets/image/testimony/5-gaos.jpeg',
+            name: 'Gaos Firdaus',
+            school: 'Orang tua'
+        },
+        {
+            comment: 'Buku audio sangat membantu guru dalam proses pembelajaran, terutama untuk siswa dengan gaya belajar audio',
+            avatar: '/assets/image/testimony/6-maya.jpeg',
+            name: 'Maya N Chairiah ',
+            school: 'SMAN 1 Margaasih'
+        },
+        {
+            comment: 'Buku di SIBI menginspirasi guru-guru SMK untuk merancang project yang menyenangkan di sekolah',
+            avatar: '/assets/image/testimony/7-asep.jpeg',
+            name: 'Asep Doni',
+            school: 'Guru Sekolah Menengah Kejuruan'
+        },
+        {
+            comment: 'Buku SIBI sangat bagus dan menarik ada audio sama interaktif',
+            avatar: '/assets/image/testimony/8-adlie.jpeg',
+            name: 'Adlie Ahmad',
+            school: 'Siswa Sekolah Dasar'
         },
     ]
 
     const testimony = [];
-    const limit = 3;
+    const limit = 2;
     let start = 1;
     let counter = 0;
     let testimonyTemp = [];
@@ -109,10 +139,10 @@ const SectionTestimony = ({ nightMode }) => {
             <Swiper
                 autoplay={{ delay: '0ms' }}
                 loop
-                speed={1000}
+                speed={7000}
                 navigation
                 modules={[Grid, Autoplay, Navigation]}
-                spaceBetween={5}
+                spaceBetween={10}
                 slidesPerView={3.5}
                 breakpoints={{
                     // when window width is >= 414px
@@ -136,7 +166,7 @@ const SectionTestimony = ({ nightMode }) => {
                                             <div className="mb-2 text-muted">{item[0].comment}</div>
                                             <div className="row px-lg-1 align-items-center">
                                                 <div className="col-lg-1 pe-0 d-flex justify-content-center text-center text-md-start">
-                                                    <img src={item[0].avatar} className="rounded-circle me-lg-auto mb-2 mb-lg-0" width={50} height={50} alt="" />
+                                                    <img src={item[0].avatar} className="rounded-circle me-lg-auto mb-2 mb-lg-0 object-fit-cover" width={50} height={50} alt="" />
                                                 </div>
                                                 <div className="col-lg-10 ms-1">
                                                     <small className="d-block fw-bold text-lg-start">{item[0].name}</small>
@@ -155,7 +185,7 @@ const SectionTestimony = ({ nightMode }) => {
                                             <div className="mb-2 text-muted">{item[1].comment}</div>
                                             <div className="row px-lg-1 align-items-center">
                                                 <div className="col-lg-1 pe-0 d-flex justify-content-center text-center text-md-start">
-                                                    <img src={item[1].avatar} className="rounded-circle me-lg-auto mb-2 mb-lg-0" width={50} height={50} alt="" />
+                                                    <img src={item[1].avatar} className="rounded-circle me-lg-auto mb-2 mb-lg-0 object-fit-cover" width={50} height={50} alt="" />
                                                 </div>
                                                 <div className="col-lg-10 ms-1">
                                                     <small className="d-block fw-bold text-lg-start">{item[1].name}</small>

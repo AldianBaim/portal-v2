@@ -8,9 +8,9 @@ const ObjectiveProgram = () => {
             <section>
                 <div className="container p-3 py-5">
                     <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><Link to="/sastra-masuk-kurikulum" className="text-decoration-none text-blue">Beranda</Link></li>
-                            <li class="breadcrumb-item active" aria-current="page">Tujuan Program</li>
+                        <ol className="breadcrumb">
+                            <li className="breadcrumb-item"><Link to="/sastra-masuk-kurikulum" className="text-decoration-none text-blue">Beranda</Link></li>
+                            <li className="breadcrumb-item active" aria-current="page">Tujuan Program</li>
                         </ol>
                     </nav>
                     <hr />
@@ -20,7 +20,7 @@ const ObjectiveProgram = () => {
                         </div>
                         <div className="col-lg-9">
                             <h4 className="mb-4">Tujuan Program Sastra Masuk Kurikulum</h4>
-                            <blockquote class="blockquote border-start border-5 ps-4">Memanfaatkan karya sastra dalam implementasi Kurikulum Merdeka untuk meningkatkan minat baca, menumbuhkan empati, dan mengasah kreativitas serta nalar kritis murid</blockquote>
+                            <blockquote className="blockquote border-start border-5 ps-4">Memanfaatkan karya sastra dalam implementasi Kurikulum Merdeka untuk meningkatkan minat baca, menumbuhkan empati, dan mengasah kreativitas serta nalar kritis murid</blockquote>
                         </div>
                     </div>
                 </div>
