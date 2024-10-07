@@ -10,12 +10,12 @@ const BukuTeksK13 = () => {
 
     // State handle query params from homepage
     const location = useLocation()
-    const [title, setTitle] = useState(location.state !== null ? location.state.title : null)
-    const [typeSearchBook, setTypeSearchBook] = useState(location.state !== null ? location.state.typeBook : null)
+    const [title, setTitle] = useState(location.state?.title ?? null)
+    const [typeSearchBook, setTypeSearchBook] = useState(location.state?.typeBook ?? null)
 
     const [loading, setLoading] = useState(false)
     const [books, setBooks] = useState([])
-    const [limit, setLimit] = useState(12)
+    const [limit] = useState(12)
     const [typeBook, setTypeBook] = useState('type_pdf')
     const [typeCatalogue, setTypeCatalogue] = useState('getPenggerakTextBooks')
 
@@ -79,51 +79,12 @@ const BukuTeksK13 = () => {
     }, [title, typeSearchBook, popularBook, typeCatalogue, typeBook, level, lessonFilter, classFilter , latestBook])
 
     const handleSetLevel = (type) => {
-        if (type == 'level_paud') {
-            if (checkActive == type) {
-                setCheckActive('')
-                setLevel('')
-            } else {
-                setCheckActive(type)
-                setLevel(type)
-            }
-        }
-        if (type == 'level_sd') {
-            if (checkActive == type) {
-                setCheckActive('')
-                setLevel('')
-            } else {
-                setCheckActive(type)
-                setLevel(type)
-            }
-        }
-        if (type == 'level_smp') {
-            if (checkActive == type) {
-                setCheckActive('')
-                setLevel('')
-            } else {
-                setCheckActive(type)
-                setLevel(type)
-            }
-        }
-        if (type == 'level_sma') {
-            if (checkActive == type) {
-                setCheckActive('')
-                setLevel('')
-            } else {
-                setCheckActive(type)
-                setLevel(type)
-            }
-        }
-
-        if (type == 'level_sdlb') {
-            if (checkActive == type) {
-                setCheckActive('')
-                setLevel('')
-            } else {
-                setCheckActive(type)
-                setLevel(type)
-            }
+        if (checkActive == type) {
+            setCheckActive('')
+            setLevel('')
+        } else {
+            setCheckActive(type)
+            setLevel(type)
         }
     }
 

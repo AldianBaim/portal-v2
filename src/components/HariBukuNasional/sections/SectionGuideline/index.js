@@ -31,32 +31,32 @@ const SectionGuideline = ({setMode}) => {
                         <img src="/assets/image/hari-buku-nasional/Timeline-2.png" className="w-100" alt="Timeline" />
 
 
-                        {/* <div class="timeline">
-                            <div class="event">
-                                <div class="event-content left">
+                        {/* <div className="timeline">
+                            <div className="event">
+                                <div className="event-content left">
                                     <h3>Membaca Sampai Selesai</h3>
                                     <p>Guru harus membaca sampai selesai buku yang akan digunakan sebelum membawakannya di kelas</p>
                                 </div>
                             </div>
-                            <div class="event">
-                                <div class="event-content right">
+                            <div className="event">
+                                <div className="event-content right">
                                     <h3>Penuh Persiapan</h3>
                                     <p>Guru perlu mempertimbangkan kesiapan dirinya, muridnya, orangtua murid, dan sekolahnya terhadap suatu buku</p>
                                 </div>
                             </div>
-                            <div class="event">
-                                <div class="event-content left">
-                                    <img src="/assets/image/hari-buku-nasional/Timeline-3.png" alt="Illustration" class="image"/>
+                            <div className="event">
+                                <div className="event-content left">
+                                    <img src="/assets/image/hari-buku-nasional/Timeline-3.png" alt="Illustration" className="image"/>
                                 </div>
                             </div>
-                            <div class="event">
-                                <div class="event-content right">
+                            <div className="event">
+                                <div className="event-content right">
                                     <h3>Membuat Rencana</h3>
                                     <p>Guru perlu punya rencana terkait cara membawakan buku ini di kelas (membaca seluruh disclaimer yang dicantumkan)</p>
                                 </div>
                             </div>
-                            <div class="event">
-                                <div class="event-content left">
+                            <div className="event">
+                                <div className="event-content left">
                                     <h3>Memahami Bersama</h3>
                                     <p>Dalam praktiknya, seluruh buku disarankan untuk dibaca bersama guru atau dengan pendampingan guru, karena memang tujuan program ini adalah juga memberdayakan guru</p>
                                 </div>

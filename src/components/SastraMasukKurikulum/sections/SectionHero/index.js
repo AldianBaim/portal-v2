@@ -12,7 +12,7 @@ const Hero = () => {
                         <Link to="#program-guide" className="btn btn-outline-primary my-3">Pelajari Selengkapnya..</Link>
                     </div>
                     <div className="col-lg-5">
-                        <div class="ratio ratio-16x9">
+                        <div className="ratio ratio-16x9">
                             <iframe width="560" height="315" className="card-rounded" title="Implementasi Sastra Masuk Kurikulum" src="https://www.youtube.com/embed/ACaSt47k7yA?si=D4VlCKTifZgr5Lsz" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                         </div>
                     </div>

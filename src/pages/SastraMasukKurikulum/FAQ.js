@@ -20,27 +20,27 @@ const SastraFAQ = () => {
             <section>
                 <div className="container p-3 py-5">
                     <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><Link to="/sastra-masuk-kurikulum" className="text-decoration-none text-blue">Beranda</Link></li>
-                            <li class="breadcrumb-item active" aria-current="page">FAQ</li>
+                        <ol className="breadcrumb">
+                            <li className="breadcrumb-item"><Link to="/sastra-masuk-kurikulum" className="text-decoration-none text-blue">Beranda</Link></li>
+                            <li className="breadcrumb-item active" aria-current="page">FAQ</li>
                         </ol>
                     </nav>
                     <hr />
                     <div className="row align-items-center">
                         <div className="col-lg-6">
                             <h4 className="mt-5">Pertanyaan yang Sering Ditanyakan</h4>
-                            <div class="accordion accordion-flush mt-3" id="accordionFlushExample">
+                            <div className="accordion accordion-flush mt-3" id="accordionFlushExample">
                                 {
                                     FAQ?.map((item, index) => {
                                         return (
-                                            <div class="accordion-item" key={index}>
-                                                <h2 class="accordion-header" id={`flush-heading-${index}`}>
-                                                    <button class="accordion-button px-1 collapsed" type="button" data-bs-toggle="collapse" data-bs-target={`#flush-collapse-${index}`} aria-expanded="false" aria-controls={`flush-collapse-${index}`}>
+                                            <div className="accordion-item" key={index}>
+                                                <h2 className="accordion-header" id={`flush-heading-${index}`}>
+                                                    <button className="accordion-button px-1 collapsed" type="button" data-bs-toggle="collapse" data-bs-target={`#flush-collapse-${index}`} aria-expanded="false" aria-controls={`flush-collapse-${index}`}>
                                                         {item?.question}
                                                     </button>
                                                 </h2>
-                                                <div id={`flush-collapse-${index}`} class="accordion-collapse collapse" aria-labelledby={`flush-heading-${index}`} data-bs-parent="#accordionFlushExample">
-                                                    <div class="accordion-body" dangerouslySetInnerHTML={{__html: item?.answer}}></div>
+                                                <div id={`flush-collapse-${index}`} className="accordion-collapse collapse" aria-labelledby={`flush-heading-${index}`} data-bs-parent="#accordionFlushExample">
+                                                    <div className="accordion-body" dangerouslySetInnerHTML={{__html: item?.answer}}></div>
                                                 </div>
                                             </div>
                                         )

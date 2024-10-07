@@ -64,7 +64,7 @@ const RecommendationBook = () => {
                         </ol>
                     </nav>
                     
-                    <div class="alert alert-info">
+                    <div className="alert alert-info">
                         <strong>Catatan:</strong> Daftar rekomendasi buku Sastra Masuk Kurikulum ini sifatnya terus berkembang. Publik dapat menyampaikan masukan terkait buku yang direkomendasikan untuk memperkaya daftar ini melalui mekanisme yang telah ditentukan.
                     </div>
 
@@ -74,16 +74,16 @@ const RecommendationBook = () => {
                             <FontAwesomeIcon icon={faNewspaper} className="me-2" />
                             Panduan Umum
                         </NavLink>
-                        {/* <div class="dropdown">
+                        {/* <div className="dropdown">
                             <a href="#" className="btn btn-sm btn-outline-secondary" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                                 <FontAwesomeIcon icon={faFileAlt} className="me-2" />
                                 Dokumen Kepmen
                             </a>
 
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <li><a href="#" class="dropdown-item">SD</a></li>
-                                <li><a href="#" class="dropdown-item">SMP</a></li>
-                                <li><a href="#" class="dropdown-item">SMA</a></li>
+                            <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <li><a href="#" className="dropdown-item">SD</a></li>
+                                <li><a href="#" className="dropdown-item">SMP</a></li>
+                                <li><a href="#" className="dropdown-item">SMA</a></li>
                             </ul>
                         </div> */}
                     </div>

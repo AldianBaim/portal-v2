@@ -19,6 +19,10 @@ body {
   font-family: Manrope;
 }
 
+.object-fit-cover {
+  object-fit: cover;
+}
+
 .timeline {
   position: relative;
   max-width: 800px;
