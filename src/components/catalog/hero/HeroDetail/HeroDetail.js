@@ -278,7 +278,7 @@ const HeroDetail = ({ category, price_zone_1, price_zone_2, price_zone_3, price_
                         </div>
                         <form onSubmit={handleSubmitDownload(onSubmitDownload)}>
                             <div className="modal-body bg-soft-grey">
-                                <p>Mohon isi data dibawah ini sebelum mengunduh buku :</p>
+                                <p>Mohon isi data di bawah ini sebelum mengunduh buku :</p>
                                 <input type="hidden" {...registerDownload('download_file')} value={id} />
                                 <div className="form-group mb-3">
                                     <label className="form-label" htmlFor="name">Nama</label>
