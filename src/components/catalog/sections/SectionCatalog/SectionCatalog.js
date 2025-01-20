@@ -357,14 +357,14 @@ const SectionCatalog = ({ level, setLevelNonText, tag, setTagNonText, setLatestB
                                         : currentData?.map((book, index) => {
                                             return (
                                                 <div key={index} className="col-lg-4 my-2">
-                                                    <a href={`/katalog/${book.slug}`} className="text-decoration-none text-dark">
+                                                    <Link to={`/katalog/${book.slug}`} className="text-decoration-none text-dark">
                                                         <CardBook
                                                             image={book.image}
                                                             title={book.title}
                                                             typeBook={book.type}
                                                             level={book.level}
                                                         />
-                                                    </a>
+                                                    </Link>
                                                 </div>
                                             )
                                         })
