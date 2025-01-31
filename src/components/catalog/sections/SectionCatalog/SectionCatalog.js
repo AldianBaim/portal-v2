@@ -12,7 +12,7 @@ import { Tooltip } from 'bootstrap'
 import { lessons } from '../../../../constants/filterBook'
 import { classLevel } from '../../../../constants/filterBook'
 
-const SectionCatalog = ({ level, setLevelNonText, tag, setTagNonText, setLatestBook, setClass , setSearchTypeCatalogue, searchTitle, checkActive, books, loading, skeletonCount, typeBook, typeCatalogue, setTypeBook, setLevel, setLesson, setPopularBook }) => {
+const SectionCatalog = ({ hideSidebar = false, level, setLevelNonText, tag, setTagNonText, setLatestBook, setClass , setSearchTypeCatalogue, searchTitle, checkActive, books, loading, skeletonCount, typeBook, typeCatalogue, setTypeBook, setLevel, setLesson, setPopularBook }) => {
     
     const pageLimit = 12;
     const [offset, setOffset] = useState(0);
@@ -96,191 +96,192 @@ const SectionCatalog = ({ level, setLevelNonText, tag, setTagNonText, setLatestB
         <section id="catalog">
             <div className="container px-3 py-5">
                 <div className="row justify-content-center">
-                    <div className="col-lg-3">
-                        <h4>{titleSidebar}</h4>
-                        {
-                            typeCatalogue === 'getNonTextBooks' || typeCatalogue === 'getRecommendationBooks'
-                                ? (
-                                    <>
-                                        <div className="card mt-3">
-                                            <div className="card-header">
-                                                PILIH JENJANG
-                                            </div>
-                                            <div className="card-body">
-                                                <div className="form-check">
-                                                    <input onClick={() => setLevelNonText('level_A')} checked={level === 'level_A' ? true : false} onChange={(e) => selectOnlyThis(e)} className="form-check-input" name="type_book" type="checkbox" id="typeA" />
-                                                    <label className="form-check-label" htmlFor="typeA">
-                                                        Pembaca Dini A
-                                                    </label>
+                    {!hideSidebar && (
+                        <div className="col-lg-3">
+                            <h4>{titleSidebar}</h4>
+                            {
+                                typeCatalogue === 'getNonTextBooks' || typeCatalogue === 'getRecommendationBooks'
+                                    ? (
+                                        <>
+                                            <div className="card mt-3">
+                                                <div className="card-header">
+                                                    PILIH JENJANG
                                                 </div>
-                                                <div className="form-check">
-                                                    <input onClick={() => setLevelNonText('level_B1')} checked={level === 'level_B1' ? true : false} onChange={(e) => selectOnlyThis(e)} className="form-check-input" name="type_book" type="checkbox" id="typeB1" />
-                                                    <label className="form-check-label" htmlFor="typeB1">
-                                                        Pembaca Awal B1
-                                                    </label>
-                                                </div>
-                                                <div className="form-check">
-                                                    <input onClick={() => setLevelNonText('level_B2')} checked={level === 'level_B2' ? true : false} onChange={(e) => selectOnlyThis(e)} className="form-check-input" name="type_book" type="checkbox" id="typeB2" />
-                                                    <label className="form-check-label" htmlFor="typeB2">
-                                                        Pembaca Awal B2
-                                                    </label>
-                                                </div>
-                                                <div className="form-check">
-                                                    <input onClick={() => setLevelNonText('level_B3')} checked={level === 'level_B3' ? true : false} onChange={(e) => selectOnlyThis(e)} className="form-check-input" name="type_book" type="checkbox" id="typeB3" />
-                                                    <label className="form-check-label" htmlFor="typeB3">
-                                                        Pembaca Awal B3
-                                                    </label>
-                                                </div>
-                                                <div className="form-check">
-                                                    <input onClick={() => setLevelNonText('level_C')} checked={level === 'level_C' ? true : false} onChange={(e) => selectOnlyThis(e)} className="form-check-input" name="type_book" type="checkbox" id="typeC" />
-                                                    <label className="form-check-label" htmlFor="typeC">
-                                                        Pembaca Semenjana C
-                                                    </label>
-                                                </div>
-                                                <div className="form-check">
-                                                    <input onClick={() => setLevelNonText('level_D')} checked={level === 'level_D' ? true : false} onChange={(e) => selectOnlyThis(e)} className="form-check-input" name="type_book" type="checkbox" id="typeD1" />
-                                                    <label className="form-check-label" htmlFor="typeD1">
-                                                        Pembaca Madya D
-                                                    </label>
-                                                </div>
-                                                <div className="form-check">
-                                                    <input onClick={() => setLevelNonText('level_E')} checked={level === 'level_E' ? true : false} onChange={(e) => selectOnlyThis(e)} className="form-check-input" name="type_book" type="checkbox" id="typeE" />
-                                                    <label className="form-check-label" htmlFor="typeE">
-                                                        Pembaca Mahir E
-                                                    </label>
-                                                </div>
-                                                <div className="mt-3">
-                                                    <span className="link text-blue" style={{ cursor: 'pointer' }} data-bs-toggle="modal" data-bs-target="#descriptionModal">
-                                                        Penjelasan Jenjang Buku
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="card mt-3">
-                                            <div className="card-header">
-                                                PILIH TAG
-                                            </div>
-                                            <div className="card-body">
-                                                <a href="#" onClick={() => setTagNonText('Buku Model')} className={`me-2 mb-2 tag ${tag == 'Buku Model' && 'tag-active'}`}>#Buku Model</a>
-                                                <a href="#" onClick={() => setTagNonText('Buku KURASI')} className={`me-2 mb-2 tag ${tag == 'Buku KURASI' && 'tag-active'}`}>#Buku KURASI</a>
-                                                <a href="#" onClick={() => setTagNonText('transisi')} className={`me-2 mb-2 tag ${tag == 'transisi' && 'tag-active'}`}>#Transisi PAUD SD</a>
-                                            </div>
-                                        </div>
-                                    </>
-                                )
-                                : (
-                                    <>
-                                        <div className="card mt-3">
-                                            <div className="card-header">
-                                                TIPE BUKU
-                                            </div>
-                                            <div className="card-body">
-                                                <div onChange={() => setTypeBook('type_pdf')} className="form-check">
-                                                    <input className="form-check-input" checked={typeBook == 'type_pdf' && true} name="type_book" type="checkbox" id="typePDF" />
-                                                    <label className="form-check-label" htmlFor="typePDF">
-                                                        Buku PDF
-                                                    </label>
-                                                </div>
-                                                <div onChange={() => setTypeBook('type_audio')} className="form-check">
-                                                    <input className="form-check-input" checked={typeBook == 'type_audio' && true} name="type_book" type="checkbox" id="typeAudio" />
-                                                    <label className="form-check-label" htmlFor="typeAudio">
-                                                        Buku Audio
-                                                    </label>
-                                                </div>
-                                                <div onChange={() => setTypeBook('type_interactive')} className="form-check">
-                                                    <input className="form-check-input" checked={typeBook == 'type_interactive' && true} name="type_book" type="checkbox" id="typeInteractive" />
-                                                    <label className="form-check-label" htmlFor="typeInteractive">
-                                                        Buku Interaktif
-                                                    </label>
+                                                <div className="card-body">
+                                                    <div className="form-check">
+                                                        <input onClick={() => setLevelNonText('level_A')} checked={level === 'level_A' ? true : false} onChange={(e) => selectOnlyThis(e)} className="form-check-input" name="type_book" type="checkbox" id="typeA" />
+                                                        <label className="form-check-label" htmlFor="typeA">
+                                                            Pembaca Dini A
+                                                        </label>
+                                                    </div>
+                                                    <div className="form-check">
+                                                        <input onClick={() => setLevelNonText('level_B1')} checked={level === 'level_B1' ? true : false} onChange={(e) => selectOnlyThis(e)} className="form-check-input" name="type_book" type="checkbox" id="typeB1" />
+                                                        <label className="form-check-label" htmlFor="typeB1">
+                                                            Pembaca Awal B1
+                                                        </label>
+                                                    </div>
+                                                    <div className="form-check">
+                                                        <input onClick={() => setLevelNonText('level_B2')} checked={level === 'level_B2' ? true : false} onChange={(e) => selectOnlyThis(e)} className="form-check-input" name="type_book" type="checkbox" id="typeB2" />
+                                                        <label className="form-check-label" htmlFor="typeB2">
+                                                            Pembaca Awal B2
+                                                        </label>
+                                                    </div>
+                                                    <div className="form-check">
+                                                        <input onClick={() => setLevelNonText('level_B3')} checked={level === 'level_B3' ? true : false} onChange={(e) => selectOnlyThis(e)} className="form-check-input" name="type_book" type="checkbox" id="typeB3" />
+                                                        <label className="form-check-label" htmlFor="typeB3">
+                                                            Pembaca Awal B3
+                                                        </label>
+                                                    </div>
+                                                    <div className="form-check">
+                                                        <input onClick={() => setLevelNonText('level_C')} checked={level === 'level_C' ? true : false} onChange={(e) => selectOnlyThis(e)} className="form-check-input" name="type_book" type="checkbox" id="typeC" />
+                                                        <label className="form-check-label" htmlFor="typeC">
+                                                            Pembaca Semenjana C
+                                                        </label>
+                                                    </div>
+                                                    <div className="form-check">
+                                                        <input onClick={() => setLevelNonText('level_D')} checked={level === 'level_D' ? true : false} onChange={(e) => selectOnlyThis(e)} className="form-check-input" name="type_book" type="checkbox" id="typeD1" />
+                                                        <label className="form-check-label" htmlFor="typeD1">
+                                                            Pembaca Madya D
+                                                        </label>
+                                                    </div>
+                                                    <div className="form-check">
+                                                        <input onClick={() => setLevelNonText('level_E')} checked={level === 'level_E' ? true : false} onChange={(e) => selectOnlyThis(e)} className="form-check-input" name="type_book" type="checkbox" id="typeE" />
+                                                        <label className="form-check-label" htmlFor="typeE">
+                                                            Pembaca Mahir E
+                                                        </label>
+                                                    </div>
+                                                    <div className="mt-3">
+                                                        <span className="link text-blue" style={{ cursor: 'pointer' }} data-bs-toggle="modal" data-bs-target="#descriptionModal">
+                                                            Penjelasan Jenjang Buku
+                                                        </span>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div className="card mt-3">
-                                            <div className="card-header">
-                                                JENJANG
+                                            <div className="card mt-3">
+                                                <div className="card-header">
+                                                    PILIH TAG
+                                                </div>
+                                                <div className="card-body">
+                                                    <a href="#" onClick={() => setTagNonText('Buku Model')} className={`me-2 mb-2 tag ${tag == 'Buku Model' && 'tag-active'}`}>#Buku Model</a>
+                                                    <a href="#" onClick={() => setTagNonText('Buku KURASI')} className={`me-2 mb-2 tag ${tag == 'Buku KURASI' && 'tag-active'}`}>#Buku KURASI</a>
+                                                    <a href="#" onClick={() => setTagNonText('transisi')} className={`me-2 mb-2 tag ${tag == 'transisi' && 'tag-active'}`}>#Transisi PAUD SD</a>
+                                                </div>
                                             </div>
-                                            <div className="card-body">
-                                                <div className="form-check">
-                                                    <input onClick={() => setLevel('level_paud')} checked={checkActive == 'level_paud' ? true : false} onChange={(e) => selectOnlyThis(e)} className="form-check-input" type="checkbox" id="check1" />
-                                                    <label className="form-check-label" htmlFor="checkPAUD">
-                                                        PAUD
-                                                    </label>
+                                        </>
+                                    )
+                                    : (
+                                        <>
+                                            <div className="card mt-3">
+                                                <div className="card-header">
+                                                    TIPE BUKU
                                                 </div>
-                                                <div className="form-check">
-                                                    <input onClick={() => setLevel('level_sd')} checked={checkActive == 'level_sd' ? true : false} onChange={(e) => selectOnlyThis(e)} className="form-check-input" type="checkbox" id="check2" />
-                                                    <label className="form-check-label" htmlFor="checkSD">
-                                                        SD/MI
-                                                    </label>
+                                                <div className="card-body">
+                                                    <div onChange={() => setTypeBook('type_pdf')} className="form-check">
+                                                        <input className="form-check-input" checked={typeBook == 'type_pdf' && true} name="type_book" type="checkbox" id="typePDF" />
+                                                        <label className="form-check-label" htmlFor="typePDF">
+                                                            Buku PDF
+                                                        </label>
+                                                    </div>
+                                                    <div onChange={() => setTypeBook('type_audio')} className="form-check">
+                                                        <input className="form-check-input" checked={typeBook == 'type_audio' && true} name="type_book" type="checkbox" id="typeAudio" />
+                                                        <label className="form-check-label" htmlFor="typeAudio">
+                                                            Buku Audio
+                                                        </label>
+                                                    </div>
+                                                    <div onChange={() => setTypeBook('type_interactive')} className="form-check">
+                                                        <input className="form-check-input" checked={typeBook == 'type_interactive' && true} name="type_book" type="checkbox" id="typeInteractive" />
+                                                        <label className="form-check-label" htmlFor="typeInteractive">
+                                                            Buku Interaktif
+                                                        </label>
+                                                    </div>
                                                 </div>
-                                                <div className="form-check">
-                                                    <input onClick={() => setLevel('level_smp')} checked={checkActive == 'level_smp' ? true : false} onChange={(e) => selectOnlyThis(e)} className="form-check-input" type="checkbox" id="check3" />
-                                                    <label className="form-check-label" htmlFor="checkSMP">
-                                                        SMP/MTS
-                                                    </label>
-                                                </div>
-                                                <div className="form-check">
-                                                    <input onClick={() => setLevel('level_sma')} checked={checkActive == 'level_sma' ? true : false} onChange={(e) => selectOnlyThis(e)} className="form-check-input" type="checkbox" id="check4" />
-                                                    <label className="form-check-label" htmlFor="checkSMK">
-                                                        SMA/MA/SMK/MAK
-                                                    </label>
-                                                </div>
-                                                {
-                                                    typeCatalogue === "getPenggerakTextBooks" && (
-                                                        <div className="form-check">
-                                                            <input onClick={() => setLevel('level_sdlb')} checked={checkActive == 'level_sdlb' ? true : false} onChange={(e) => selectOnlyThis(e)} className="form-check-input" type="checkbox" id="check5" />
-                                                            <label className="form-check-label" htmlFor="checkSDLB">
-                                                                SLB (SDLB/SMPLB/SMALB)
-                                                            </label>
-                                                        </div>
-                                                    )
-                                                }
                                             </div>
-                                        </div>
-                                        <div className="card mt-3">
-                                            <div className="card-header">
-                                                Kelas
-                                            </div>
-                                            <div className="card-body row overflow-auto">
-                                                {
-                                                    classLevel.map((level, index) => (
-                                                        <div className="col-6" key={index}>
+                                            <div className="card mt-3">
+                                                <div className="card-header">
+                                                    JENJANG
+                                                </div>
+                                                <div className="card-body">
+                                                    <div className="form-check">
+                                                        <input onClick={() => setLevel('level_paud')} checked={checkActive == 'level_paud' ? true : false} onChange={(e) => selectOnlyThis(e)} className="form-check-input" type="checkbox" id="check1" />
+                                                        <label className="form-check-label" htmlFor="checkPAUD">
+                                                            PAUD
+                                                        </label>
+                                                    </div>
+                                                    <div className="form-check">
+                                                        <input onClick={() => setLevel('level_sd')} checked={checkActive == 'level_sd' ? true : false} onChange={(e) => selectOnlyThis(e)} className="form-check-input" type="checkbox" id="check2" />
+                                                        <label className="form-check-label" htmlFor="checkSD">
+                                                            SD/MI
+                                                        </label>
+                                                    </div>
+                                                    <div className="form-check">
+                                                        <input onClick={() => setLevel('level_smp')} checked={checkActive == 'level_smp' ? true : false} onChange={(e) => selectOnlyThis(e)} className="form-check-input" type="checkbox" id="check3" />
+                                                        <label className="form-check-label" htmlFor="checkSMP">
+                                                            SMP/MTS
+                                                        </label>
+                                                    </div>
+                                                    <div className="form-check">
+                                                        <input onClick={() => setLevel('level_sma')} checked={checkActive == 'level_sma' ? true : false} onChange={(e) => selectOnlyThis(e)} className="form-check-input" type="checkbox" id="check4" />
+                                                        <label className="form-check-label" htmlFor="checkSMK">
+                                                            SMA/MA/SMK/MAK
+                                                        </label>
+                                                    </div>
+                                                    {
+                                                        typeCatalogue === "getPenggerakTextBooks" && (
                                                             <div className="form-check">
-                                                                <input onChange={() => setClass(level.code)} className="form-check-input" type="checkbox" value="" id={level.label} />
-                                                                <label className="form-check-label" htmlFor={level.label}>
-                                                                    {level.label}
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                    ))
-                                                }
-                                            </div>
-                                        </div>
-                                        <div className="card mt-3">
-                                            <div className="card-header">
-                                                MATA PELAJARAN
-                                            </div>
-                                            <div className="card-body overflow-auto" style={{ height: '230px' }}>
-                                                {
-                                                    // Add sort by lesson label
-                                                    lessons.sort((a, b) => a.label.localeCompare(b.label)).map((lesson, index) => (
-                                                        (
-                                                            <div className="form-check" key={index}>
-                                                                <input onChange={() => setLesson(lesson.code)} className="form-check-input" type="checkbox" value="" id={lesson.label} />
-                                                                <label className="form-check-label" htmlFor={lesson.label}>
-                                                                    {lesson.label}
+                                                                <input onClick={() => setLevel('level_sdlb')} checked={checkActive == 'level_sdlb' ? true : false} onChange={(e) => selectOnlyThis(e)} className="form-check-input" type="checkbox" id="check5" />
+                                                                <label className="form-check-label" htmlFor="checkSDLB">
+                                                                    SLB (SDLB/SMPLB/SMALB)
                                                                 </label>
                                                             </div>
                                                         )
-                                                    ))
-                                                }
+                                                    }
+                                                </div>
                                             </div>
-                                        </div>
-                                    </>
-                                )
-                        }
-                    </div>
+                                            <div className="card mt-3">
+                                                <div className="card-header">
+                                                    Kelas
+                                                </div>
+                                                <div className="card-body row overflow-auto">
+                                                    {
+                                                        classLevel.map((level, index) => (
+                                                            <div className="col-6" key={index}>
+                                                                <div className="form-check">
+                                                                    <input onChange={() => setClass(level.code)} className="form-check-input" type="checkbox" value="" id={level.label} />
+                                                                    <label className="form-check-label" htmlFor={level.label}>
+                                                                        {level.label}
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                        ))
+                                                    }
+                                                </div>
+                                            </div>
+                                            <div className="card mt-3">
+                                                <div className="card-header">
+                                                    MATA PELAJARAN
+                                                </div>
+                                                <div className="card-body overflow-auto" style={{ height: '230px' }}>
+                                                    {
+                                                        // Add sort by lesson label
+                                                        lessons.sort((a, b) => a.label.localeCompare(b.label)).map((lesson, index) => (
+                                                            (
+                                                                <div className="form-check" key={index}>
+                                                                    <input onChange={() => setLesson(lesson.code)} className="form-check-input" type="checkbox" value="" id={lesson.label} />
+                                                                    <label className="form-check-label" htmlFor={lesson.label}>
+                                                                        {lesson.label}
+                                                                    </label>
+                                                                </div>
+                                                            )
+                                                        ))
+                                                    }
+                                                </div>
+                                            </div>
+                                        </>
+                                    )
+                            }
+                        </div>
+                    )}
 
-                    
                     <div className="col-lg-9">
                         <div className="text-muted text-end my-4">
                             Menampilkan {currentData?.length} buku ({currentData?.length} dari {books?.length} buku)

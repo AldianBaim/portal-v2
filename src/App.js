@@ -40,6 +40,7 @@ import GeneralGuide from "./pages/SastraMasukKurikulum/GeneralGuide";
 import Feedback from "./pages/SastraMasukKurikulum/Feedback";
 import ObjectiveProgram from "./pages/SastraMasukKurikulum/ObjectiveProgram";
 import CurrationStage from "./pages/SastraMasukKurikulum/CurrationStage";
+import CatalogList from "./pages/catalog/Catalog";
 
 const App = () => {
   useEffect(() => {
@@ -71,6 +72,7 @@ const App = () => {
       <Route path="/survey" element={<Survey />} />
       <Route path="/faq" element={<FAQ />} />
       <Route path="/test" element={<Test />} />
+      <Route path="/daftar-katalog" element={<CatalogList />} />
       <Route path="/katalog" element={<Catalog />} />
       <Route path="/katalog/buku-teks-k13" element={<BukuTeksK13 />} />
       <Route
