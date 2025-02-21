@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Layout from '../components/global/Layout'
 import Hero from '../components/home/hero'
 import SectionAccessBook from '../components/home/sections/SectionAccessBook/SectionAccessBook'
@@ -11,48 +11,150 @@ import SectionTestimony from '../components/home/sections/SectionTestimony/Secti
 import { BASE_URL } from '../utils/config'
 import useSWR from 'swr';
 
-const fetcher = (url) => fetch(url).then((res) => res.json());
+const EXPIRY_DAYS = 2;
 
-function useStatisticBook() {
-    const { data, error, isValidating } = useSWR(`${BASE_URL}/api/statistic/getSummary`, fetcher, {
-        refreshInterval: 18000000,    // Re-fetch setiap 5 Jam
-        dedupingInterval: 18000000,   // Cegah fetching ulang dalam 5 Jam
-        revalidateOnFocus: false,  // Jangan revalidate saat window fokus kembali
-        revalidateOnReconnect: false
-    });
-
-    const statisticBook = data ?? {};
-    const loadingStatisticBook = isValidating ?? false;
+// Fungsi untuk memeriksa apakah data di localStorage sudah kadaluarsa
+function isDataExpired(key) {
+    const lastSavedTime = localStorage.getItem(`${key}Timestamp`);
+    const currentTime = new Date().getTime();
+    const expiryTime = EXPIRY_DAYS * 24 * 60 * 60 * 1000; // 2 hari dalam milidetik
   
-    return { statisticBook, errorStatisticBook: error ,loadingStatisticBook };
+    return !lastSavedTime || currentTime - lastSavedTime >= expiryTime;
+}
+  
+  // Fungsi untuk mengambil data dari localStorage dengan pengecekan kadaluarsa
+function getCachedData(key) {
+    if (isDataExpired(key)) {
+      localStorage.removeItem(key); // Hapus data kadaluarsa
+      localStorage.removeItem(`data-home-timestamp`);
+      return undefined;
+    }
+  
+    const cachedData = localStorage.getItem(key);
+    return cachedData ? JSON.parse(cachedData) : undefined;
 }
 
 function useAudioBooks() {
-    const { data, error, isValidating } = useSWR(`${BASE_URL}/api/catalogue/getPenggerakTextBooks?limit=4&type_audio`, fetcher, {
-        refreshInterval: 18000000,    // Re-fetch setiap 5 Jam
-        dedupingInterval: 18000000,   // Cegah fetching ulang dalam 5 Jam
-        revalidateOnFocus: false,  // Jangan revalidate saat window fokus kembali
-        revalidateOnReconnect: false
-    });
-
-    const audioBooks = data?.results ?? [];
-    const loadingAudioBooks = isValidating ?? false;
+    const [audioBooks, setAudioBooks] = useState([]);
+    const [loadingAudioBooks, setLoadingAudioBooks] = useState(true);
+    const [errorAudioBooks, setErrorAudioBooks] = useState(null);
   
-    return { audioBooks, errorAudioBooks: error ,loadingAudioBooks };
+    useEffect(() => {
+      async function fetchData() {
+        const cachedData = getCachedData('audioBooksData');
+  
+        if (cachedData) {
+          setAudioBooks(cachedData.results);
+          setLoadingAudioBooks(false);
+          return;
+        }
+  
+        try {
+          const response = await fetch(`${BASE_URL}/api/catalogue/getPenggerakTextBooks?limit=4&type_audio`);
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+  
+          const responseData = await response.json();
+          setAudioBooks(responseData.results);
+          setLoadingAudioBooks(false);
+  
+          localStorage.setItem('audioBooksData', JSON.stringify(responseData));
+          localStorage.setItem('audioBooksDataTimestamp', new Date().getTime().toString());
+  
+        } catch (error) {
+          console.error("Error fetching audio books:", error.message);
+          setErrorAudioBooks(error);
+          setLoadingAudioBooks(false);
+        }
+      }
+  
+      fetchData();
+    }, []);
+  
+    return { audioBooks, errorAudioBooks, loadingAudioBooks };
+}
+  
+function useStatisticBook() {
+    const [statisticBook, setStatisticBook] = useState({});
+    const [loadingStatisticBook, setLoadingStatisticBook] = useState(true);
+    const [errorStatisticBook, setErrorStatisticBook] = useState(null);
+  
+    useEffect(() => {
+      async function fetchData() {
+        const cachedData = getCachedData('statisticBookData');
+  
+        if (cachedData) {
+          setStatisticBook(cachedData);
+          setLoadingStatisticBook(false);
+          return;
+        }
+  
+        try {
+          const response = await fetch(`${BASE_URL}/api/statistic/getSummary`);
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+  
+          const responseData = await response.json();
+          setStatisticBook(responseData);
+          setLoadingStatisticBook(false);
+  
+          localStorage.setItem('statisticBookData', JSON.stringify(responseData));
+          localStorage.setItem('statisticBookDataTimestamp', new Date().getTime().toString());
+  
+        } catch (error) {
+          console.error("Error fetching data statistik:", error.message);
+          setErrorStatisticBook(error);
+          setLoadingStatisticBook(false);
+        }
+      }
+  
+      fetchData();
+    }, []);
+  
+    return { statisticBook, errorStatisticBook, loadingStatisticBook };
 }
 
 function usePopularBooks() {
-    const { data, error, isValidating } = useSWR(`${BASE_URL}/api/statistic/getPopularCatalogue?qty=4`, fetcher, {
-        refreshInterval: 18000000,    // Re-fetch setiap 5 Jam
-        dedupingInterval: 18000000,   // Cegah fetching ulang dalam 5 Jam
-        revalidateOnFocus: false,  // Jangan revalidate saat window fokus kembali
-        revalidateOnReconnect: false
-    });
-
-    const popularBooks = data?.results ?? [];
-    const loadingPopularBooks = isValidating ?? false;
+    const [popularBooks, setPopularBooks] = useState([]);
+    const [loadingPopularBooks, setLoadingPopularBooks] = useState(true);
+    const [errorPopularBooks, setErrorPopularBooks] = useState(null);
   
-    return { popularBooks, errorPopularBooks: error ,loadingPopularBooks };
+    useEffect(() => {
+      async function fetchData() {
+        const cachedData = getCachedData('popularBooksData');
+  
+        if (cachedData) {
+          setPopularBooks(cachedData.results); // Ambil data dari cachedData
+          setLoadingPopularBooks(false);
+          return;
+        }
+  
+        try {
+          const response = await fetch(`${BASE_URL}/api/statistic/getPopularCatalogue?qty=4`);
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+  
+          const responseData = await response.json();
+          setPopularBooks(responseData.results);
+          setLoadingPopularBooks(false);
+  
+          localStorage.setItem('popularBooksData', JSON.stringify(responseData)); // Simpan seluruh responseData
+          localStorage.setItem('popularBooksDataTimestamp', new Date().getTime().toString());
+  
+        } catch (error) {
+          console.error("Error fetching popular books:", error.message);
+          setErrorPopularBooks(error);
+          setLoadingPopularBooks(false);
+        }
+      }
+  
+      fetchData();
+    }, []);
+  
+    return { popularBooks, errorPopularBooks, loadingPopularBooks };
 }
 
 const Home = () => {
