@@ -39,7 +39,7 @@ const Footer = ({ guide }) => {
                     </div>
                     <div className="col-md-3 mt-4 mt-md-0">
                         <h5 className="footer-section-title">Kontak Kami</h5>
-                        <p className="text-white"><FontAwesomeIcon icon={faLocationDot} className="me-2" /> Jalan RS. Fatmawati Gd D Komplek Kemendikbudristek Cipete, Jakarta 12410</p>
+                        <p className="text-white"><FontAwesomeIcon icon={faLocationDot} className="me-2" /> Jalan RS. Fatmawati Gd D Komplek Kemendikdasmen Cipete, Jakarta 12410</p>
                         <NavLink className="nav-link" to="phoneto:021-3804248"><FontAwesomeIcon icon={faPhone} className="me-2" /> 021-3804248</NavLink>
                         <NavLink className="nav-link" to="mailto:buku@kemdikbud.go.id"><FontAwesomeIcon icon={faEnvelope} className="me-2" /> buku@kemdikbud.go.id</NavLink>
                     </div>
