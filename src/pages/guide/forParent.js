@@ -31,7 +31,7 @@ const ForParent = () => {
         title: 'Bantu tingkatkan proses belajar anak',
         image: '/assets/image/guide/untuk ortu.png',
         vector: '/assets/image/guide/vectorForParent.png',
-        description: 'Dengan akses gratis ke semua buku pelajaran resmi kemendikbud dari jenjang pendidikan PAUD sampai SMA'
+        description: 'Dengan akses gratis ke semua buku pelajaran resmi Kemendikdasmen dari jenjang pendidikan PAUD sampai SMA'
     }
 
     return (

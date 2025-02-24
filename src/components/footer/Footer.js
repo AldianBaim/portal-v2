@@ -14,7 +14,7 @@ const Footer = ({ guide }) => {
                     <div className="col-md-4 pe-md-5">
                         <img src="/assets/image/kemendikbud.webp" className="" width="100" alt="" />
                         <p className="text-white my-2"><strong>Pusat Perbukuan</strong></p>
-                        <p className="text-white"><small>Badan Standar, Kurikulum, dan Asesmen Pendidikan. Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi.</small></p>
+                        <p className="text-white"><small>Badan Standar, Kurikulum, dan Asesmen Pendidikan. Kementerian Pendidikan Dasar dan Menengah.</small></p>
                     </div>
                     <div className="col-md-5 mt-4 mt-md-0">
                         <h5 className="footer-section-title">Peta Situs</h5>

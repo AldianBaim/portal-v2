@@ -28,7 +28,7 @@ const ForTeacher = () => {
 
     const content = {
         subtitle: 'BUKU UNTUK GURU',
-        title: 'Temukan referensi buku-buku resmi dari Kemdikbud',
+        title: 'Temukan referensi buku-buku resmi dari Kemendikdasmen',
         image: '/assets/image/guide/untuk guru.png',
         vector: '/assets/image/guide/vectorForTeacher.png',
         description: 'Akses berbagai referensi buku untuk membantu proses belajar mengajar Ibu/Bapak guru di seluruh Indonesia'
