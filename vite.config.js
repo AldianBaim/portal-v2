@@ -32,6 +32,70 @@ export default defineConfig({
           },
         ],
       },
+      workbox: {
+        debug: false,
+        skipWaiting: true,
+        clientsClaim: true,
+        runtimeCaching: [
+          {
+            urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'google-fonts-cache',
+              expiration: {
+                maxEntries: 10,
+                maxAgeSeconds: 60 * 60 * 24 * 365 // <== 365 days
+              },
+              cacheableResponse: {
+                statuses: [0, 200]
+              }
+            }
+          },
+          {
+            urlPattern: /^https:\/\/fonts\.gstatic\.com\/.*/i,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'gstatic-fonts-cache',
+              expiration: {
+                maxEntries: 10,
+                maxAgeSeconds: 60 * 60 * 24 * 365 // <== 365 days
+              },
+              cacheableResponse: {
+                statuses: [0, 200]
+              },
+            },
+          },
+          {
+            urlPattern: ({ url }) => {
+              console.log("Checking URL:", url.href);
+              const matches = url.pathname === '/' ||
+                url.pathname === '/daftar-katalog' ||
+                url.pathname.startsWith('/katalog/');
+                return matches;
+            },
+            handler: 'StaleWhileRevalidate',
+            options: {
+              cacheName: 'api-cache', 
+              expiration: {
+                maxEntries: 50,
+                maxAgeSeconds: 60 * 60 * 24,
+              },
+              cacheableResponse: {
+                statuses: [0, 200]
+              },              
+              plugins: [
+                {
+                  cacheWillUpdate: async ({ response }) => {
+                    console.log("Response status:", response.status);
+                    console.log("Response headers:", response.headers);
+                    return response;
+                  },
+                },
+              ],
+            },
+          },
+        ],
+      },
     }),
   ],
 });
