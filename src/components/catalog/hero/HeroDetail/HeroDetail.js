@@ -221,21 +221,27 @@ const HeroDetail = ({ category, price_zone_1, price_zone_2, price_zone_3, price_
                     }
                 </div>
             </div>
-            <Modal id="readModal" title={title}>
-                {!!attachment && <object
-                    type="application/pdf"
-                    data={attachment}
-                    width="100%"
-                    style={{height: '90vh'}}
-                    aria-label={title}
-                >
-                    <PdfViewer url={attachment}></PdfViewer>
-                </object>
-                
-                }
+            <Modal id="readModal" title={title} className="modal-dialog-scrollable">
+                {!!attachment && (
+                    <div className="pdf-viewer-container" style={{ height: '80vh', overflow: 'auto' }}>
+                        {window.innerWidth >= 1024 ? (
+                            <object
+                                data={attachment}
+                                type="application/pdf"
+                                width="100%"
+                                height="100%"
+                                className="d-block mx-auto"
+                            >
+                                <p>Your browser doesn't support PDF viewing. Please download the PDF to view it.</p>
+                            </object>
+                        ) : (
+                            <PdfViewer url={attachment} />
+                        )}
+                    </div>
+                )}
             </Modal>
             <div className="modal fade" id="reportModal" tabIndex="-1" aria-labelledby="reportModalLabel" aria-hidden="true">
-                <div className="modal-dialog">
+                <div className="modal-dialog m-0">
                     <div className="modal-content bg-">
                         <div className="modal-header bg-warning">
                             <h5 className="modal-title" id="reportModalLabel"><FontAwesomeIcon icon={faCircleExclamation} /> Laporkan Buku</h5>
