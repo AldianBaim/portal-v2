@@ -46,12 +46,6 @@ const PdfViewer = ({ url }) => {
     try {
       const uniqueUrl = `${url}?t=${new Date().getTime()}`;
       const loadingTask = pdfjsLib.getDocument({ url: uniqueUrl });
-      
-      // Add loading task error handling
-      loadingTask.onProgress = (progress) => {
-        console.log('Loading progress:', progress.loaded / progress.total);
-      };
-
       const pdf = await loadingTask.promise;
       setPdfDoc(pdf);
       setPageCount(pdf.numPages);
@@ -60,7 +54,6 @@ const PdfViewer = ({ url }) => {
     } catch (error) {
       console.error("Error loading PDF:", error);
       setLoading(false);
-      // Optionally set an error state to show to the user
     }
   };
 
