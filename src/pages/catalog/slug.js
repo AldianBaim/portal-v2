@@ -86,7 +86,6 @@ const CatalogDetail = () => {
   const { recommendBooks, loadingRecommendBooks } = useRecommendBooks(slug);
   const { book, loadingBook } = useBookDetail(slug);
   const { reviews } = useReviews(slug);
-  console.log(book);
 
   return (
     <Layout>
