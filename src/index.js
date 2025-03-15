@@ -28,4 +28,4 @@ root.render(
 reportWebVitals();
 
 // For activate service worker change to register()
-serviceWorkerRegistration.register();
+// serviceWorkerRegistration.register();

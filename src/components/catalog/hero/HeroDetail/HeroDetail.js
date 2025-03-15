@@ -1,4 +1,4 @@
-import { faCheck, faCircleExclamation, faDownload, faFile, faFileAudio, faFilePdf, faPlay } from '@fortawesome/free-solid-svg-icons'
+import { faCheck, faCircleExclamation, faFile, faFileAudio, faFilePdf, faPlay } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import axios from 'axios'
 import React from 'react'
@@ -34,7 +34,7 @@ const HeroDetail = ({ category, price_zone_1, price_zone_2, price_zone_3, price_
                     Authorization: token,
                 },
             })
-            if (response.data.status == 'success') {
+            if (response.data.status === 'success') {
                 setFailedReview(false)
                 setSuccessReview(true)
                 resetFieldReport('message')
@@ -52,7 +52,7 @@ const HeroDetail = ({ category, price_zone_1, price_zone_2, price_zone_3, price_
 
         try {
             const response = await axios.post(`${BASE_URL}/api/download/submit`, JSON.stringify(data))
-            if (response.data.status == 'success') {
+            if (response.data.status === 'success') {
                 resetFieldDownload('message')
                 window.location.replace(attachment)
             }
@@ -79,7 +79,7 @@ const HeroDetail = ({ category, price_zone_1, price_zone_2, price_zone_3, price_
                     Authorization: token,
                 },
             })
-            if (response.data.status == 'success') {
+            if (response.data.status === 'success') {
                 console.log('log pushed');
             }
         } catch (error) {
@@ -115,9 +115,9 @@ const HeroDetail = ({ category, price_zone_1, price_zone_2, price_zone_3, price_
                                     <img src={image || '/assets/image/catalog/book-placeholder.jpg'} className={styles['img-size']} alt="" />
                                 </div>
                                 <div className="col-lg-9 pt-5 pt-md-0">
-                                    {bookType == 'pdf' && <button className="btn btn-sm rounded-pill btn-outline-danger">Buku PDF</button>}
-                                    {bookType == 'audio' && <button className="btn btn-sm rounded-pill btn-outline-success">Buku Audio</button>}
-                                    {bookType == 'interactive' && <button className="btn btn-sm rounded-pill btn-outline-primary">Buku Interaktif</button>}
+                                    {bookType === 'pdf' && <button className="btn btn-sm rounded-pill btn-outline-danger">Buku PDF</button>}
+                                    {bookType === 'audio' && <button className="btn btn-sm rounded-pill btn-outline-success">Buku Audio</button>}
+                                    {bookType === 'interactive' && <button className="btn btn-sm rounded-pill btn-outline-primary">Buku Interaktif</button>}
 
                                     <h3 className="my-3">{title}</h3>
 
@@ -224,17 +224,19 @@ const HeroDetail = ({ category, price_zone_1, price_zone_2, price_zone_3, price_
             <Modal id="readModal" title={title} className="modal-dialog-scrollable">
                 {!!attachment && (
                     <div className="pdf-viewer-container" style={{ height: '80vh', overflow: 'auto' }}>
-                        
-                        <object
-                            data={attachment}
-                            type="application/pdf"
-                            width="100%"
-                            height="100%"
-                            className="d-block mx-auto"
-                        >
-                            <p>Your browser doesn't support PDF viewing. Please download the PDF to view it.</p>
-                        </object>
-                        
+                        {window.innerWidth >= 1024 ? (
+                            <object
+                                data={attachment}
+                                type="application/pdf"
+                                width="100%"
+                                height="100%"
+                                className="d-block mx-auto"
+                            >
+                                <p>Your browser doesn't support PDF viewing. Please download the PDF to view it.</p>
+                            </object>
+                        ) : (
+                            <PdfViewer url={attachment} />
+                        )}
                     </div>
                 )}
             </Modal>

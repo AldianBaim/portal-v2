@@ -43,28 +43,28 @@ import CurrationStage from "./pages/SastraMasukKurikulum/CurrationStage";
 import CatalogList from "./pages/catalog/Catalog";
 
 const App = () => {
-  useEffect(() => {
-    if ("caches" in window) {
-      caches.keys().then((names) => {
-        // Delete all the cache files
-        names.forEach((name) => {
-          caches.delete(name);
-        });
-      });
-    }
-    // Clear all caches browser
-    caches
-      .keys()
-      .then((keyList) => Promise.all(keyList.map((key) => caches.delete(key))));
+  // useEffect(() => {
+  //   if ("caches" in window) {
+  //     caches.keys().then((names) => {
+  //       // Delete all the cache files
+  //       names.forEach((name) => {
+  //         caches.delete(name);
+  //       });
+  //     });
+  //   }
+  //   // Clear all caches browser
+  //   caches
+  //     .keys()
+  //     .then((keyList) => Promise.all(keyList.map((key) => caches.delete(key))));
 
-    gapi.load("client:auth2", () => {
-      gapi.client.init({
-        clientId:
-          "104944373110-hd7umobu1j3k66fnjm82l8gd32vnefm8.apps.googleusercontent.com",
-        plugin_name: "chat",
-      });
-    });
-  }, []);
+  //   gapi.load("client:auth2", () => {
+  //     gapi.client.init({
+  //       clientId:
+  //         "104944373110-hd7umobu1j3k66fnjm82l8gd32vnefm8.apps.googleusercontent.com",
+  //       plugin_name: "chat",
+  //     });
+  //   });
+  // }, []);
 
   return (
     <Routes>
