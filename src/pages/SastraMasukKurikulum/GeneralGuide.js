@@ -96,7 +96,7 @@ const GeneralGuide = () => {
                                                         program Sastra Masuk Sekolah. Terima kasih untuk Perpustakaan Nasional yang
                                                         turut mendukung penyediaan buku-buku yang direkomendasikan. Saya juga
                                                         menyampaikan selamat kepada tim Pusat Perbukuan, Badan Standar, Kurikulum,
-                                                        dan Asesmen Pendidikan Kemendikbudristek yang telah mengawal program
+                                                        dan Asesmen Pendidikan Kemendikdasmen yang telah mengawal program
                                                         Sastra Masuk Kurikulum ini dengan baik.
                                                     </p>
                                                     <p>

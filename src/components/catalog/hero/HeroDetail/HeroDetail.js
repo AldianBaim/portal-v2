@@ -147,7 +147,11 @@ const HeroDetail = ({ category, price_zone_1, price_zone_2, price_zone_3, price_
                                                 >
                                                     <FontAwesomeIcon icon={faFilePdf} className="me-1" /> Baca Online
                                                 </button>
+<<<<<<< HEAD
                                                 <small className="my-3 text-muted d-block">Telah di-unduh {totalDownload.toLocaleString()} kali <a data-bs-toggle="modal" data-bs-target="#reportModal" className="text-decoration-none text-blue ms-2 fw-bold" style={{ cursor: 'pointer' }}><FontAwesomeIcon icon={faCircleExclamation} /> Lapor disini</a> jika menemukan kesalahan pada buku</small>
+=======
+                                                <small className="my-3 text-muted d-block">{totalDownload ? `Telah di-unduh ${totalDownload} kali` : null} <a data-bs-toggle="modal" data-bs-target="#reportModal" className="text-decoration-none text-blue ms-1 fw-bold" style={{ cursor: 'pointer' }}><FontAwesomeIcon icon={faCircleExclamation} /> Lapor disini</a> jika menemukan kesalahan pada buku</small>
+>>>>>>> development
                                             </>
                                         )
                                     }
@@ -160,7 +164,7 @@ const HeroDetail = ({ category, price_zone_1, price_zone_2, price_zone_3, price_
                                                 <a onClick={() => pushLog('download')} href={attachment} className="btn btn-sm btn-outline-primary py-2" target="_blank" rel="noreferrer" download="file.pdf">
                                                     <FontAwesomeIcon icon={faFileAudio} className="me-1" /> Unduh PDF
                                                 </a>
-                                                <small className="my-3 text-muted d-block">Telah diputar {totalPlay} kali <a data-bs-toggle="modal" data-bs-target="#reportModal" className="text-decoration-none text-blue ms-2 fw-bold" style={{ cursor: 'pointer' }}><FontAwesomeIcon icon={faCircleExclamation} /> Lapor disini</a> jika menemukan kesalahan pada audio</small>
+                                                <small className="my-3 text-muted d-block">{totalPlay ? `Telah diputar ${totalPlay} kali` : null} <a data-bs-toggle="modal" data-bs-target="#reportModal" className="text-decoration-none text-blue ms-1 fw-bold" style={{ cursor: 'pointer' }}><FontAwesomeIcon icon={faCircleExclamation} /> Lapor disini</a> jika menemukan kesalahan pada audio</small>
                                             </>
                                         )
                                     }
@@ -170,7 +174,11 @@ const HeroDetail = ({ category, price_zone_1, price_zone_2, price_zone_3, price_
                                         bookType === 'interactive' && attachment && (
                                             <>
                                                 <a onClick={() => pushLog('read')} href={attachment} target="_blank" rel="noreferrer" className="btn btn-sm btn-orange py-2 me-3 my-2"><FontAwesomeIcon icon={faFile} className="me-2" />Baca Buku Interaktif</a>
+<<<<<<< HEAD
                                                 <small className="my-3 text-muted d-block">Telah di-unduh {totalDownload.toLocaleString()} kali <a data-bs-toggle="modal" data-bs-target="#reportModal" className="text-decoration-none text-blue ms-2 fw-bold" style={{ cursor: 'pointer' }}><FontAwesomeIcon icon={faCircleExclamation} /> Lapor disini</a> jika menemukan kesalahan pada naskah</small>
+=======
+                                                <small className="my-3 text-muted d-block">{totalDownload ? `Telah di-unduh ${totalDownload} kali` : null} <a data-bs-toggle="modal" data-bs-target="#reportModal" className="text-decoration-none text-blue ms-1 fw-bold" style={{ cursor: 'pointer' }}><FontAwesomeIcon icon={faCircleExclamation} /> Lapor disini</a> jika menemukan kesalahan pada naskah</small>
+>>>>>>> development
                                             </>
                                         )
                                     }
@@ -221,21 +229,27 @@ const HeroDetail = ({ category, price_zone_1, price_zone_2, price_zone_3, price_
                     }
                 </div>
             </div>
-            <Modal id="readModal" title={title}>
-                {!!attachment && <object
-                    type="application/pdf"
-                    data={attachment}
-                    width="100%"
-                    style={{height: '90vh'}}
-                    aria-label={title}
-                >
-                    <PdfViewer url={attachment}></PdfViewer>
-                </object>
-                
-                }
+            <Modal id="readModal" title={title} className="modal-dialog-scrollable">
+                {!!attachment && (
+                    <div className="pdf-viewer-container" style={{ height: '80vh', overflow: 'auto' }}>
+                        {window.innerWidth >= 1024 ? (
+                            <object
+                                data={attachment}
+                                type="application/pdf"
+                                width="100%"
+                                height="100%"
+                                className="d-block mx-auto"
+                            >
+                                <p>Your browser doesn't support PDF viewing. Please download the PDF to view it.</p>
+                            </object>
+                        ) : (
+                            <PdfViewer url={attachment} />
+                        )}
+                    </div>
+                )}
             </Modal>
             <div className="modal fade" id="reportModal" tabIndex="-1" aria-labelledby="reportModalLabel" aria-hidden="true">
-                <div className="modal-dialog">
+                <div className="modal-dialog m-0">
                     <div className="modal-content bg-">
                         <div className="modal-header bg-warning">
                             <h5 className="modal-title" id="reportModalLabel"><FontAwesomeIcon icon={faCircleExclamation} /> Laporkan Buku</h5>

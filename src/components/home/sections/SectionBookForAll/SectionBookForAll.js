@@ -16,7 +16,7 @@ const SectionBookForAll = () => {
                                 <div className="col-md-8">
                                     <div className="card-body">
                                         <h5 className="card-title fw-bold">Siswa</h5>
-                                        <p className="card-text text-muted">Belajar lebih asik bersama Buku Kemendikbud</p>
+                                        <p className="card-text text-muted">Belajar lebih asik bersama Buku Kemendikdasmen</p>
                                         <Link to="/panduan/siswa" className="card-text text-decoration-none fw-bold"><small className="text-blue">Lihat selengkapnya &#8594;</small></Link>
                                     </div>
                                 </div>

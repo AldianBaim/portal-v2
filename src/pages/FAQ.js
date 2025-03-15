@@ -10,9 +10,9 @@ const FAQ = () => {
 
                     Berikut adalah daftar pertanyaan yang sering ditanyakan <br /><br />
 
-                    <span className="fw-bold">Apa itu buku Kemendikbudristek?</span> <br />
+                    <span className="fw-bold">Apa itu buku Kemendikdasmen?</span> <br />
 
-                    Buku-buku yang dikembangkan dan diterbitkan oleh unit-unit kerja di Kementerian Pendidikan, Kebudayaan, Riset dan Teknologi untuk kebutuhan siswa, guru, atau masyarakat Indonesia. <br /><br />
+                    Buku-buku yang dikembangkan dan diterbitkan oleh unit-unit kerja di Kementerian Pendidikan Dasar dan Menengah untuk kebutuhan siswa, guru, atau masyarakat Indonesia. <br /><br />
 
                     <span className="fw-bold">Bagaimana cara mendaftar di SIBI?</span> <br />
 

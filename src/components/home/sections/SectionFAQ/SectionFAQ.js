@@ -17,11 +17,11 @@ const SectionFAQ = ({ nightMode }) => {
                                 <div className={`accordion-item mb-2 border-0 ${backgroundColor}`}>
                                     <h2 className="accordion-header" id="flush-headingOne">
                                         <button className={`accordion-button collapsed ps-1 ${backgroundColor}`} type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                                            Apa itu buku Kemendikbudristek?
+                                            Apa itu buku Kemendikdasmen?
                                         </button>
                                     </h2>
                                     <div id="flush-collapseOne" className="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                                        <div className="accordion-body">Buku-buku yang dikembangkan dan diterbitkan oleh unit-unit kerja di Kementerian Pendidikan, Kebudayaan, Riset dan Teknologi untuk kebutuhan siswa, guru, atau masyarakat Indonesia.</div>
+                                        <div className="accordion-body">Buku-buku yang dikembangkan dan diterbitkan oleh unit-unit kerja di Kementerian Pendidikan Dasar dan Menengah untuk kebutuhan siswa, guru, atau masyarakat Indonesia.</div>
                                     </div>
                                 </div>
                                 <div className={`accordion-item mb-2 border-0 ${backgroundColor}`}>

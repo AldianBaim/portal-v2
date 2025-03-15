@@ -112,11 +112,14 @@ const Navbar = ({ nightMode }) => {
                             <li className="nav-item mx-1">
                                 <NavLink to="/" className={({ isActive }) => isActive ? 'nav-link fw-bold' : 'nav-link'} aria-current="page">Beranda</NavLink>
                             </li>
+                            <li className="nav-item mx-1">
+                                <NavLink to="/daftar-katalog" className={({ isActive }) => isActive ? 'nav-link fw-bold' : 'nav-link'} aria-current="page">Katalog Terbaru</NavLink>
+                            </li>
                             <li className="nav-item dropdown mx-1">
                                 <a className="nav-link dropdown-toggle dropdown-mobile" href="#" id="dropdownCatalogue" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Katalog Buku
+                                    Kategori
                                 </a>
-                                <NavLink to="/katalog" className={({ isActive }) => isActive ? 'dropdown-desktop nav-link fw-bold dropdown-toggle' : 'dropdown-desktop nav-link dropdown-toggle'} aria-current="page">Katalog Buku</NavLink>
+                                <NavLink to="/katalog" className={({ isActive }) => isActive ? 'dropdown-desktop nav-link fw-bold dropdown-toggle' : 'dropdown-desktop nav-link dropdown-toggle'} aria-current="page">Kategori Buku</NavLink>
                                 <ul className="dropdown-menu px-2" aria-labelledby="dropdownCatalogue">
                                     <li>
                                         <Link className="dropdown-item p-2" to="/katalog/buku-kurikulum-merdeka">

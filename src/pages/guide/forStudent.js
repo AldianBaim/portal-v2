@@ -31,7 +31,7 @@ const ForStudent = () => {
         title: 'Belajar jadi lebih mudah',
         image: '/assets/image/guide/untuk siswa.png',
         vector: '/assets/image/guide/vectorForStudent.png',
-        description: 'Temukan buku pelajaran resmi kemendikbud di sini'
+        description: 'Temukan buku pelajaran resmi Kemendikdasmen di sini'
     }
 
     return (
