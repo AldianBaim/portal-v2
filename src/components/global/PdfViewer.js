@@ -3,7 +3,11 @@ import * as pdfjsLib from "pdfjs-dist";
 import styles from "./PdfViewer.module.scss";
 import Spinner from "./Spinner";
 
-pdfjsLib.GlobalWorkerOptions.workerSrc = `/pdf.worker.min.mjs`;
+// Update the worker configuration at the top of the file
+pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjsLib.version}/pdf.worker.min.js`;
+
+// Or if you prefer using unpkg
+// pdfjsLib.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjsLib.version}/build/pdf.worker.min.js`;
 
 const MOBILE_BREAKPOINT = 600;
 const TABLET_BREAKPOINT = 1024;
@@ -42,6 +46,12 @@ const PdfViewer = ({ url }) => {
     try {
       const uniqueUrl = `${url}?t=${new Date().getTime()}`;
       const loadingTask = pdfjsLib.getDocument({ url: uniqueUrl });
+      
+      // Add loading task error handling
+      loadingTask.onProgress = (progress) => {
+        console.log('Loading progress:', progress.loaded / progress.total);
+      };
+
       const pdf = await loadingTask.promise;
       setPdfDoc(pdf);
       setPageCount(pdf.numPages);
@@ -50,6 +60,7 @@ const PdfViewer = ({ url }) => {
     } catch (error) {
       console.error("Error loading PDF:", error);
       setLoading(false);
+      // Optionally set an error state to show to the user
     }
   };
 
