@@ -224,19 +224,17 @@ const HeroDetail = ({ category, price_zone_1, price_zone_2, price_zone_3, price_
             <Modal id="readModal" title={title} className="modal-dialog-scrollable">
                 {!!attachment && (
                     <div className="pdf-viewer-container" style={{ height: '80vh', overflow: 'auto' }}>
-                        {window.innerWidth >= 1024 ? (
-                            <object
-                                data={attachment}
-                                type="application/pdf"
-                                width="100%"
-                                height="100%"
-                                className="d-block mx-auto"
-                            >
-                                <p>Your browser doesn't support PDF viewing. Please download the PDF to view it.</p>
-                            </object>
-                        ) : (
-                            <PdfViewer url={attachment} />
-                        )}
+                        
+                        <object
+                            data={attachment}
+                            type="application/pdf"
+                            width="100%"
+                            height="100%"
+                            className="d-block mx-auto"
+                        >
+                            <p>Your browser doesn't support PDF viewing. Please download the PDF to view it.</p>
+                        </object>
+                        
                     </div>
                 )}
             </Modal>
